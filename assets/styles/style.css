@@ -136,12 +136,15 @@ body {
         font-size: 2rem;
         position: absolute;
         top: 30rem;
-        left: 2.7rem;
+        background-color: rgba(35, 122, 18, 0.863);
+        border-radius: 5px;
+        padding: 5px;
         visibility: hidden;
         transition: all .2s; }
-    .header__content__icon:hover + .header__content__icon--text {
+    .header__content__iconset .header__content__icon:hover + span {
       top: 23rem;
-      color: rgba(0, 0, 0, 0.4);
+      transform: translate(-6rem);
+      color: rgba(219, 233, 224, 0.9);
       visibility: visible; }
     .header__content ul {
       color: rgba(255, 255, 255, 0.7);

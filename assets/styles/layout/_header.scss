@@ -103,15 +103,18 @@
 				font-size: 2rem;
 				position: absolute;
 				top: 30rem;
-				left: 2.7rem;
+				background-color: rgba(35, 122, 18, 0.863);
+				border-radius: 5px;
+				padding: 5px;
 				visibility: hidden;
 				transition: all .2s;
 			}
 		}
 
-		&__icon:hover + .header__content__icon--text {
+		&__iconset &__icon:hover + span {
 			top: 23rem;
-			color: rgba(0, 0, 0, .4);
+			transform: translate(-6rem);
+			color: rgba(219, 233, 224, 0.9);
 			visibility: visible;
 		}
 
