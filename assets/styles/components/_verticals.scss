@@ -1,10 +1,10 @@
 .vertical {
-	background-color: rgba(18, 78, 18, .8);
+	background-color: rgba(6, 75, 6, 0.3);
 
 	&__left {
 		grid-column: void-left-start / void-left-end;
 		grid-row: 1 / -1;
-		border-right: .7px solid rgba(52, 204, 52, 0.3);
+		border-right: .7px solid rgba(52, 204, 52, 0.6);
 	}
 
 	&__right {

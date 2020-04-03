@@ -43,14 +43,14 @@ body {
 .sideBar {
   grid-column: sidebar-start / sidebar-end;
   grid-row: 1 / -1;
-  background-color: red; }
+  background-color: #114d09; }
 
 .vertical {
-  background-color: rgba(18, 78, 18, 0.8); }
+  background-color: rgba(6, 75, 6, 0.3); }
   .vertical__left {
     grid-column: void-left-start / void-left-end;
     grid-row: 1 / -1;
-    border-right: 0.7px solid rgba(52, 204, 52, 0.3); }
+    border-right: 0.7px solid rgba(52, 204, 52, 0.6); }
   .vertical__right {
     grid-column: void-right-start / void-right-end;
     grid-row: 1 / -1;
@@ -58,10 +58,54 @@ body {
 
 .header {
   grid-column: void-left-end / void-right-start;
-  background-image: linear-gradient(rgba(0, 255, 0, 0.2), rgba(0, 255, 0, 0.6)), url(../images/bg-xlarge.jpg);
+  background-image: url("../images/1.jpg");
+  height: 100%;
   background-size: cover;
   background-position: center;
-  filter: sepia(0.3); }
+  display: grid;
+  grid-template-columns: 1fr 2fr; }
+  .header__bgimage {
+    grid-column: 2 / -1; }
+  .header__content {
+    font-family: cursive;
+    grid-column: 1 / 2;
+    margin: 3rem;
+    background-color: rgba(122, 117, 117, 0.3);
+    box-shadow: 0.1rem 0.5rem rgba(122, 117, 117, 0.5);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .header__content__titles {
+      background-color: rgba(0, 50, 0, 0.6); }
+      .header__content__titles h1 {
+        text-transform: uppercase;
+        color: rgba(234, 243, 235, 0.7);
+        font-weight: 300;
+        font-size: 4rem; }
+      .header__content__titles h3 {
+        text-transform: uppercase;
+        color: green;
+        font-weight: 700;
+        font-size: 2rem; }
+    .header__content__icon {
+      fill: #fff;
+      width: 4.5rem;
+      height: 4.5rem; }
+    .header__content ul {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      list-style: none;
+      text-transform: uppercase;
+      font-size: 4rem;
+      margin-top: 2rem; }
+      .header__content ul li {
+        margin-left: 3rem;
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        grid-row-gap: 1.5rem;
+        grid-column-gap: 1.5rem;
+        text-align: left; }
 
 .footer {
   grid-column: void-left-end / void-right-start;
