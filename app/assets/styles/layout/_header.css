@@ -31,13 +31,26 @@
 
 			li {
 				background-color: rgba(138, 172, 59, 0.3);
+				min-height: 4rem;
+				line-height: 2rem;
 				margin: 1rem;
 				padding: 2rem;
 				display: flex;
 				flex-direction: column;
+				transition: transform .2s;
+				cursor: pointer;
+				border-radius: 2px;
+				border: 1px solid rgba(0, 0, 0, .2);
+				box-shadow: .2rem .2rem rgba(0, 0, 0, .1);
+			}
+
+			&--isLIHovered:hover {
+				transform: scale(1.2);
+				background-color: rgba(138, 172, 59, 0.8) !important;
 			}
 
 			&__icon {
+				opacity: 1;
 				width: 4.5rem;
 				height: 4.5rem;
 				fill: rgba(4, 70, 20, 0.9);
