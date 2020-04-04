@@ -1,0 +1,19 @@
+@import "normalize.css";
+/* @import "abstracts/_mixins"; */
+/* @import "abstracts/_variables"; */
+
+/* @import "base/_animations"; */
+@import "base/_base";
+/* @import "base/_typography"; */
+/* @import "base/_utilities"; */
+
+@import "components/_aboutMe";
+@import "components/_courses";
+@import "components/_getInTouch";
+@import "components/_projects";
+@import "components/_technologies";
+@import "components/_sideBar";
+@import "components/_verticals";
+
+@import "layout/_header";
+@import "layout/_footer";
