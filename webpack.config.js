@@ -17,6 +17,7 @@
 // postcss-nested = allows for nesting css selectors
 // autoprefixer
 // postcss-import = not force browsers to download all CSS files
+// postcss-mixins =
 //
 // *************
 // normalize.css = For initializing browser configurations
@@ -27,6 +28,7 @@ const path = require('path');
 // Plugins for post CSS to work as expected
 const postCSSPlugins = [
 	require('postcss-import'),
+	require('postcss-mixins'),
 	require('postcss-simple-vars'),
 	require('postcss-nested'),
 	require('autoprefixer')
