@@ -1,3 +1,45 @@
 .aboutMe {
 	grid-column: void-left-end / void-right-start;
+	background: linear-gradient(to right bottom, rgba(245, 229, 14, 0.7), rgba(245, 229, 14, 0.7)),
+		url('assets/images/5.jpg') no-repeat center;
+
+	display: grid;
+	grid-template-rows: repeat(2, 1fr);
+	align-items: center;
+
+	&__about {
+		background-color: rgba(255, 255, 255, .4);
+		margin: 1.5rem;
+		height: 75%;
+		font-size: 2rem;
+		border-radius: 1rem;
+		display: flex;
+		align-items: flex-end;
+		text-align: center;
+		position: relative;
+
+		span {
+			color: rgba(0, 0, 0, .7);
+			border: .7px solid rgba(0, 0, 0, .5);
+			border-radius: 1rem;
+			padding: .2rem 1rem;
+			background-color: rgba(245, 229, 14, 0.7);
+			font-size: 4rem;
+			text-transform: uppercase;
+			position: absolute;
+			top: -2.8rem;
+			left: 50%;
+			transform: translate(-50%);
+			z-index: 1;
+
+			&:hover {
+				background-color: rgba(245, 229, 14, 1);
+			}
+		}
+	}
+
+	ul {
+		text-align: center;
+		font-size: 4rem;
+	}
 }
