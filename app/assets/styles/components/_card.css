@@ -28,7 +28,7 @@
 				grid-column: badge-start / badge-end;
 				position: relative;
 
-				background-color: yellow;
+				background-color: rgb(20, 92, 12);
 				z-index: 1;
 				overflow: hidden;
 				display: grid;
@@ -36,7 +36,9 @@
 
 				span {
 					text-transform: uppercase;
+					color: rgba(255, 255, 255, .9);
 					letter-spacing: 1rem;
+					/* VERY IMPORTANT: This is how text is positioned in the center */
 					writing-mode: tb-rl;
 					transform: rotate(-180deg);
 					position: absolute;
