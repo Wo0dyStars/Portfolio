@@ -4,7 +4,7 @@ class Card {
 	}
 
 	GenerateTemplate() {
-		return `
+		let template = `
             <div class="card">
                 <div class="card__side card__side--front card__side--front--${this.course['CourseDone']}">
                     <div class="badge"><span>${this.course['CourseBadge']}</span></div>
@@ -19,8 +19,12 @@ class Card {
                         <ul>${this.course['CourseFeatures']}</ul>
                     </div>
                 </div>
-                <div class="card__side card__side--back card__side--back--${this.course['CourseDone']}">
-                    <div class="card__certificate card__certificate--${this.course['ImageIndex']}"></div>
+                `;
+
+		if (this.course['CourseDone'] === 'done') {
+			template += `
+            <div class="card__side card__side--back card__side--back--${this.course['CourseDone']}">
+                <div class="card__certificate card__certificate--${this.course['ImageIndex']}"></div>
                     <div class="card__properties">
                         <div class="card__title">
                             ${this.course['CourseSubTitle']}
@@ -35,8 +39,14 @@ class Card {
                         </ul>
                     </div>
                 </div>
-            </div>
-        `;
+            </div>`;
+		} else {
+			template += `
+                </div>
+            `;
+		}
+
+		return template;
 	}
 }
 
