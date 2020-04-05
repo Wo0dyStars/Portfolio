@@ -1,4 +1,6 @@
 .courses {
 	grid-column: void-left-end / void-right-start;
-	background-color: yellow;
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
 }
