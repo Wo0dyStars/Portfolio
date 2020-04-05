@@ -1,6 +1,6 @@
 .header {
 	grid-column: void-left-end / void-right-start;
-	background: linear-gradient(to right bottom, rgba(2, 82, 29, 0.7), rgba(9, 77, 3, 0.7)),
+	background: linear-gradient(to bottom, rgba(250, 252, 251, 0.5), rgba(255, 255, 255, 1)),
 		url('assets/images/5.jpg') no-repeat center;
 	background-size: cover;
 
@@ -33,6 +33,10 @@
 			grid-template-columns: repeat(3, 1fr);
 			list-style: none;
 
+			@mixin atLarge {
+				grid-template-columns: repeat(6, 1fr);
+			}
+
 			li {
 				background-color: rgba(138, 172, 59, 0.3);
 				min-height: 4rem;
@@ -48,6 +52,10 @@
 				border: 1px solid rgba(0, 0, 0, .2);
 				box-shadow: .2rem .2rem rgba(0, 0, 0, .1);
 				text-align: center;
+
+				@mixin atLarge {
+					padding: 6rem;
+				}
 
 				&:hover {
 					transform: scale(1.2);

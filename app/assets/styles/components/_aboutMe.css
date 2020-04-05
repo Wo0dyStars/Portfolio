@@ -1,7 +1,6 @@
 .aboutMe {
 	grid-column: void-left-end / void-right-start;
-	background: linear-gradient(to right bottom, rgba(245, 229, 14, 0.7), rgba(245, 229, 14, 0.7)),
-		url('assets/images/5.jpg') no-repeat center;
+	background-color: #fff;
 
 	display: grid;
 	grid-template-rows: repeat(2, 1fr);
