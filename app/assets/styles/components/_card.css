@@ -1,10 +1,11 @@
 .card {
 	margin: 1rem;
 	position: relative;
+	height: 40rem;
 
 	&__side {
 		transition: all .8s ease;
-		padding: .2rem .2rem .2rem 2rem;
+		padding: .2rem;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -17,22 +18,30 @@
 		backface-visibility: hidden;
 
 		&--front {
-			background-color: white;
+			display: grid;
+			grid-template-rows: 4fr 3fr;
+			grid-template-columns: [badge-start] 2rem [badge-end] 1fr;
+			background-color: rgba(255, 119, 48, .2);
 
 			.badge {
-				font-family: cursive;
-				position: absolute;
-				top: 0;
-				right: 100%;
-				white-space: nowrap;
-				transform: rotate(270deg);
-				transform-origin: right top;
+				grid-row: 1 / -1;
+				grid-column: badge-start / badge-end;
+				position: relative;
+
 				background-color: yellow;
-				width: 100%;
-				text-align: center;
-				text-transform: uppercase;
-				letter-spacing: 1rem;
 				z-index: 1;
+				overflow: hidden;
+				display: grid;
+				align-items: center;
+
+				span {
+					text-transform: uppercase;
+					letter-spacing: 1rem;
+					writing-mode: tb-rl;
+					transform: rotate(-180deg);
+					position: absolute;
+					z-index: 2;
+				}
 			}
 		}
 
@@ -51,9 +60,11 @@
 	}*/
 
 	&__image {
+		grid-row: 1 / 2;
+		grid-column: badge-start / -1;
+
 		background-size: cover;
 		background-position: center;
-		height: 60%;
 		background-blend-mode: screen;
 		-webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 		clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
@@ -82,5 +93,38 @@
 			text-shadow: .2rem .2rem rgba(255, 119, 48, .7);
 			user-select: none;
 		}
+	}
+
+	&__features {
+		grid-row: 2 / 3;
+		grid-column: badge-start / -1;
+
+		display: grid;
+		justify-items: center;
+		margin-top: 1.2rem;
+		font-family: sans-serif;
+		user-select: none;
+
+		ul {
+			list-style: none;
+			text-align: center;
+			margin: 0 4rem;
+
+			.strong {
+				font-weight: 700;
+			}
+
+			li {
+				padding: 0.4rem;
+
+				&:not(:last-child) {
+					border-bottom: 1px solid rgba(255, 119, 48, .3);
+				}
+			}
+		}
+	}
+
+	&__properties {
+		text-transform: uppercase;
 	}
 }
