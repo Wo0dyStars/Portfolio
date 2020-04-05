@@ -68,26 +68,6 @@
 		transform: rotateY(0);
 	}
 
-	&:hover &__side--front--undone .cover-left-bg {
-		background-color: rgba(255, 255, 255, .7);
-		position: absolute;
-		width: 50%;
-		height: 100%;
-		z-index: 3;
-		animation: moveFromLeft 1s ease;
-	}
-
-	&:hover &__side--front--undone .cover-right-bg {
-		background-color: rgba(255, 255, 255, .7);
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 50%;
-		height: 100%;
-		z-index: 3;
-		animation: moveFromRight 1s ease;
-	}
-
 	&__image {
 		grid-row: 1 / 2;
 		grid-column: badge-start / -1;

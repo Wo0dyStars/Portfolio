@@ -6,7 +6,12 @@ class Card {
 	GenerateTemplate() {
 		let template = `
             <div class="card">
-                <div class="card__side card__side--front card__side--front--${this.course['CourseDone']}">
+                <div class="card__side card__side--front card__side--front--${this.course['CourseDone']}
+        `;
+		if (this.course['CourseDone'] === 'undone') {
+			template += `hvr-hollow hvr-curl-bottom-right`;
+		}
+		template += `">
                     <div class="badge"><span>${this.course['CourseBadge']}</span></div>
                     <div class="card__image card__image--${this.course['ImageIndex']}">
                         <div class="card__image--caption-head card__image--caption-head--${this.course['ImageIndex']}">
