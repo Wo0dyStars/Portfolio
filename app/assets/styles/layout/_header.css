@@ -19,6 +19,11 @@
 				font-size: 4rem;
 				color: rgba(138, 172, 59, 0.9);
 				font-weight: 300;
+
+				@mixin atLarge {
+					font-size: 10rem;
+					animation: moveInLeft 1s ease-out;
+				}
 			}
 
 			&--title {
@@ -38,7 +43,7 @@
 			}
 
 			li {
-				background-color: rgba(138, 172, 59, 0.3);
+				background-color: rgba(138, 172, 59, 0.7);
 				min-height: 4rem;
 				line-height: 2rem;
 				margin: 1rem;
@@ -59,11 +64,11 @@
 
 				&:hover {
 					transform: scale(1.2);
-					background-color: rgba(138, 172, 59, 0.8) !important;
+					background-color: rgba(138, 172, 59, 1) !important;
 				}
 
 				&:hover > svg {
-					transform: scale(0.9);
+					transform: scale(1.4);
 				}
 
 				&:hover > span {
