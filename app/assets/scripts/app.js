@@ -44,7 +44,6 @@ const Technologies = [
 	'Animations',
 	'Grid',
 	'Sass',
-	'SVG',
 	'DOM',
 	'Axios',
 	'Asynchronous',
@@ -55,36 +54,73 @@ const Technologies = [
 	'Authorization'
 ];
 
+// Knuth shuffle algorithm
+function shuffle(array) {
+	var currentIndex = array.length,
+		temporaryValue,
+		randomIndex;
+
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+
+		// And swap it with the current element.
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+
+	array[23] = array[12];
+	array[12] = 'Peter Kertesz';
+
+	return array;
+}
+
+shuffle(Technologies);
+console.log(Technologies);
+
 const Parent = document.querySelector('.technologies');
 
 for (let i = 0; i < 24; i++) {
 	Parent.children[i].textContent = `${Technologies[i]}`;
 }
 
-Parent.children[0].style.cssText = `background-color: red; grid-row: 1 / 2; grid-column: 1 / 4`;
-Parent.children[4].style.cssText = `background-color: red; grid-row: 2 / 3; grid-column: 2 / 5`;
+const C = [];
+for (let i = 0; i < 24; i++) {
+	let R = Math.floor(Math.random() * 255);
+	let G = Math.floor(Math.random() * 255);
+	let B = Math.floor(Math.random() * 255);
+	let A = (Math.random() * 0.2).toFixed(2);
+	C.push(`${R}, ${G}, ${B}, ${A}`);
+}
+Parent.children[0].style.backgroundColor = 'green';
 
-Parent.children[1].style.cssText = `background-color: blue; grid-row: 1 / 2; grid-column: 4 / 6`;
-Parent.children[3].style.cssText = `background-color: blue; grid-row: 2 / 4; grid-column: 1 / 2`;
-Parent.children[7].style.cssText = `background-color: blue; grid-row: 3 / 5; grid-column: 2 / 3`;
-Parent.children[8].style.cssText = `background-color: blue; grid-row: 3 / 4; grid-column: 5 / 7`;
-Parent.children[13].style.cssText = `background-color: blue; grid-row: 4 / 5; grid-column: 5 / 7`;
+Parent.children[0].style.cssText = `background-color: rgba(${C[0]}); grid-row: 1 / 2; grid-column: 1 / 4`;
+Parent.children[4].style.cssText = `background-color: rgba(${C[1]}); grid-row: 2 / 3; grid-column: 2 / 5`;
 
-Parent.children[2].style.cssText = `background-color: green; grid-row: 1 / 2; grid-column: 6 / 7`;
-Parent.children[5].style.cssText = `background-color: green; grid-row: 2 / 3; grid-column: 5 / 6`;
-Parent.children[6].style.cssText = `background-color: green; grid-row: 2 / 3; grid-column: 6 / 7`;
-Parent.children[9].style.cssText = `background-color: green; grid-row: 4 / 5; grid-column: 1 / 2`;
-Parent.children[10].style.cssText = `background-color: green; grid-row: 5 / 6; grid-column: 3 / 4`;
-Parent.children[11].style.cssText = `background-color: green; grid-row: 5 / 6; grid-column: 4 / 5`;
-Parent.children[14].style.cssText = `background-color: green; grid-row: 5 / 6; grid-column: 1 / 2`;
-Parent.children[15].style.cssText = `background-color: green; grid-row: 5 / 6; grid-column: 2 / 3`;
-Parent.children[16].style.cssText = `background-color: green; grid-row: 5 / 6; grid-column: 5 / 6`;
-Parent.children[17].style.cssText = `background-color: green; grid-row: 6 / 7; grid-column: 5 / 6`;
-Parent.children[18].style.cssText = `background-color: green; grid-row: 5 / 6; grid-column: 6 / 7`;
-Parent.children[19].style.cssText = `background-color: green; grid-row: 6 / 7; grid-column: 1 / 2`;
-Parent.children[20].style.cssText = `background-color: green; grid-row: 6 / 7; grid-column: 2 / 3`;
-Parent.children[21].style.cssText = `background-color: green; grid-row: 6 / 7; grid-column: 3 / 4`;
-Parent.children[22].style.cssText = `background-color: green; grid-row: 6 / 7; grid-column: 4 / 5`;
-Parent.children[23].style.cssText = `background-color: green; grid-row: 6 / 7; grid-column: 6 / 7`;
+Parent.children[1].style.cssText = `background-color: rgba(${C[2]}); grid-row: 1 / 2; grid-column: 4 / 6`;
+Parent.children[3].style.cssText = `background-color: rgba(${C[3]}); grid-row: 2 / 4; grid-column: 1 / 2`;
+Parent.children[7].style.cssText = `background-color: rgba(${C[4]}); grid-row: 3 / 5; grid-column: 2 / 3`;
+Parent.children[8].style.cssText = `background-color: rgba(${C[5]}); grid-row: 3 / 4; grid-column: 5 / 7`;
+Parent.children[13].style.cssText = `background-color: rgba(${C[6]}); grid-row: 4 / 5; grid-column: 5 / 7`;
 
-Parent.children[12].style.cssText = `background-color: yellow; grid-row: 3 / 5; grid-column: 3 / 5`;
+Parent.children[2].style.cssText = `background-color: rgba(${C[7]}); grid-row: 1 / 2; grid-column: 6 / 7`;
+Parent.children[5].style.cssText = `background-color: rgba(${C[8]}); grid-row: 2 / 3; grid-column: 5 / 6`;
+Parent.children[6].style.cssText = `background-color: rgba(${C[9]}); grid-row: 2 / 3; grid-column: 6 / 7`;
+Parent.children[9].style.cssText = `background-color: rgba(${C[10]}); grid-row: 4 / 5; grid-column: 1 / 2`;
+Parent.children[10].style.cssText = `background-color: rgba(${C[11]}); grid-row: 5 / 6; grid-column: 3 / 4`;
+Parent.children[11].style.cssText = `background-color: rgba(${C[12]}); grid-row: 5 / 6; grid-column: 4 / 5`;
+Parent.children[14].style.cssText = `background-color: rgba(${C[13]}); grid-row: 5 / 6; grid-column: 1 / 2`;
+Parent.children[15].style.cssText = `background-color: rgba(${C[14]}); grid-row: 5 / 6; grid-column: 2 / 3`;
+Parent.children[16].style.cssText = `background-color: rgba(${C[15]}); grid-row: 5 / 6; grid-column: 5 / 6`;
+Parent.children[17].style.cssText = `background-color: rgba(${C[16]}); grid-row: 6 / 7; grid-column: 5 / 6`;
+Parent.children[18].style.cssText = `background-color: rgba(${C[17]}); grid-row: 5 / 6; grid-column: 6 / 7`;
+Parent.children[19].style.cssText = `background-color: rgba(${C[18]}); grid-row: 6 / 7; grid-column: 1 / 2`;
+Parent.children[20].style.cssText = `background-color: rgba(${C[19]}); grid-row: 6 / 7; grid-column: 2 / 3`;
+Parent.children[21].style.cssText = `background-color: rgba(${C[20]}); grid-row: 6 / 7; grid-column: 3 / 4`;
+Parent.children[22].style.cssText = `background-color: rgba(${C[21]}); grid-row: 6 / 7; grid-column: 4 / 5`;
+Parent.children[23].style.cssText = `background-color: rgba(${C[22]}); grid-row: 6 / 7; grid-column: 6 / 7`;
+
+Parent.children[12].style.cssText = `grid-row: 3 / 5; grid-column: 3 / 5`;
