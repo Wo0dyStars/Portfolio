@@ -10,6 +10,7 @@
 	transition: all .4s ease;
 	align-items: center;
 	justify-items: center;
+	transition: 1s;
 
 	font-size: 3rem;
 	text-align: center;
@@ -29,6 +30,8 @@
 		padding: 1rem;
 		text-transform: uppercase;
 		transition: all .3s ease;
+		margin: 5rem;
+		clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
 
 		&:hover {
 			transform: scale(1.2);
