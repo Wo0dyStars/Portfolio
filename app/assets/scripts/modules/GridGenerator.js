@@ -26,9 +26,8 @@ for (let i = 0; i < 3; i++) {}
 // Children[0].style.cssText = `background-color: green; grid-row: ${row} / span 3; grid-column: ${column} / ${column +
 // 	1}`;
 
-let isTaken = true;
 for (let three = 0; three < NumberOfThrees; three++) {
-	isTaken = true;
+	let isTaken = true;
 	while (isTaken === true) {
 		let row = Math.floor(Math.random() * Math.floor(4)) + 1;
 		let column = Math.floor(Math.random() * Math.floor(6)) + 1;
@@ -45,6 +44,31 @@ for (let three = 0; three < NumberOfThrees; three++) {
 			Children[
 				three
 			].style.cssText = `background-color: green; grid-row: ${row} / span 3; grid-column: ${column} / ${column +
+				1}`;
+		}
+	}
+}
+
+let NumberOfTwos = 9;
+for (let two = 3; two < 12; two++) {
+	let isTaken = true;
+	while (isTaken === true) {
+		let row = Math.floor(Math.random() * Math.floor(4)) + 1;
+		let column = Math.floor(Math.random() * Math.floor(6)) + 1;
+		isTaken = false;
+		for (var cell = row; cell < row + 2; cell++) {
+			console.log(`The code runs again.`);
+			for (var i = 0; i < grid.length && isTaken === false; i++) {
+				if (grid[i][0] === cell && grid[i][1] === column) {
+					isTaken = true;
+				}
+			}
+		}
+		if (!isTaken) {
+			grid.push([ row, column ], [ row + 1, column ]);
+			Children[
+				two
+			].style.cssText = `background-color: red; grid-row: ${row} / span 2; grid-column: ${column} / ${column +
 				1}`;
 		}
 	}
