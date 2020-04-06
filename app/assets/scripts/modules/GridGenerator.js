@@ -16,30 +16,43 @@ if (Children[0].style.backgroundColor !== '') {
 }
 
 const grid = []; // It starts with an empty grid
-grid.push([ 2, 4 ]);
-grid.push([ 1, 4 ]);
 
 // Finding threes
 const NumberOfThrees = 3;
 for (let i = 0; i < 3; i++) {}
 
-// Get positions
-let RandomCell = Math.floor(Math.random() * Math.floor(4)) + 1;
-
 // First three cells
 // TERM-1
-Children[0].style.cssText = `background-color: green; grid-row: ${RandomCell} / span 3; grid-column: 4 / 5`;
-let takenrow = parseInt(Children[0].style.gridRowStart);
-let takencol = parseInt(Children[0].style.gridColumnStart);
+// Children[0].style.cssText = `background-color: green; grid-row: ${row} / span 3; grid-column: ${column} / ${column +
+// 	1}`;
 
-for (var i = 0; i < grid.length; i++) {
-	if (grid[i][0] === takenrow && grid[i][1] === takencol) {
-		break;
+let isTaken = true;
+for (let three = 0; three < NumberOfThrees; three++) {
+	isTaken = true;
+	while (isTaken === true) {
+		let row = Math.floor(Math.random() * Math.floor(4)) + 1;
+		let column = Math.floor(Math.random() * Math.floor(6)) + 1;
+		isTaken = false;
+		for (var cell = row; cell < row + 3; cell++) {
+			for (var i = 0; i < grid.length && isTaken === false; i++) {
+				if (grid[i][0] === cell && grid[i][1] === column) {
+					isTaken = true;
+				}
+			}
+		}
+		if (!isTaken) {
+			grid.push([ row, column ], [ row + 1, column ], [ row + 2, column ]);
+			Children[
+				three
+			].style.cssText = `background-color: green; grid-row: ${row} / span 3; grid-column: ${column} / ${column +
+				1}`;
+		}
 	}
 }
-grid.push([ takenrow, takencol ]);
-grid.push([ takenrow + 1, takencol ]);
-grid.push([ takenrow + 2, takencol ]);
+
+// grid.push([ takenrow, takencol ]);
+// grid.push([ takenrow + 1, takencol ]);
+// grid.push([ takenrow + 2, takencol ]);
 console.log(grid);
 
 // Paint three cells in row
