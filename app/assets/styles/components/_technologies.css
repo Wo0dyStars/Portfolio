@@ -10,7 +10,6 @@
 	transition: all .4s ease;
 	align-items: center;
 	justify-items: center;
-	transition: 1s;
 
 	font-size: 3rem;
 	text-align: center;
@@ -19,6 +18,11 @@
 		border-radius: 5px;
 		box-shadow: 0.1rem 0.1rem 1rem rgba(156, 13, 13, 0.2);
 		padding: 1rem;
+		animation: orbit 5s ease infinite;
+		transform-origin: 50% 90px;
+	}
+
+	.term-2 {
 	}
 
 	.mainElement {
