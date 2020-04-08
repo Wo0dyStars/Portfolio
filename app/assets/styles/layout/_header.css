@@ -1,8 +1,5 @@
 .header {
 	grid-column: void-left-end / void-right-start;
-	background: linear-gradient(to bottom, rgba(250, 252, 251, 0.5), rgba(255, 255, 255, 1)),
-		url('assets/images/5.jpg') no-repeat center;
-	background-size: cover;
 
 	&__content {
 		display: grid;

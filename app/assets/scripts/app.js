@@ -73,7 +73,7 @@ function shuffle(array) {
 	}
 
 	array[23] = array[12];
-	array[12] = 'Peter Kertesz';
+	array[12] = '';
 
 	return array;
 }
