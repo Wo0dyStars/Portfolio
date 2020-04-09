@@ -1,5 +1,6 @@
 .projects {
 	grid-column: void-left-end / void-right-start;
+	background-color: black;
 
 	position: relative;
 	width: 100%;

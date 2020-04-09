@@ -1,6 +1,18 @@
 .header {
 	grid-column: void-left-end / void-right-start;
 
+	.bg-circle {
+		width: 80%;
+		height: 80%;
+		background-color: black;
+		position: absolute;
+		top: -50%;
+		left: 50%;
+		transform: translate(-50%);
+		z-index: -1;
+		clip-path: circle(50% at 50% 50%);
+	}
+
 	&__content {
 		display: grid;
 		grid-template-rows: repeat(2, minmax(32rem, 1fr));
