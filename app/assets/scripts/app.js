@@ -1,9 +1,11 @@
 import '../styles/styles.css';
 import IconHover from './modules/IconHover';
 import Courses from './modules/Cards';
+import Gallery from './modules/Gallery';
 //import Children from './modules/GridGenerator';
 
 const icons = new IconHover();
+const gallery = new Gallery();
 
 // console.log(Children);
 
