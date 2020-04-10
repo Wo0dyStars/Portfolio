@@ -130,3 +130,12 @@
 		opacity: 1;
 	}
 }
+
+@keyframes jump {
+	90% {
+		transform: scale(1.0);
+	}
+	100% {
+		transform: scale(1.1);
+	}
+}
