@@ -1,179 +1,77 @@
 .header {
 	grid-column: void-left-end / void-right-start;
 
-	.hungarian-flag {
-		width: 30%;
-		height: 15%;
-		top: 19.5%;
-		left: -10%;
-		position: absolute;
-		transform: skewY(-4deg);
-		display: grid;
-		grid-template-rows: repeat(3, 1fr);
-		z-index: -1;
+	&__upperdeck {
+		background: linear-gradient(to right, rgb(255, 128, 8), rgb(255, 200, 55));
+		height: 50%;
 
-		&__red {
-			background-color: rgba(255, 0, 0, .2);
-		}
+		.header__navigation {
+			background: linear-gradient(to left, rgb(255, 128, 8), rgb(255, 200, 55));
+			border-bottom: 2px dashed rgba(255, 255, 255, .1);
+			box-shadow: 1rem 1rem 1rem rgba(255, 128, 8, .9);
+			height: 10vh;
 
-		&__white {
-			background-color: rgba(255, 255, 255, .2);
-		}
-
-		&__green {
-			background-color: rgba(0, 255, 0, .2);
-		}
-	}
-
-	&__background {
-		width: 100%;
-		height: 100%;
-		background-color: rgb(244, 240, 236);
-	}
-
-	&__horizontal-line {
-		position: absolute;
-		width: 100%;
-		height: 1rem;
-		background-color: rgb(105, 113, 132);
-		top: 20%;
-	}
-
-	.navigation-circles {
-		background-color: transparent;
-		position: absolute;
-		width: 100%;
-		height: 38%;
-		top: -9%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		z-index: 11;
-
-		&__circle {
-			background-color: rgb(105, 113, 132);
-			width: 22%;
-			height: 50%;
-			border: none;
-			transition: all .4s ease;
-			z-index: 1;
-			backface-visibility: hidden;
-			overflow: hidden;
-			display: flex;
-			align-items: center;
-			margin: 0 auto;
-			clip-path: circle(17%);
-			justify-content: center;
-			cursor: pointer;
-
-			span {
-				color: rgb(242, 241, 239);
-				font-weight: 300;
-				text-transform: uppercase;
-				font-size: 2rem;
-			}
-
-			&__paragraph {
-				visibility: hidden;
-				opacity: 0;
-				width: 0;
-				text-transform: uppercase;
-				font-size: 3rem;
-			}
-
-			&:hover {
-				backface-visibility: hidden;
-				overflow: hidden;
-				clip-path: circle(80%);
-				transform: scale(1.1);
-			}
-			&:hover .navigation-circles__circle__paragraph {
-				visibility: visible;
-				opacity: 1;
-				width: 100%;
-				text-align: center;
-			}
-			&:hover span {
-				visibility: hidden;
-				opacity: 0;
-				width: 0;
-			}
-		}
-	}
-
-	&__main {
-		width: 100%;
-		height: 20%;
-		position: absolute;
-		background-color: rgb(65, 63, 61);
-		top: 0;
-	}
-	&__content {
-		display: grid;
-		grid-template-rows: repeat(2, minmax(32rem, 1fr));
-		align-items: center;
-		justify-items: center;
-		&__headers {
-			grid-column: 1 / 2;
-			grid-row: 1 / 2;
-			text-transform: uppercase;
-			&--name {
-				font-size: 4rem;
-				color: rgba(138, 172, 59, 0.9);
-				font-weight: 300;
-			}
-			&--title {
-				color: rgba(131, 165, 51, 0.6);
-			}
-		}
-		&__iconset {
-			grid-column: 1 / 2;
-			grid-row: 2 / 3;
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			list-style: none;
-			@mixin atLarge {
-				grid-template-columns: repeat(6, 1fr);
-			}
-			li {
-				background-color: rgba(138, 172, 59, 0.7);
-				min-height: 4rem;
-				line-height: 2rem;
-				margin: 1rem;
-				padding: 2rem;
+			ul {
 				display: flex;
-				flex-direction: column;
-				transform: scale(1);
-				transition: all .3s ease-in;
-				cursor: pointer;
-				border-radius: 2px;
-				border: 1px solid rgba(0, 0, 0, .2);
-				box-shadow: .2rem .2rem rgba(0, 0, 0, .1);
-				text-align: center;
-				@mixin atLarge {
-					padding: 6rem;
-				}
-				&:hover {
-					transform: scale(1.2);
-					background-color: rgba(138, 172, 59, 1) !important;
-				}
-				&:hover > svg {
-					transform: scale(1.4);
-				}
-				&:hover > span {
-					transform: scale(1.4);
+				justify-content: space-evenly;
+				align-items: center;
+				height: 100%;
+				list-style: none;
+
+				li {
+					font-size: 2rem;
+					text-transform: uppercase;
+					a {
+						text-decoration: none;
+					}
 				}
 			}
-			&__icon {
-				opacity: 1;
-				width: 4.5rem;
-				height: 4.5rem;
-				fill: rgba(4, 70, 20, 0.9);
-			}
-			span {
-				color: rgba(255, 255, 255, .5);
-				margin-top: .3rem;
-			}
+		}
+	}
+
+	&__centertext {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		width: 100%;
+
+		.halfStyle {
+			font-family: Arial, Helvetica, sans-serif;
+			position: relative;
+			display: inline-block;
+			font-size: 120px; /* or any font size will work */
+			color: transparent; /* hide the base character */
+			overflow: hidden;
+			white-space: pre; /* to preserve the spaces from collapsing */
+			user-select: none;
+			text-shadow: 0.23rem .3rem 1rem rgba(0, 0, 0, .2);
+		}
+
+		.halfStyle:before {
+			/* creates the top part */
+			display: block;
+			z-index: 2;
+			position: absolute;
+			top: 0;
+			height: 50%;
+			content: attr(data-content); /* dynamic content for the pseudo element */
+			overflow: hidden;
+			pointer-events: none; /* so the base char is selectable by mouse */
+			color: rgba(255, 255, 255, .9); /* for demo purposes */
+		}
+
+		.halfStyle:after {
+			/* creates the bottom part */
+			display: block;
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			height: 100%;
+			content: attr(data-content); /* dynamic content for the pseudo element */
+			overflow: hidden;
+			pointer-events: none; /* so the base char is selectable by mouse */
+			color: rgba(255, 128, 8, 1); /* for demo purposes */
 		}
 	}
 }
