@@ -2,56 +2,92 @@
 	grid-column: void-left-end / void-right-start;
 
 	&__container {
-		display: grid;
-		grid-template-rows: 1fr;
-		grid-template-columns: repeat(2, 1fr);
+		width: 80%;
 		height: 100%;
-		align-items: center;
-		justify-items: center;
+		margin: 0 auto;
 
-		&--blogposts {
-			width: 85%;
-			height: 75%;
-			background: linear-gradient(to right, rgba(243, 240, 240, 0.9), rgba(188, 188, 199, 0.9)),
-				url("assets/images/blogposts.jpg") no-repeat;
-			background-size: cover;
-			border: .1rem solid rgba(36, 35, 35, 0.1);
-			box-shadow: .1rem .1rem .1rem rgba(15, 13, 13, 0.2);
+		&__group {
+			display: flex;
+			justify-content: space-around;
+			width: 100%;
+			height: 40%;
 
-			display: grid;
-			grid-template-rows: 3fr 1fr 1fr 1fr;
+			&--element {
+				width: 20%;
+				display: grid;
+				grid-template-rows: 7fr 1fr 1fr;
 
-			&-message {
-				margin: 15px;
-				background-color: rgba(0, 0, 0, .65);
-				color: rgba(255, 255, 255, .8);
-				text-transform: uppercase;
-				font-size: 2rem;
-				padding: 10px;
+				&__icon {
+					background: linear-gradient(to left, rgb(255, 128, 8), rgb(255, 200, 55));
+					clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					.aboutMe__icon {
+						width: 10rem;
+						height: 10rem;
+						fill: rgba(255, 255, 255, .9);
+					}
+				}
+
+				&__text {
+					font-family: Arial, Helvetica, sans-serif;
+					justify-self: center;
+					text-transform: uppercase;
+					font-size: 2.2rem;
+					padding-top: 1rem;
+					color: orange;
+					font-weight: 300;
+				}
+
+				&__description {
+					font-family: Arial, Helvetica, sans-serif;
+					justify-self: center;
+					text-transform: uppercase;
+					font-size: 1.1rem;
+					color: rgba(0, 0, 0, .7);
+				}
 			}
 		}
 
-		&--introduction {
-			width: 85%;
-			height: 75%;
-			background: linear-gradient(to right, rgba(190, 86, 1, 0.9), rgba(236, 164, 7, 0.9)),
-				url("assets/images/about.jpg") no-repeat;
-			background-size: cover;
-			border-radius: 50%;
-			position: relative;
+		&__introduction {
+			height: 60%;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
 
-			&-about {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				width: 60%;
-				height: 70%;
-				background-color: rgba(243, 199, 4, 0.2);
-				z-index: 1;
-				padding: 1rem;
-				font-size: 2rem;
-				color: #fff;
+			&--personal {
+				padding: 5rem;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 1.6rem;
+				letter-spacing: .1rem;
+				display: flex;
+				align-items: center;
+				text-align: center;
+			}
+
+			&--skillset {
+				display: grid;
+				grid-template-rows: 1fr 3fr 1fr;
+
+				&__main {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 2rem;
+					text-transform: uppercase;
+				}
+
+				&__icons {
+					display: flex;
+					align-items: center;
+					justify-content: space-evenly;
+
+					.aboutMe__semiicon {
+						width: 9rem;
+						height: 9rem;
+					}
+				}
 			}
 		}
 	}
