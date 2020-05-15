@@ -2,14 +2,14 @@
 	grid-column: void-left-end / void-right-start;
 
 	&__upperdeck {
-		background: linear-gradient(to right, rgb(255, 128, 8), rgb(255, 200, 55));
+		background: linear-gradient(to right, #44a08d, #093637);
 		height: 50%;
 
 		.header__navigation {
-			background: linear-gradient(to left, rgb(255, 128, 8), rgb(255, 200, 55));
+			background: linear-gradient(to right, #44a08d, #093637);
 			border-bottom: 2px dashed rgba(255, 255, 255, .1);
-			box-shadow: 1rem 1rem 1rem rgba(255, 128, 8, .9);
-			height: 10vh;
+			box-shadow: .1rem .1rem .1rem #396afc;
+			height: 5vh;
 
 			ul {
 				display: flex;
@@ -35,43 +35,5 @@
 		transform: translate(-50%, -50%);
 		text-align: center;
 		width: 100%;
-
-		.halfStyle {
-			font-family: Arial, Helvetica, sans-serif;
-			position: relative;
-			display: inline-block;
-			font-size: 120px; /* or any font size will work */
-			color: transparent; /* hide the base character */
-			overflow: hidden;
-			white-space: pre; /* to preserve the spaces from collapsing */
-			user-select: none;
-			text-shadow: 0.23rem .3rem 1rem rgba(0, 0, 0, .2);
-		}
-
-		.halfStyle:before {
-			/* creates the top part */
-			display: block;
-			z-index: 2;
-			position: absolute;
-			top: 0;
-			height: 50%;
-			content: attr(data-content); /* dynamic content for the pseudo element */
-			overflow: hidden;
-			pointer-events: none; /* so the base char is selectable by mouse */
-			color: rgba(255, 255, 255, .9); /* for demo purposes */
-		}
-
-		.halfStyle:after {
-			/* creates the bottom part */
-			display: block;
-			position: absolute;
-			z-index: 1;
-			top: 0;
-			height: 100%;
-			content: attr(data-content); /* dynamic content for the pseudo element */
-			overflow: hidden;
-			pointer-events: none; /* so the base char is selectable by mouse */
-			color: rgba(255, 128, 8, 1); /* for demo purposes */
-		}
 	}
 }

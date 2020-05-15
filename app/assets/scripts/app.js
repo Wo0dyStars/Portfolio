@@ -4,8 +4,90 @@ import Courses from './modules/Cards';
 import Gallery from './modules/Gallery';
 //import Children from './modules/GridGenerator';
 
-const icons = new IconHover();
-const gallery = new Gallery();
+// const icons = new IconHover();
+// const gallery = new Gallery();
+
+const Arrows = document.querySelectorAll('.arrow');
+
+Arrows.forEach((arrow) => {
+	arrow.addEventListener('click', (e) => {
+		const images = document.getElementsByClassName('project-image');
+		let currentIndex = 0;
+		for (let i = 0; i < images.length; i++) {
+			if (images[i].classList.contains('image-on')) {
+				// turn off current image
+				images[i].classList.remove('image-on');
+				images[i].classList.add('image-off');
+				currentIndex = i;
+			}
+		}
+
+		let nextIndex = 0;
+		if (e.target.classList.contains('leftarrow')) {
+			// turn on next image
+			nextIndex = currentIndex - 1;
+			if (nextIndex < 0) {
+				// turn on last image
+				nextIndex = images.length - 1;
+			}
+		} else if (e.target.classList.contains('rightarrow')) {
+			// turn on next image
+			nextIndex = currentIndex + 1;
+			if (nextIndex > images.length - 1) {
+				nextIndex = 0;
+			}
+		}
+
+		images[nextIndex].classList.remove('image-off');
+		images[nextIndex].classList.add('image-on');
+	});
+});
+
+// Arrows.addEventListener('click', (e) => {
+// 	console.log(e.target);
+// 	const images = document.getElementsByClassName('project-image');
+// 	let currentIndex = 0;
+// 	for (let i = 0; i < images.length; i++) {
+// 		if (images[i].classList.contains('image-on')) {
+// 			// turn off current image
+// 			images[i].classList.remove('image-on');
+// 			images[i].classList.add('image-off');
+// 			currentIndex = i;
+// 		}
+// 	}
+
+// 	// turn on next image
+// 	let nextIndex = currentIndex - 1;
+// 	if (nextIndex < 0) {
+// 		// turn on last image
+// 		nextIndex = images.length - 1;
+// 	}
+
+// 	images[nextIndex].classList.remove('image-off');
+// 	images[nextIndex].classList.add('image-on');
+// });
+
+// var slideIndex = 1;
+// showDivs(slideIndex);
+
+// function plusDivs(n) {
+// 	showDivs((slideIndex += n));
+// }
+
+// function showDivs(n) {
+// 	var i;
+// 	var x = document.getElementsByClassName('hide-image');
+// 	if (n > x.length) {
+// 		slideIndex = 1;
+// 	}
+// 	if (n < 1) {
+// 		slideIndex = x.length;
+// 	}
+// 	for (i = 0; i < x.length; i++) {
+// 		x[i].style.display = 'none';
+// 	}
+// 	x[slideIndex - 1].style.display = 'block';
+// }
 
 // console.log(Children);
 
