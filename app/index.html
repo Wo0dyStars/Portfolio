@@ -100,11 +100,16 @@
                 </div>
 
                 <div class="aboutMe__container__introduction">
+                    <div class="introduction-background"></div>
+
                     <div class="aboutMe__container__introduction--personal">
-                        A self-motivated, intuitive and technically astute individual seeking to forge a rewarding career in the IT industry. Exhibits the acumen required to learn new subjects and concepts in a timely fashion and takes a particular interest in pursuing a placement / Internship in programming. Well versed in various languages including HTML, PHP and JAVA, currently studying towards a BSc (Honours) Computing and IT degree and embraces any opportunity to undertake workplace training.
+                        <figure class="profile-photo">
+                            <img src="assets/images/profile-photo.jpg" alt="My profile photo">
+                            <figcaption>This is me, Peter Kertesz</figcaption>
+                        </figure>
+                        <p>A self-motivated and passionate person with the relevant skills to create beautifully styled and well-organized web applications. </p>
                     </div>
                     <div class="aboutMe__container__introduction--skillset">
-                        <div class="aboutMe__container__introduction--skillset__main">Skillset</div>
                         <div class="aboutMe__container__introduction--skillset__icons">
                             <svg class="aboutMe__semiicon">
                                 <use xlink:href="assets/images/icons/sprite.svg#icon-css3"></use>
@@ -134,27 +139,54 @@
             <div class="section__title">Projects</div>
 
             <div class="projects__name">House storage</div>
-
-            <div class="projects__project">
-
-                <img class="project-image image-on" src="assets/images/projects/house-stocker.jpg" alt="">
-                <img class="project-image image-off" src="assets/images/projects/house-stocker-1.jpg" alt="">
-                <img class="project-image image-off" src="assets/images/projects/house-stocker-2.jpg" alt="">
-                <img class="project-image image-off" src="assets/images/projects/house-stocker-3.jpg" alt="">
-                <img class="project-image image-off" src="assets/images/projects/house-stocker-4.jpg" alt="">
-                <img class="project-image image-off" src="assets/images/projects/house-stocker-5.jpg" alt="">
-                <img class="project-image image-off" src="assets/images/projects/house-stocker-6.jpg" alt="">
-
-                <div class="mask">
-                    <h2>House storage</h2>
-                    <p>This project has been made with passion and love for Express JS, Node JS, MongoDB and other technologies.</p>
-                    <a href="#" class="info">Read more</a>
-                </div>
-
+            <div class="projects__techs">
+                <span>#</span>Git
+                <span>#</span>Node
+                <span>#</span>Express
+                <span>#</span>HTML5
+                <span>#</span>CSS3
+                <span>#</span>JavaScript
+                <span>#</span>Amazon S3
+                <span>#</span>MongoDB
+                <span>#</span>Heroku
             </div>
 
-            <button class="arrow leftarrow">&#10094;</button>
-            <button class="arrow rightarrow">&#10095;</button>
+            <div class="projects__container">
+                <div class="project-background"></div>
+
+                <button class="arrow leftarrow">&#10094;</button>
+
+                <div class="projects__project">
+
+                    <img class="project-image image-on" src="assets/images/projects/house-stocker.jpg" alt="">
+                    <img class="project-image image-off" src="assets/images/projects/house-stocker-1.jpg" alt="">
+                    <img class="project-image image-off" src="assets/images/projects/house-stocker-2.jpg" alt="">
+                    <img class="project-image image-off" src="assets/images/projects/house-stocker-3.jpg" alt="">
+                    <img class="project-image image-off" src="assets/images/projects/house-stocker-4.jpg" alt="">
+                    <img class="project-image image-off" src="assets/images/projects/house-stocker-5.jpg" alt="">
+                    <img class="project-image image-off" src="assets/images/projects/house-stocker-6.jpg" alt="">
+    
+                    <div class="mask">
+                        <h2>House storage</h2>
+                        <ul>
+                            <li>Allows visitors to register and edit user profile. <span>&#10004;</span></li>
+                            <li>Allows users to collaborate within a team that shares household. <span>&#10004;</span></li>
+                            <li>Allows users to add new household items into the database. <span>&#10004;</span></li>
+                            <li>Allows users to see their household stock and modify quantities. <span>&#10004;</span></li>
+                            <li>Allows users to add new purchases and see the details of all purchases. <span>&#10004;</span></li>
+                            <li>User profile shows the most frequently purchased items and all spendings. <span>&#10004;</span></li>
+                            <li>Search facility helps find items quicker and filter purchases. <span>&#10004;</span></li>
+                            <li>Only logged in users are able to carry out restricted activities. <span>&#10004;</span></li>
+                            <li>Responsive design allows users to use it on any device. <span>&#10004;</span></li>
+                            <li>User avatars and item photos are stored in Amazon S3 to save space. <span>&#10004;</span></li>
+                        </ul>
+                        <a href="https://pacific-fortress-95051.herokuapp.com/" class="info">View project</a>
+                    </div>
+    
+                </div>
+    
+                <button class="arrow rightarrow">&#10095;</button>
+            </div>
 
         </section>
 

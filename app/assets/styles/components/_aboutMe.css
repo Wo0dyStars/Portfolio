@@ -71,31 +71,78 @@
 		}
 
 		&__introduction {
+			margin: 10rem;
 			height: 60%;
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
+			font-family: 'Montserrat Alternates', sans-serif;
+			position: relative;
+
+			.introduction-background {
+				position: absolute;
+				top: 0;
+				left: -25%;
+				width: 100vw;
+				height: 100%;
+				background-color: rgba(0, 0, 0, .02);
+				z-index: -1;
+			}
 
 			&--personal {
 				padding: 5rem;
-				font-family: Arial, Helvetica, sans-serif;
 				font-size: 1.6rem;
 				letter-spacing: .1rem;
-				display: flex;
-				align-items: center;
 				text-align: center;
+
+				display: grid;
+				justify-items: center;
+
+				.profile-photo {
+					width: 20rem;
+					height: 20rem;
+					margin-bottom: 1.5rem;
+					position: relative;
+
+					&:hover,
+					&:focus {
+						figcaption {
+							opacity: 1;
+							visibility: visible;
+							transform: translate(-50%, -50%);
+						}
+
+						img {
+							filter: blur(.3rem) brightness(80%);
+						}
+					}
+
+					img {
+						max-width: 100%;
+						border-radius: 50%;
+						border: 1px dashed rgba(0, 0, 0, .4);
+						box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, .2);
+						transition: all .5s;
+						backface-visibility: hidden;
+						overflow: hidden;
+					}
+
+					figcaption {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -20%);
+						color: #fff;
+						font-weight: 400;
+						opacity: 0;
+						visibility: hidden;
+						transition: all .5s;
+					}
+				}
 			}
 
 			&--skillset {
 				display: grid;
-				grid-template-rows: 1fr 3fr 1fr;
-
-				&__main {
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					font-size: 2rem;
-					text-transform: uppercase;
-				}
+				position: relative;
 
 				&__icons {
 					display: flex;
@@ -107,6 +154,12 @@
 						height: 9rem;
 					}
 				}
+			}
+
+			&--bottom-message {
+				position: absolute;
+				right: 0;
+				bottom: 30%;
 			}
 		}
 	}
