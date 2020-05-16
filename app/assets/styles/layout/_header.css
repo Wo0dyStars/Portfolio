@@ -1,6 +1,48 @@
 .header {
 	grid-column: void-left-end / void-right-start;
 
+	.reveal-fixed-navbar {
+		position: fixed;
+		z-index: 10;
+		background: linear-gradient(to right, #44a08d, #093637);
+		animation: SlideInFromTop 1s ease;
+	}
+
+	&__navigation {
+		background-color: rgba(255, 255, 255, .04);
+		border-bottom: 1px solid rgba(255, 255, 255, .04);
+		height: 5vh;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 5;
+
+		ul {
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			height: 100%;
+			list-style: none;
+
+			li {
+				font-size: 1.5rem;
+				text-transform: uppercase;
+
+				a {
+					text-decoration: none;
+					color: rgba(255, 255, 255, .55);
+					transition: all .3s ease;
+
+					&:hover,
+					&:focus {
+						color: rgba(255, 255, 255, .85);
+					}
+				}
+			}
+		}
+	}
+
 	&__upperdeck {
 		background: linear-gradient(to bottom, #44a08d, #093637);
 		height: 50%;
@@ -10,35 +52,6 @@
 		justify-content: space-around;
 		border-bottom: 3px solid rgba(9, 54, 55, .2);
 		clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 62% 95%, 50% 80%, 38% 95%, 0% 100%);
-
-		.header__navigation {
-			background: linear-gradient(to right, #44a08d, #093637);
-			border-bottom: 1px dashed rgba(255, 255, 255, .4);
-			height: 5vh;
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			z-index: 2;
-
-			ul {
-				display: flex;
-				justify-content: space-evenly;
-				align-items: center;
-				height: 100%;
-				list-style: none;
-
-				li {
-					font-size: 1.5rem;
-					text-transform: uppercase;
-
-					a {
-						text-decoration: none;
-						color: rgba(255, 255, 255, .6);
-					}
-				}
-			}
-		}
 	}
 
 	&__centertext {
@@ -54,6 +67,7 @@
 
 		&--main {
 			font-size: 3rem;
+			animation: SlideInFromLeft 1s ease;
 
 			span {
 				font-weight: 400;
@@ -63,6 +77,7 @@
 
 		&--sub {
 			font-size: 2rem;
+			animation: SlideInFromRight 1s ease;
 		}
 	}
 

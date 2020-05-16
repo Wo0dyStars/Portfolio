@@ -241,3 +241,15 @@
 		opacity: 1;
 	}
 }
+
+@keyframes SlideInFromTop {
+	0% {
+		transform: translateY(-100rem);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
