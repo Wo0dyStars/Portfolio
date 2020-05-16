@@ -1,3 +1,33 @@
+.reveal-card-animation {
+	&:nth-of-type(1) {
+		animation: FadeInFromBottom 1s linear;
+	}
+
+	&:nth-of-type(2) {
+		animation: FadeInFromBottom 1s .2s linear;
+	}
+
+	&:nth-of-type(3) {
+		animation: FadeInFromBottom 1s .4s linear;
+	}
+
+	&:nth-of-type(4) {
+		animation: FadeInFromBottom 1s .6s linear;
+	}
+
+	&:nth-of-type(5) {
+		animation: FadeInFromBottom 1s .8s linear;
+	}
+
+	&:nth-of-type(6) {
+		animation: FadeInFromBottom 1s 1s linear;
+	}
+
+	&:nth-of-type(7) {
+		animation: FadeInFromBottom 1s 1.2s linear;
+	}
+}
+
 .card {
 	perspective: 150rem;
 	margin: 1rem;
@@ -18,32 +48,11 @@
 
 		&--front {
 			display: grid;
-			grid-template-rows: 4fr 3fr;
+			grid-template-rows: 2fr 5fr;
 			grid-template-columns: [badge-start] 2rem [badge-end] 1fr;
-			background-color: rgba(9, 54, 55, .1);
-
-			.badge {
-				grid-row: 1 / -1;
-				grid-column: badge-start / badge-end;
-				position: relative;
-
-				background: linear-gradient(to top, #44a08d, #093637);
-				z-index: 1;
-				overflow: hidden;
-				display: grid;
-				align-items: center;
-
-				span {
-					text-transform: uppercase;
-					color: rgba(255, 255, 255, .9);
-					letter-spacing: 1rem;
-					/* VERY IMPORTANT: This is how text is positioned in the center */
-					writing-mode: tb-rl;
-					transform: rotate(-180deg);
-					position: absolute;
-					z-index: 2;
-				}
-			}
+			background-color: rgba(9, 54, 55, .01);
+			border: 1px dashed rgba(9, 54, 55, .2);
+			box-shadow: .1rem .1rem 2rem rgba(9, 54, 55, .3);
 		}
 
 		&--back {
@@ -77,7 +86,7 @@
 		position: relative;
 
 		&--1 {
-			background-image: linear-gradient(to right bottom, rgba(255, 185, 0, .8), rgba(255, 119, 48, .6)),
+			background-image: linear-gradient(to right bottom, rgba(255, 119, 48, .7), rgba(241, 157, 31, 0.7)),
 				url("assets/images/udemy/course.jpg");
 		}
 
@@ -170,6 +179,8 @@
 		margin-top: 1.2rem;
 		font-family: sans-serif;
 		user-select: none;
+		font-size: 1.2rem;
+		padding-top: 3rem;
 
 		ul {
 			list-style: none;
@@ -180,8 +191,12 @@
 				font-weight: 700;
 			}
 
+			.tick {
+				color: rgba(7, 131, 17, 1);
+			}
+
 			li {
-				padding: 0.4rem;
+				padding: 1rem;
 
 				&:not(:last-child) {
 					border-bottom: 1px solid rgba(255, 119, 48, .3);

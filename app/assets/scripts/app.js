@@ -10,7 +10,10 @@ import Gallery from './modules/Gallery';
 
 // Check if scrolling is working
 let groupElements = document.querySelectorAll('.aboutMe__container__group--element');
-new RevealOnScroll(groupElements);
+let cardElements = document.querySelectorAll('.card');
+
+new RevealOnScroll(groupElements, 'reveal-animation');
+new RevealOnScroll(cardElements, 'reveal-card-animation');
 
 const Arrows = document.querySelectorAll('.arrow');
 

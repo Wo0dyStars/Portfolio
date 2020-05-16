@@ -12,7 +12,7 @@ class Card {
 			template += `hvr-hollow hvr-curl-bottom-right`;
 		}
 		template += `">
-                    <div class="badge"><span>${this.course['CourseBadge']}</span></div>
+                    
                     <div class="card__image card__image--${this.course['ImageIndex']}">
                         <div class="card__image--caption-head card__image--caption-head--${this.course['ImageIndex']}">
                             <span class="card__image--caption-title card__image--caption-title--${this.course[

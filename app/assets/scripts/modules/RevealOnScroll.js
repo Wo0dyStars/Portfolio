@@ -2,10 +2,11 @@ import debounce from 'lodash/debounce';
 import throttle from 'lodash/throttle';
 
 class RevealOnScroll {
-	constructor(elements) {
+	constructor(elements, CSSclass) {
 		this.items = elements;
 		this.browserHeight = window.innerHeight;
 		this.scrolling = throttle(this.calculateElements, 200).bind(this);
+		this.newClass = CSSclass;
 		this.events();
 	}
 
@@ -22,7 +23,7 @@ class RevealOnScroll {
 
 	scrolledElement(element) {
 		if (window.scrollY + this.browserHeight > element.offsetTop) {
-			element.classList.add('reveal-animation');
+			element.classList.add(this.newClass);
 		}
 	}
 
