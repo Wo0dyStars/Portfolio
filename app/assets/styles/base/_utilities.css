@@ -1,0 +1,14 @@
+.section__title {
+	font-size: 3rem;
+	border-bottom: 2px dashed rgba(9, 54, 55, .05);
+	color: rgba(9, 54, 55, .9);
+	width: 20%;
+	margin: auto;
+	margin-bottom: 10rem;
+	text-align: center;
+	padding: 2rem;
+	font-weight: 400;
+	font-family: 'Montserrat Alternates', sans-serif;
+
+	animation: SlideInFromLeft 1s linear;
+}

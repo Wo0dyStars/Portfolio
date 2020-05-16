@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
         <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
         <link href="assets/styles/external/hover-min.css" rel="stylesheet" media="all">
         <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
@@ -15,6 +17,7 @@
     <body class="container">
         <!-- Use BEM approach when naming CSS classes -->
         <header class="header">
+
             <div class="header__upperdeck">
                 <div class="header__navigation">
                     <ul>
@@ -25,13 +28,36 @@
                         <li class="header__navigation--element"><a href="#">Reach me</a></li>
                     </ul>
                 </div>
+
+                <div class="random-terms">
+                    <img src="assets/images/random-terms.jpg" alt="">
+                </div>
+
+                <div class="icon-list">
+                    <img src="assets/images/iconlist.jpg" alt="">
+                </div>
             </div>
             <div class="header__centertext">
-                I am Peter Kertesz, I am a full stack developer.
+                <div class="header__centertext--main">I'm <span>Peter Kertesz</span>.</div>
+                <div class="header__centertext--sub">I'm a web developer.</div>
             </div>
+
+            <div class="header__viewmywork">
+                <div class="header__viewmywork--view">View my work</div>
+                <div class="header__viewmywork--arrows">
+                    <a href="#about">
+                        <span class="large">&#10094;</span>
+                        <span class="medium">&#10094;</span>
+                        <span class="small">&#10094;</span>
+                    </a>
+                </div>
+            </div>
+            
         </header>
 
-        <section class="aboutMe">
+        <section id="about" class="aboutMe">
+            <div class="section__title">About me</div>
+
             <div class="aboutMe__container">
                 
                 <div class="aboutMe__container__group">
@@ -105,6 +131,7 @@
         </section>
         
         <section class="projects">
+            <div class="section__title">Projects</div>
 
             <div class="projects__name">House storage</div>
 
@@ -146,7 +173,7 @@
             <div class="term-10">term-10</div>
             <div class="term-11">term-11</div>
             <div class="term-12">term-12</div>
-            <div class="term-13 mainElement">term-13</div>
+            <div class="term-13"></div>
             <div class="term-14">term-14</div>
             <div class="term-15">term-15</div>
             <div class="term-16">term-16</div>
@@ -160,15 +187,26 @@
             <div class="term-24">term-24</div>
         </section>
 
-        <!-- This section is populated by JavaScript code -->
-        <section class="courses"></section>
+        <section class="courses">
+            <div class="section__title">Courses</div>
+
+            <!-- This section is populated by JavaScript code -->
+            <div class="courses__cards"></div>
+        </section>
 
         <section class="getInTouch">
             getInTouch
         </section>
 
         <footer class="footer">
-            Footer
+            <div class="footer__backwards">
+                <a href="#about">
+                    <span class="large">&#10094;</span>
+                    <span class="medium">&#10094;</span>
+                    <span class="small">&#10094;</span>
+                </a>
+            </div>
+            <div class="footer__copyright">Peter Kertesz <span>&copy;</span> 2020 </div>
         </footer>
 
         <script type="text/JavaScript" src="bundled.js"></script>

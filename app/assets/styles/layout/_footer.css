@@ -1,4 +1,54 @@
 .footer {
 	grid-column: void-left-end / void-right-start;
-	background-color: pink;
+
+	height: 40vh;
+	background: linear-gradient(to top, #44a08d, #093637);
+	border-bottom: 3px solid rgba(9, 54, 55, .2);
+	clip-path: polygon(0% 0%, 38% 5%, 50% 20%, 62% 5%, 100% 0%, 100% 100%, 0% 100%);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+
+	&__backwards {
+		transform: rotate(90deg);
+		margin: 4rem;
+
+		a {
+			text-decoration: none;
+			display: flex;
+			align-items: center;
+			animation: bounceX 5s infinite;
+
+			.large {
+				font-size: 5rem;
+				color: rgba(255, 255, 255, .9);
+			}
+
+			.medium {
+				font-size: 4rem;
+				color: rgba(255, 255, 255, .7);
+			}
+
+			.small {
+				font-size: 3rem;
+				color: rgba(255, 255, 255, .5);
+			}
+		}
+	}
+
+	&__copyright {
+		font-size: 1.6rem;
+		font-family: 'Montserrat Alternates', sans-serif;
+		text-transform: uppercase;
+		font-weight: 400;
+		color: rgba(9, 54, 55, .9);
+
+		span {
+			color: #fff;
+			font-weight: 100;
+		}
+	}
 }

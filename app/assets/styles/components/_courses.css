@@ -1,7 +1,10 @@
 .courses {
 	grid-column: void-left-end / void-right-start;
-	background-color: black;
 
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	&__cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+		grid-gap: 3rem;
+		margin: 3rem;
+	}
 }

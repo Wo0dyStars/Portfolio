@@ -5,7 +5,7 @@
 @import "base/_animations";
 @import "base/_base";
 /* @import "base/_typography"; */
-/* @import "base/_utilities"; */
+@import "base/_utilities";
 
 @import "components/_aboutMe";
 @import "components/_courses";

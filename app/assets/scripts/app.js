@@ -1,11 +1,16 @@
 import '../styles/styles.css';
 import IconHover from './modules/IconHover';
+import RevealOnScroll from './modules/RevealOnScroll';
 import Courses from './modules/Cards';
 import Gallery from './modules/Gallery';
 //import Children from './modules/GridGenerator';
 
 // const icons = new IconHover();
 // const gallery = new Gallery();
+
+// Check if scrolling is working
+let groupElements = document.querySelectorAll('.aboutMe__container__group--element');
+new RevealOnScroll(groupElements);
 
 const Arrows = document.querySelectorAll('.arrow');
 
@@ -157,7 +162,7 @@ function shuffle(array) {
 	}
 
 	array[23] = array[12];
-	array[12] = '';
+	array[12] = 'Responsive';
 
 	return array;
 }
@@ -177,7 +182,7 @@ for (let i = 0; i < 24; i++) {
 	let R = Math.floor(Math.random() * 255);
 	let G = Math.floor(Math.random() * 255);
 	let B = Math.floor(Math.random() * 255);
-	let A = (Math.random() * 0.2).toFixed(2);
+	let A = (Math.random() * 0.5).toFixed(2);
 	C.push(`${R}, ${G}, ${B}, ${A}`);
 
 	let Font = Math.floor(Math.random() * 1.4) + 1.8;

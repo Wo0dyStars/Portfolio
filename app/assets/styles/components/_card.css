@@ -12,27 +12,22 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		border-top-right-radius: 1rem;
-		border-bottom-right-radius: 1rem;
 		overflow: hidden;
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
-		box-shadow: 0 1.5rem 4rem rgba(255, 119, 48, .2);
-		border: 1px solid rgba(255, 119, 48, .1);
-		border-left: none;
 
 		&--front {
 			display: grid;
 			grid-template-rows: 4fr 3fr;
 			grid-template-columns: [badge-start] 2rem [badge-end] 1fr;
-			background-color: rgba(255, 119, 48, .2);
+			background-color: rgba(9, 54, 55, .1);
 
 			.badge {
 				grid-row: 1 / -1;
 				grid-column: badge-start / badge-end;
 				position: relative;
 
-				background-color: rgb(20, 92, 12);
+				background: linear-gradient(to top, #44a08d, #093637);
 				z-index: 1;
 				overflow: hidden;
 				display: grid;
@@ -201,7 +196,9 @@
 
 		background-size: cover;
 		background-position: center;
-		width: 100%;
+		width: 80%;
+		height: 80%;
+		margin: auto;
 
 		&--1 {
 			background-image: url("assets/images/udemy/certificates/master-the-workflow.jpg");

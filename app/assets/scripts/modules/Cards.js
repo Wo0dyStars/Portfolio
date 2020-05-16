@@ -3,7 +3,7 @@ import Courses from './content/classes/CardObject';
 
 Courses.forEach((course) => {
 	let template = new Card(course).GenerateTemplate();
-	document.querySelector('.courses').insertAdjacentHTML('beforeend', template);
+	document.querySelector('.courses__cards').insertAdjacentHTML('beforeend', template);
 });
 
 export default Courses;

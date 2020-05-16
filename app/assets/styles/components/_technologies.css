@@ -10,35 +10,15 @@
 	transition: all .4s ease;
 	align-items: center;
 	justify-items: center;
+	z-index: 10;
 
 	font-size: 3rem;
 	text-align: center;
 
 	& > * {
 		border-radius: 5px;
-		box-shadow: 0.1rem 0.1rem 1rem rgba(156, 13, 13, 0.2);
+		border: 1px dashed rgba(0, 0, 0, .3);
+		box-shadow: 0.1rem 0.1rem 1rem rgba(9, 54, 55, .3);
 		padding: 1rem;
-	}
-
-	.term-2 {
-	}
-
-	.mainElement {
-		background: url("assets/images/samplephoto.jpg");
-		background-size: cover;
-		color: #fff;
-		align-self: center;
-		text-align: center;
-		font-size: 4rem;
-		width: 10rem;
-		height: 10rem;
-		text-transform: uppercase;
-		transition: all .7s ease;
-		margin: 5rem;
-		border-radius: 20%;
-
-		&:hover {
-			transform: scale(1.6);
-		}
 	}
 }
