@@ -11,6 +11,20 @@
 	font-family: 'Montserrat Alternates', sans-serif;
 }
 
+.section-icon {
+	margin: 1rem auto;
+	margin-top: 4rem;
+	width: 10rem;
+	height: 10rem;
+
+	svg {
+		width: 10rem;
+		height: 10rem;
+		fill: rgba(58, 145, 127, .84);
+		animation: ScaleOutandIn 1s linear infinite;
+	}
+}
+
 .reveal-section-animation {
 	animation: SlideInFromLeft 1s linear;
 }

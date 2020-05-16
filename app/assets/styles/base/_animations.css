@@ -253,3 +253,15 @@
 		opacity: 1;
 	}
 }
+
+@keyframes ScaleOutandIn {
+	0% {
+		transform: scale(1.04);
+		opacity: 0.9;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
