@@ -1,0 +1,13 @@
+.planning {
+	grid-column: void-left-end / void-right-start;
+	position: relative;
+
+	.planning-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(58, 145, 127, .04);
+	}
+}

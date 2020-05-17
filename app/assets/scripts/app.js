@@ -51,10 +51,12 @@ let cardElements = document.querySelectorAll('.card');
 let FirstSectionIcon = document.querySelector('.section-icon');
 let headerClass = document.querySelector('.header__navigation');
 let sectionElements = document.querySelectorAll('.section__title');
+let getInTouchElement = document.querySelector('.getInTouch');
 
 new RevealOnScroll(groupElements, 'reveal-animation');
 new RevealOnScroll(cardElements, 'reveal-card-animation');
 new RevealOnScroll(sectionElements, 'reveal-section-animation');
+new RevealOnScroll(getInTouchElement, 'getInTouch-animated');
 new RevealOnScroll(FirstSectionIcon, 'reveal-fixed-navbar', headerClass);
 
 const Arrows = document.querySelectorAll('.arrow');

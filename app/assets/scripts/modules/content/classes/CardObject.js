@@ -58,52 +58,52 @@ const Courses = [
 		CourseInstructor: `Colt Steele`,
 		CourseInstructorLink: `#`,
 		CourseCompletedDate: `23/02/2020`
-	},
-	{
-		CourseDone: `undone`,
-		CourseBadge: `Udemy course`,
-		ImageIndex: `undone`,
-		CourseMainTitle: `Advanced Web Bootcamp`,
-		//CourseSubTitle: `Git a Web Developer Job: Mastering the Modern Workflow`,
-		CourseFeatures: `<li><span class="strong">React</span>, <span class="strong">Redux</span> and CSS3 animations</li>
-		<li>Using <span class="strong">SVG</span> and data visualization</li>
-		<li><span class="strong">ES2015, ES2016</span> and <span class="strong">ES2017</span> cutting edge JS features</li>
-		<li><span class="strong">Callbacks, Promises</span> and Async functions</li>
-		<li>Building <span class="strong">NodeJS APIs</span>, testing with Jasmine</li>`
-		//CourseInstructor: `Brad Schiff`,
-		//CourseInstructorLink: `#`,
-		//CourseCompletedDate: `02/22/2020`
-	},
-	{
-		CourseDone: `undone`,
-		CourseBadge: `Udemy course`,
-		ImageIndex: `undone`,
-		CourseMainTitle: `TypeScript Guide 2020`,
-		//CourseSubTitle: `Git a Web Developer Job: Mastering the Modern Workflow`,
-		CourseFeatures: `<li>Master design patterns for building large applications</li>
-		<li>Integrate <span class="strong">Typescript</span> into <span class="strong">React/Redux</span> or Express projects</li>
-		<li>Understand Composition vs Inheritance</li>
-		<li>Reusable code powered by classes and interfaces</li>
-		<li>Reusable boilerplates for your own Typescript projects</li>`
-		//CourseInstructor: `Brad Schiff`,
-		//CourseInstructorLink: `#`,
-		//CourseCompletedDate: `02/22/2020`
-	},
-	{
-		CourseDone: `undone`,
-		CourseBadge: `Udemy course`,
-		ImageIndex: `undone`,
-		CourseMainTitle: `Angular Guide 2020`,
-		//CourseSubTitle: `Git a Web Developer Job: Mastering the Modern Workflow`,
-		CourseFeatures: `<li><span class="strong">Databinding</span>, <span class="strong">routing</span> and handling navigation</li>
-		<li><span class="strong">Dependency injection</span> and access <span class="strong">RESTful</span> servers</li>
-		<li>Complex, responsive and scalable apps with <span class="strong">Angular 9</span></li>
-		<li>Introduction to <span class="strong">NgRx</span> and complex state management</li>
-		<li>Leverage the most-modern JavaScript frameworks</li>`
-		//CourseInstructor: `Brad Schiff`,
-		//CourseInstructorLink: `#`,
-		//CourseCompletedDate: `02/22/2020`
 	}
+	// {
+	// 	CourseDone: `undone`,
+	// 	CourseBadge: `Udemy course`,
+	// 	ImageIndex: `undone`,
+	// 	CourseMainTitle: `Advanced Web Bootcamp`,
+	// 	//CourseSubTitle: `Git a Web Developer Job: Mastering the Modern Workflow`,
+	// 	CourseFeatures: `<li><span class="strong">React</span>, <span class="strong">Redux</span> and CSS3 animations</li>
+	// 	<li>Using <span class="strong">SVG</span> and data visualization</li>
+	// 	<li><span class="strong">ES2015, ES2016</span> and <span class="strong">ES2017</span> cutting edge JS features</li>
+	// 	<li><span class="strong">Callbacks, Promises</span> and Async functions</li>
+	// 	<li>Building <span class="strong">NodeJS APIs</span>, testing with Jasmine</li>`
+	// 	//CourseInstructor: `Brad Schiff`,
+	// 	//CourseInstructorLink: `#`,
+	// 	//CourseCompletedDate: `02/22/2020`
+	// },
+	// {
+	// 	CourseDone: `undone`,
+	// 	CourseBadge: `Udemy course`,
+	// 	ImageIndex: `undone`,
+	// 	CourseMainTitle: `TypeScript Guide 2020`,
+	// 	//CourseSubTitle: `Git a Web Developer Job: Mastering the Modern Workflow`,
+	// 	CourseFeatures: `<li>Master design patterns for building large applications</li>
+	// 	<li>Integrate <span class="strong">Typescript</span> into <span class="strong">React/Redux</span> or Express projects</li>
+	// 	<li>Understand Composition vs Inheritance</li>
+	// 	<li>Reusable code powered by classes and interfaces</li>
+	// 	<li>Reusable boilerplates for your own Typescript projects</li>`
+	// 	//CourseInstructor: `Brad Schiff`,
+	// 	//CourseInstructorLink: `#`,
+	// 	//CourseCompletedDate: `02/22/2020`
+	// },
+	// {
+	// 	CourseDone: `undone`,
+	// 	CourseBadge: `Udemy course`,
+	// 	ImageIndex: `undone`,
+	// 	CourseMainTitle: `Angular Guide 2020`,
+	// 	//CourseSubTitle: `Git a Web Developer Job: Mastering the Modern Workflow`,
+	// 	CourseFeatures: `<li><span class="strong">Databinding</span>, <span class="strong">routing</span> and handling navigation</li>
+	// 	<li><span class="strong">Dependency injection</span> and access <span class="strong">RESTful</span> servers</li>
+	// 	<li>Complex, responsive and scalable apps with <span class="strong">Angular 9</span></li>
+	// 	<li>Introduction to <span class="strong">NgRx</span> and complex state management</li>
+	// 	<li>Leverage the most-modern JavaScript frameworks</li>`
+	// 	//CourseInstructor: `Brad Schiff`,
+	// 	//CourseInstructorLink: `#`,
+	// 	//CourseCompletedDate: `02/22/2020`
+	// }
 ];
 
 export default Courses;

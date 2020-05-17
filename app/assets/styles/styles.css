@@ -15,6 +15,7 @@
 @import "components/_sideBar";
 @import "components/_verticals";
 @import "components/_card";
+@import "components/_planning";
 
 @import "layout/_header";
 @import "layout/_footer";

@@ -212,9 +212,17 @@
 		opacity: 0;
 	}
 
-	100% {
+	90% {
 		transform: translateX(0);
 		opacity: 1;
+	}
+
+	95% {
+		transform: rotateY(45deg);
+	}
+
+	100% {
+		transform: rotateY(0);
 	}
 }
 
@@ -273,5 +281,25 @@
 
 	100% {
 		transform: translateY(0);
+	}
+}
+
+@keyframes LoadFromLeft {
+	0% {
+		width: 0;
+	}
+
+	100% {
+		width: 30%;
+	}
+}
+
+@keyframes LoadFromRight {
+	0% {
+		width: 0;
+	}
+
+	100% {
+		width: 50%;
 	}
 }

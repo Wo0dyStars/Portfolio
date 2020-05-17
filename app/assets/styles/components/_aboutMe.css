@@ -14,19 +14,19 @@
 
 			.reveal-animation {
 				&:nth-of-type(1) {
-					animation: SlideInFromRight 1s linear;
+					animation: SlideInFromRight .8s linear;
 				}
 
 				&:nth-of-type(2) {
-					animation: SlideInFromRight 1.3s 0.1s linear;
+					animation: SlideInFromRight 1s 0.1s linear;
 				}
 
 				&:nth-of-type(3) {
-					animation: SlideInFromRight 1.6s 0.1s linear;
+					animation: SlideInFromRight 1.2s 0.1s linear;
 				}
 
 				&:nth-of-type(4) {
-					animation: SlideInFromRight 1.9s 0.1s linear;
+					animation: SlideInFromRight 1.5s 0.1s linear;
 				}
 			}
 

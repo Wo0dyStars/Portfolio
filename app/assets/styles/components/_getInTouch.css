@@ -1,3 +1,21 @@
+.getInTouch-animated {
+	.getInTouch__container {
+		animation: MoveDownSlowly 2s linear;
+	}
+
+	input[type="text"] {
+		animation: SlideInFromLeft 1s linear;
+	}
+
+	input[type="email"] {
+		animation: SlideInFromRight 1s linear;
+	}
+
+	textarea {
+		animation: FadeInFromBottom 1s linear;
+	}
+}
+
 .getInTouch {
 	grid-column: void-left-end / void-right-start;
 	display: flex;
@@ -16,7 +34,6 @@
 		display: flex;
 		align-items: center;
 		flex-direction: column;
-		animation: MoveDownSlowly 2s linear;
 
 		&--title {
 			font-family: 'Montserrat Alternates', sans-serif;
@@ -73,19 +90,6 @@
 				}
 			}
 
-			input[type="text"] {
-				animation: SlideInFromLeft 1s linear;
-			}
-
-			input[type="email"] {
-				animation: SlideInFromRight 1s linear;
-			}
-
-			textarea {
-				height: 20rem;
-				animation: FadeInFromBottom 1s linear;
-			}
-
 			label {
 				position: absolute;
 				bottom: 1rem;
@@ -119,6 +123,10 @@
 			&:focus {
 				outline: none;
 			}
+		}
+
+		textarea {
+			height: 20rem;
 		}
 
 		.form-status {

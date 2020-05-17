@@ -38,10 +38,17 @@ class RevealOnScroll {
 	}
 
 	calculateElements() {
+		console.log('this.items: ', this.items);
 		if (this.outerClass == 'none') {
-			this.items.forEach((element) => {
-				this.scrolledElement(element);
-			});
+			if (!NodeList.prototype.isPrototypeOf(this.items)) {
+				console.log('not array.');
+				this.scrolledElement(this.items);
+			} else {
+				console.log('array.');
+				this.items.forEach((element) => {
+					this.scrolledElement(element);
+				});
+			}
 		} else {
 			this.scrolledElement(this.items, this.outerClass);
 		}
