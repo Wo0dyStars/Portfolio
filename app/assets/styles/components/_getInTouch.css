@@ -1,3 +1,134 @@
 .getInTouch {
 	grid-column: void-left-end / void-right-start;
+	display: flex;
+	justify-content: space-around;
+	position: relative;
+
+	&__container {
+		width: 30vw;
+		height: 60vh;
+		background-color: rgb(255, 255, 255);
+		box-shadow: .1rem .1rem 1rem rgba(255, 255, 255, .4);
+		border-radius: 3rem;
+		position: absolute;
+		bottom: -10%;
+		z-index: 5;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		animation: MoveDownSlowly 2s linear;
+
+		&--title {
+			font-family: 'Montserrat Alternates', sans-serif;
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+			font-weight: 400;
+			color: rgba(0, 0, 0, .8);
+		}
+
+		.message-form {
+			width: 70%;
+			transition: all .4s ease;
+		}
+
+		.form-group {
+			width: 100%;
+			position: relative;
+
+			margin: 1rem auto;
+			box-shadow: .1rem .1rem .4rem rgba(0, 0, 0, .03);
+
+			input,
+			textarea {
+				padding: 1rem;
+				resize: none;
+				width: 100%;
+				border: none;
+				border-bottom: 1px dashed rgba(0, 0, 0, .1);
+				color: rgba(0, 0, 0, .5);
+				background-color: rgba(0, 0, 0, .04);
+				transition: all .4s ease;
+
+				&:focus {
+					outline: none;
+				}
+
+				&:hover,
+				&:focus {
+					background-color: rgba(0, 0, 0, .08);
+				}
+
+				&::-webkit-input-placeholder {
+					color: rgba(0, 0, 0, .3);
+				}
+
+				&:placeholder-shown + label {
+					opacity: 0;
+					visibility: hidden;
+					transform: translateY(-3rem);
+				}
+
+				&:valid {
+					border-bottom: 1px solid rgba(9, 122, 9, 0.3);
+				}
+			}
+
+			input[type="text"] {
+				animation: SlideInFromLeft 1s linear;
+			}
+
+			input[type="email"] {
+				animation: SlideInFromRight 1s linear;
+			}
+
+			textarea {
+				height: 20rem;
+				animation: FadeInFromBottom 1s linear;
+			}
+
+			label {
+				position: absolute;
+				bottom: 1rem;
+				right: 5%;
+				color: rgba(0, 0, 0, .3);
+				opacity: 1;
+				visibility: visible;
+				transition: all .3s ease;
+			}
+		}
+
+		button {
+			display: flex;
+			margin: 0 auto;
+			padding: 1rem;
+			background-color: rgba(255, 0, 0, .8);
+			border: none;
+			text-transform: uppercase;
+			color: #fff;
+			cursor: pointer;
+			box-shadow: 0 .3rem .4rem rgba(0, 0, 0, .1);
+			border-bottom-left-radius: 1rem;
+			border-bottom-right-radius: 1rem;
+			transition: all .4s ease;
+
+			&:hover,
+			&:focus {
+				box-shadow: 0 .2rem .2rem rgba(255, 0, 0, .5);
+			}
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		.form-status {
+			font-family: 'Montserrat Alternates', sans-serif;
+			font-weight: 400;
+			color: rgba(0, 0, 0, .8);
+			font-size: 1.1rem;
+			margin: 1rem auto;
+			display: flex;
+			justify-content: center;
+		}
+	}
 }

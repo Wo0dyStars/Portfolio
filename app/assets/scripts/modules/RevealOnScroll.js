@@ -23,11 +23,11 @@ class RevealOnScroll {
 	}
 
 	scrolledElement(element, target = 'none') {
-		console.log('offset: ', element.offsetTop);
-		console.log('this.browserHeight: ', this.browserHeight);
-		console.log('window.scrollY: ', window.scrollY);
+		// console.log('offset: ', element.offsetTop);
+		// console.log('this.browserHeight: ', this.browserHeight);
+		// console.log('window.scrollY: ', window.scrollY);
 
-		console.log('element: ', element);
+		// console.log('element: ', element);
 		if (window.scrollY + this.browserHeight > element.offsetTop) {
 			if (target == 'none') {
 				element.classList.add(this.newClass);

@@ -20,8 +20,10 @@
 		"webpack-dev-server": "^3.10.3"
 	},
 	"dependencies": {
+		"dotenv": "^8.2.0",
 		"hover.css": "^2.3.2",
 		"lodash": "^4.17.15",
+		"mongoose": "^5.9.7",
 		"normalize.css": "^8.0.1"
 	}
 }

@@ -1,7 +1,6 @@
 .footer {
 	grid-column: void-left-end / void-right-start;
 
-	height: 40vh;
 	background: linear-gradient(to top, #44a08d, #093637);
 	border-bottom: 3px solid rgba(9, 54, 55, .2);
 	clip-path: polygon(0% 0%, 38% 5%, 50% 20%, 62% 5%, 100% 0%, 100% 100%, 0% 100%);
@@ -15,6 +14,7 @@
 	&__backwards {
 		transform: rotate(90deg);
 		margin: 4rem;
+		margin-top: 20rem;
 
 		a {
 			text-decoration: none;
