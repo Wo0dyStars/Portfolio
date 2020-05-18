@@ -1,10 +1,13 @@
 import '../styles/styles.css';
 import IconHover from './modules/IconHover';
 import RevealOnScroll from './modules/RevealOnScroll';
+import StickyHeader from './modules/StickyHeader';
 import Courses from './modules/Cards';
 import Gallery from './modules/Gallery';
 
 const submit = document.querySelector('.submit-message');
+
+new StickyHeader();
 
 window.addEventListener('DOMContentLoaded', () => {
 	const form = document.querySelector('.message-form');
@@ -52,6 +55,8 @@ let FirstSectionIcon = document.querySelector('.section-icon');
 let headerClass = document.querySelector('.header__navigation');
 let sectionElements = document.querySelectorAll('.section__title');
 let getInTouchElement = document.querySelector('.getInTouch');
+
+let about = document.getElementById('about');
 
 new RevealOnScroll(groupElements, 'reveal-animation');
 new RevealOnScroll(cardElements, 'reveal-card-animation');

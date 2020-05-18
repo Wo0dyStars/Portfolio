@@ -17,10 +17,11 @@
     </head>
     <body class="container">
         <!-- Use BEM approach when naming CSS classes -->
-        <header class="header">
+        <section id="home" class="header page-section">
 
             <div class="header__navigation">
                 <ul>
+                    <li class="header__navigation--element active"><a href="#home">Home</a></li>
                     <li class="header__navigation--element"><a href="#about">Who am I?</a></li>
                     <li class="header__navigation--element"><a href="#courses">What have I studied?</a></li>
                     <li class="header__navigation--element"><a href="#projects">What have I made?</a></li>
@@ -31,7 +32,7 @@
 
             <div class="header__navigation-elements">
                 <div class="header__navigation-elements__element">
-                    <a href="#about">
+                    <a class="circle-bg-large" href="#about">
                         <div class="header__navigation-elements__element--circle header__navigation-elements__element--circle-1">
                             <svg class="navigation__icon">
                                 <use xlink:href="assets/images/icons/sprite.svg#icon-profile"></use>
@@ -45,13 +46,13 @@
                 </div>
                 
                 <div class="header__navigation-elements__element">
-                    <a href="#projects">
+                    <a class="circle-bg-small" href="#projects">
                         <div class="header__navigation-elements__element--circle header__navigation-elements__element--circle-2">
                             <svg class="navigation__icon">
                                 <use xlink:href="assets/images/icons/sprite.svg#icon-document-code"></use>
                             </svg>
                         </div>
-                        <div class="white-bg-circle"></div>
+                        <div class="white-bg-circle white-bg-circle-small"></div>
                     </a>
                     <div class="header__navigation-elements__element--paragraph header__navigation-elements__element--paragraph-2">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere doloribus corporis molestias voluptates velit, aperiam blanditiis eveniet sint explicabo. Consequuntur!
@@ -59,13 +60,13 @@
                 </div>
 
                 <div class="header__navigation-elements__element">
-                    <a href="#getintouch">
+                    <a class="circle-bg-small" href="#getintouch">
                         <div class="small-circle header__navigation-elements__element--circle header__navigation-elements__element--circle-3">
                             <svg class="navigation__icon">
                                 <use xlink:href="assets/images/icons/sprite.svg#icon-email"></use>
                             </svg>
                         </div>
-                        <div class="white-bg-circle"></div>
+                        <div class="white-bg-circle white-bg-circle-small"></div>
                     </a>
                     <div class="header__navigation-elements__element--paragraph header__navigation-elements__element--paragraph-3">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere doloribus corporis molestias voluptates velit, aperiam blanditiis eveniet sint explicabo. Consequuntur!
@@ -73,7 +74,7 @@
                 </div>
 
                 <div class="header__navigation-elements__element">
-                    <a href="#">
+                    <a class="circle-bg-large" href="#">
                         <div class="header__navigation-elements__element--circle header__navigation-elements__element--circle-4">
                             <svg class="navigation__icon">
                                 <use xlink:href="assets/images/icons/sprite.svg#icon-sitemap"></use>
@@ -87,13 +88,13 @@
                 </div>
 
                 <div class="header__navigation-elements__element">
-                    <a href="#courses">
+                    <a class="circle-bg-small" href="#courses">
                         <div class="header__navigation-elements__element--circle header__navigation-elements__element--circle-5">
                             <svg class="navigation__icon">
                                 <use xlink:href="assets/images/icons/sprite.svg#icon-device-laptop"></use>
                             </svg>
                         </div>
-                        <div class="white-bg-circle"></div>
+                        <div class="white-bg-circle white-bg-circle-small"></div>
                     </a>
                     <div class="header__navigation-elements__element--paragraph header__navigation-elements__element--paragraph-5">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere doloribus corporis molestias voluptates velit, aperiam blanditiis eveniet sint explicabo. Consequuntur!
@@ -120,9 +121,9 @@
                 </div>
             </div>
             
-        </header>
+        </section>
 
-        <section id="about" class="aboutMe">
+        <section id="about" class="aboutMe page-section">
             <div class="section-icon">
                 <svg class="aboutMe__icon">
                     <use xlink:href="assets/images/icons/sprite.svg#icon-question"></use>
@@ -208,7 +209,7 @@
             </div>
         </section>
         
-        <section id="projects" class="projects">
+        <section id="projects" class="projects page-section">
             <div class="section-icon">
                 <svg class="aboutMe__icon">
                     <use xlink:href="assets/images/icons/sprite.svg#icon-folder-open1"></use>
@@ -270,7 +271,7 @@
         </section>
 
 
-        <section id ="courses" class="courses">
+        <section id ="courses" class="courses page-section">
             <div class="section-icon">
                 <svg class="aboutMe__icon">
                     <use xlink:href="assets/images/icons/sprite.svg#icon-display"></use>
@@ -283,12 +284,12 @@
             <div class="courses__cards"></div>
         </section>
 
-        <section id="planning" class="planning">
+        <section id="planning" class="planning page-section">
             <div class="planning-background"></div>
 
         </section>
 
-        <section id="getintouch" class="getInTouch">
+        <section id="getintouch" class="getInTouch page-section">
             <div class="section-icon">
                 <svg class="aboutMe__icon">
                     <use xlink:href="assets/images/icons/sprite.svg#icon-envelope"></use>
