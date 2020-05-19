@@ -8,6 +8,55 @@
 		left: 0;
 		width: 100vw;
 		height: 100vh;
+		z-index: -1;
 		background-color: rgba(58, 145, 127, .04);
+	}
+
+	&__container {
+		width: 80%;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-rows: minmax(50rem, 1fr);
+		margin: 0 auto;
+
+		&__element {
+			background-color: red;
+			margin: 2rem;
+			display: grid;
+			grid-template-rows: 1fr 4fr;
+
+			&--title {
+				background-color: green;
+				color: #fff;
+				text-transform: uppercase;
+				font-size: 2rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			&--reasons {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				img {
+					width: 35rem;
+				}
+
+				ul {
+					list-style: none;
+					text-align: center;
+
+					li {
+						padding: 2rem;
+
+						&:not(:last-child) {
+							border-bottom: 1px solid black;
+						}
+					}
+				}
+			}
+		}
 	}
 }
