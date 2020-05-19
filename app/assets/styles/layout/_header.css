@@ -1,5 +1,6 @@
 .header {
 	grid-column: void-left-end / void-right-start;
+	position: relative;
 
 	&__navigation-elements {
 		&__element {
@@ -11,22 +12,22 @@
 			backface-visibility: hidden;
 
 			&:nth-of-type(1) {
-				top: 10%;
+				top: 13%;
 				left: 15%;
 			}
 
 			&:nth-of-type(2) {
-				top: 8%;
+				top: 12%;
 				right: 18%;
 			}
 
 			&:nth-of-type(3) {
-				top: 33%;
+				top: 37%;
 				right: 14%;
 			}
 
 			&:nth-of-type(4) {
-				bottom: 8%;
+				bottom: 22%;
 				left: 5%;
 			}
 
@@ -157,14 +158,13 @@
 		visibility: visible;
 		position: fixed;
 		z-index: 20;
-		background: linear-gradient(to right, #44a08d, #093637);
+		background: #093637;
 		animation: SlideInFromTop 1s ease;
 	}
 
 	&__navigation {
-		background-color: rgba(255, 255, 255, .04);
-		border-bottom: 1px solid rgba(255, 255, 255, .04);
-		height: 5vh;
+		border-bottom: 3px solid #44a08d;
+		height: 8vh;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -172,6 +172,7 @@
 		z-index: 5;
 		opacity: 0;
 		visibility: hidden;
+		font-weight: 100;
 
 		ul {
 			display: flex;
@@ -181,11 +182,13 @@
 			list-style: none;
 
 			.active {
-				background: linear-gradient(to top, #000428, #004e92);
+				a {
+					color: #e65c00;
+				}
 			}
 
 			li {
-				font-size: 1.5rem;
+				font-size: 1.3rem;
 				text-transform: uppercase;
 				width: 50%;
 				height: 100%;
@@ -195,14 +198,12 @@
 
 				a {
 					text-decoration: none;
-					color: rgba(255, 255, 255, .75);
+					color: #fff;
 					transition: all .1s ease;
 
 					&:hover,
 					&:focus {
-						transform: translateY(1rem) rotate(5deg);
-						background: linear-gradient(to top, #000428, #004e92);
-						padding: 1rem;
+						color: #e65c00;
 					}
 				}
 			}
@@ -211,12 +212,9 @@
 
 	&__leftdeck {
 		background: linear-gradient(to bottom, #44a08d, #093637);
-		height: 150%;
+		height: 100%;
 		width: 30%;
 		position: absolute;
-		overflow: hidden;
-		display: flex;
-		justify-content: space-around;
 		border-bottom: 3px solid rgba(9, 54, 55, .2);
 		clip-path: polygon(0% 0%, 80% 0, 0% 100%, 0% 100%);
 		animation: LoadFromLeft 1s linear;
@@ -230,9 +228,6 @@
 		top: -44rem;
 		position: absolute;
 		border-radius: 50%;
-		overflow: hidden;
-		display: flex;
-		justify-content: space-around;
 		border-bottom: 3px solid rgba(9, 54, 55, .2);
 		animation: LoadFromRight 1s linear;
 	}

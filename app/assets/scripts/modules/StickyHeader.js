@@ -21,33 +21,14 @@ class StickyHeader {
 	}
 
 	runOnScroll() {
-		this.determineScrollDirection();
 		this.sections.forEach((element, idx) => this.findSection(element, idx));
 	}
 
-	determineScrollDirection() {
-		if (window.scrollY > this.previousScrollY) {
-			this.scrollDirection = 'down';
-		} else {
-			this.scrollDirection = 'up';
-		}
-		this.previousScrollY = window.scrollY;
-	}
-
 	findSection(element, idx) {
-		if (
-			window.scrollY + this.browserHeight > element.offsetTop &&
-			window.scrollY < element.offsetTop + element.offsetHeight
-		) {
-			let scrollPercent = element.getBoundingClientRect().y / this.browserHeight * 100;
-			if (
-				(scrollPercent < 18 && scrollPercent > -0.1 && this.scrollDirection == 'down') ||
-				(scrollPercent < 33 && this.scrollDirection == 'up')
-			) {
-				this.elements[idx].classList.add('active');
-				this.elements[this.currentIndex].classList.remove('active');
-				this.currentIndex = idx;
-			}
+		if (window.scrollY + this.browserHeight > element.offsetTop) {
+			this.elements[idx].classList.add('active');
+			this.elements[this.currentIndex].classList.remove('active');
+			this.currentIndex = idx;
 		}
 	}
 }

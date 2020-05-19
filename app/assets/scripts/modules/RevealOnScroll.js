@@ -23,11 +23,6 @@ class RevealOnScroll {
 	}
 
 	scrolledElement(element, target = 'none') {
-		// console.log('offset: ', element.offsetTop);
-		// console.log('this.browserHeight: ', this.browserHeight);
-		// console.log('window.scrollY: ', window.scrollY);
-
-		// console.log('element: ', element);
 		if (window.scrollY + this.browserHeight > element.offsetTop) {
 			if (target == 'none') {
 				element.classList.add(this.newClass);
@@ -38,13 +33,10 @@ class RevealOnScroll {
 	}
 
 	calculateElements() {
-		console.log('this.items: ', this.items);
 		if (this.outerClass == 'none') {
 			if (!NodeList.prototype.isPrototypeOf(this.items)) {
-				console.log('not array.');
 				this.scrolledElement(this.items);
 			} else {
-				console.log('array.');
 				this.items.forEach((element) => {
 					this.scrolledElement(element);
 				});
