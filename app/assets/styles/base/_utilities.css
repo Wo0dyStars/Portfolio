@@ -4,11 +4,22 @@
 	color: rgba(9, 54, 55, .9);
 	width: 20%;
 	margin: auto;
-	margin-bottom: 10rem;
+	margin-bottom: 2rem;
 	text-align: center;
 	padding: 2rem;
 	font-weight: 400;
 	font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.section__description {
+	font-size: 1.4rem;
+	color: rgba(0, 0, 0, .6);
+	width: 75%;
+	margin: auto;
+	margin-bottom: 5rem;
+	text-align: center;
+	padding: 2rem;
+	font-weight: 100;
 }
 
 .section-icon {

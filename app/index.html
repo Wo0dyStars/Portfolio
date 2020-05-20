@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="header__navigation-elements__element">
-                    <a class="circle-bg-large" href="#">
+                    <a class="circle-bg-large" href="#planning">
                         <div class="header__navigation-elements__element--circle header__navigation-elements__element--circle-4">
                             <svg class="navigation__icon">
                                 <use xlink:href="assets/images/icons/sprite.svg#icon-sitemap"></use>
@@ -132,6 +132,8 @@
 
             <div class="section__title">About me</div>
 
+            <div class="section__description">I have recently graduated in Computing and IT at The Open University with Upper Second-class Honours. During my study time, I have shown how disciplined, dedicated and passionate I was about learning new materials. Although, I am really interested in many aspects of programming, I fell in love with web development, especially creative designs, beautiful visualizations and amazing animations. Therefore, I have gratefully decided to select this path and put my greatest effort into bringing my full potential. </div>
+
             <div class="aboutMe__container">
                 
                 <div class="aboutMe__container__group">
@@ -178,7 +180,7 @@
 
                     <div class="aboutMe__container__introduction--personal">
                         <figure class="profile-photo">
-                            <img src="assets/images/profile-photo.jpg" alt="My profile photo">
+                            <img src="assets/images/bg-images/profile.JPG" alt="My profile photo">
                             <figcaption>This is me, Peter Kertesz</figcaption>
                         </figure>
                         <p>A self-motivated and passionate person with the relevant skills to create beautifully styled and well-organized web applications. </p>
@@ -218,7 +220,10 @@
 
             <div class="section__title">Projects</div>
 
+            <div class="section__description">I have been constantly thinking of how to apply the recently acquired skills in the real world. Since I am a fresh graduate, I can present only one project so far.</div>
+
             <div class="projects__name">House storage</div>
+            <a href="https://pacific-fortress-95051.herokuapp.com/" class="info">View project</a>
             <div class="projects__techs">
                 <span>#</span>Git
                 <span>#</span>Node
@@ -234,38 +239,27 @@
             <div class="projects__container">
                 <div class="project-background"></div>
 
-                <button class="arrow leftarrow">&#10094;</button>
+                <div class="projects__description">
+                    <div class="projects__description__features">
+                        <div class="projects__description__features--feature">Register and edit profile</div>
+                        <div class="projects__description__features--feature">Collaborate within a team</div>
+                        <div class="projects__description__features--feature">Add new household items</div>
+                        <div class="projects__description__features--feature">Modify household stock</div>
+                        <div class="projects__description__features--feature">Add new purchases</div>
+                        <div class="projects__description__features--feature">See favourite items and spendings</div>
+                        <div class="projects__description__features--feature">Search items and purchases</div>
+                        <div class="projects__description__features--feature">Responsive design</div>
+                    </div>
+                </div>
 
                 <div class="projects__project">
 
-                    <img class="project-image image-on" src="assets/images/projects/house-stocker.jpg" alt="">
-                    <img class="project-image image-off" src="assets/images/projects/house-stocker-1.jpg" alt="">
-                    <img class="project-image image-off" src="assets/images/projects/house-stocker-2.jpg" alt="">
-                    <img class="project-image image-off" src="assets/images/projects/house-stocker-3.jpg" alt="">
-                    <img class="project-image image-off" src="assets/images/projects/house-stocker-4.jpg" alt="">
-                    <img class="project-image image-off" src="assets/images/projects/house-stocker-5.jpg" alt="">
-                    <img class="project-image image-off" src="assets/images/projects/house-stocker-6.jpg" alt="">
-    
-                    <div class="mask">
-                        <h2>House storage</h2>
-                        <ul>
-                            <li>Allows visitors to register and edit user profile. <span>&#10004;</span></li>
-                            <li>Allows users to collaborate within a team that shares household. <span>&#10004;</span></li>
-                            <li>Allows users to add new household items into the database. <span>&#10004;</span></li>
-                            <li>Allows users to see their household stock and modify quantities. <span>&#10004;</span></li>
-                            <li>Allows users to add new purchases and see the details of all purchases. <span>&#10004;</span></li>
-                            <li>User profile shows the most frequently purchased items and all spendings. <span>&#10004;</span></li>
-                            <li>Search facility helps find items quicker and filter purchases. <span>&#10004;</span></li>
-                            <li>Only logged in users are able to carry out restricted activities. <span>&#10004;</span></li>
-                            <li>Responsive design allows users to use it on any device. <span>&#10004;</span></li>
-                            <li>User avatars and item photos are stored in Amazon S3 to save space. <span>&#10004;</span></li>
-                        </ul>
-                        <a href="https://pacific-fortress-95051.herokuapp.com/" class="info">View project</a>
-                    </div>
+                    <img class="projects__project--image" src="assets/images/projects/house-stocker-3.jpg" alt="">
+                    <img class="projects__project--image" src="assets/images/projects/house-stocker-1.jpg" alt="">
+                    <img class="projects__project--image" src="assets/images/projects/house-stocker-4.jpg" alt="">
+                    <img class="projects__project--image" src="assets/images/projects/house-stocker-5.jpg" alt="">
     
                 </div>
-    
-                <button class="arrow rightarrow">&#10095;</button>
             </div>
 
         </section>
@@ -280,56 +274,84 @@
 
             <div class="section__title">Courses</div>
 
+            <div class="section__description">In the past months after graduation, I have been taking online courses at Udemy, which elevated my knowledge to a much higher level. I have listed these courses with the associated learning outcomes. </div>
+
             <!-- This section is populated by JavaScript code -->
             <div class="courses__cards"></div>
         </section>
 
         <section id="planning" class="planning page-section">
-            <div class="planning-background"></div>
+            <div class="section-icon">
+                <svg class="aboutMe__icon">
+                    <use xlink:href="assets/images/icons/sprite.svg#icon-sitemap"></use>
+                </svg>
+            </div>
+
+            <div class="section__title">Future plans</div>
+
+            <div class="section__description">There are many different technologies that I wish to learn. I love tackling new challenges and bringing improvements to my code. These are the languages that I am going to discover in the next months. </div>
+
+            <div class="planning--background"></div>
 
             <div class="planning__container">
                 <div class="planning__container__element">
                     <div class="planning__container__element--title">TypeScript</div>
                     <div class="planning__container__element--reasons">
-                        <img src="assets/images/typescript.png" alt="">
+                        <div class="planning--image planning--image-1">
+                            <img src="assets/images/typescript.png" alt="">
+                        </div>
+
                         <ul>
                             <li>Master design patterns for building large applications</li>
                             <li>Integrate <span class="strong">Typescript</span> into <span class="strong">React/Redux</span> or Express projects</li>
                             <li>Understand Composition vs Inheritance</li>
-                            <li>Reusable code powered by classes and interfaces</li>
                             <li>Reusable boilerplates for my own Typescript projects</li>
-                            <li>There is so much more to learn at <a href="https://www.typescriptlang.org/docs/">React docs</a> </li>
                         </ul>
+                    </div>
+
+                    <div class="planning--bottom">
+                        There is so much more to learn at <a href="https://www.typescriptlang.org/docs/">TypeScript docs</a>
                     </div>
                 </div>
 
                 <div class="planning__container__element">
                     <div class="planning__container__element--title">Angular</div>
                     <div class="planning__container__element--reasons">
-                        <img src="assets/images/angular.png" alt="">
+                        <div class="planning--image">
+                            <img src="assets/images/angular.png" alt="">
+                        </div>
+                        
                         <ul>
                             <li><span class="strong">Databinding</span>, <span class="strong">routing</span> and handling navigation</li>
                             <li><span class="strong">Dependency injection</span> and access <span class="strong">RESTful</span> servers</li>
                             <li>Complex, responsive and scalable apps with <span class="strong">Angular 9</span></li>
-                            <li>Introduction to <span class="strong">NgRx</span> and complex state management</li>
                             <li>Leverage the most-modern JavaScript frameworks</li>
-                            <li>There is so much more to learn at <a href="https://angular.io/">React docs</a> </li>
                         </ul>
+                    </div>
+
+                    <div class="planning--bottom">
+                        There is so much more to learn at <a href="https://angular.io/">Angular docs</a>
                     </div>
                 </div>
 
                 <div class="planning__container__element">
                     <div class="planning__container__element--title">React</div>
                     <div class="planning__container__element--reasons">
-                        <img src="assets/images/react.png" alt="">
+                        <div class="planning--image">
+                            <img src="assets/images/react.png" alt="">
+                        </div>
+
                         <ul>
                             <li>Rendering elements into DOM is simple and flexible.</li>
                             <li>Allows for reusable function components.</li>
                             <li>Easy integration of JS funtions into HTML tags.</li>
                             <li>Rendering multiple components with functions is easy.</li>
                             <li>Form handling is really great and flexible.</li>
-                            <li>There is so much more to learn at <a href="https://reactjs.org/docs/">React docs</a> </li>
                         </ul>
+                    </div>
+
+                    <div class="planning--bottom">
+                        There is so much more to learn at <a href="https://reactjs.org/docs/">React docs</a>
                     </div>
                 </div>
             </div>

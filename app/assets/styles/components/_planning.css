@@ -2,7 +2,7 @@
 	grid-column: void-left-end / void-right-start;
 	position: relative;
 
-	.planning-background {
+	&--background {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -12,37 +12,72 @@
 		background-color: rgba(58, 145, 127, .04);
 	}
 
+	&--image {
+		position: absolute;
+		top: 9%;
+
+		img {
+			width: 23rem;
+			height: 17rem;
+		}
+
+		&-1 {
+			top: 12%;
+
+			img {
+				width: 16rem;
+				height: 14rem;
+			}
+		}
+	}
+
+	&--bottom {
+		background-color: #44a08d;
+		padding: 2rem;
+		text-align: center;
+		color: #fff;
+
+		a:link,
+		a:visited {
+			color: #093637;
+			text-decoration: none;
+
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+
 	&__container {
-		width: 80%;
+		width: 90%;
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-auto-rows: minmax(50rem, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(33rem, 1fr));
+		grid-auto-rows: 1fr;
 		margin: 0 auto;
 
 		&__element {
-			background-color: red;
+			background-color: #fff;
 			margin: 2rem;
 			display: grid;
-			grid-template-rows: 1fr 4fr;
+			grid-template-rows: 1.5fr 4fr min-content;
+			grid-template-columns: 1fr;
+			position: relative;
 
 			&--title {
-				background-color: green;
+				background-color: #093637;
 				color: #fff;
 				text-transform: uppercase;
 				font-size: 2rem;
 				display: flex;
-				align-items: center;
 				justify-content: center;
+				padding-top: 2rem;
 			}
 
 			&--reasons {
 				display: flex;
 				align-items: center;
 				justify-content: center;
-
-				img {
-					width: 35rem;
-				}
+				margin-top: 7rem;
 
 				ul {
 					list-style: none;

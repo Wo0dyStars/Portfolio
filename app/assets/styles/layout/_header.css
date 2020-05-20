@@ -200,6 +200,7 @@
 					text-decoration: none;
 					color: #fff;
 					transition: all .1s ease;
+					text-shadow: .1rem .1rem 2rem rgba(255, 255, 255, .2);
 
 					&:hover,
 					&:focus {
