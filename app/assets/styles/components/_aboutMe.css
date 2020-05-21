@@ -97,6 +97,22 @@
 				display: grid;
 				justify-items: center;
 
+				.reveal-photo-animation {
+					.white-photo-bg {
+						width: 20rem;
+						height: 20rem;
+						background-color: #fff;
+						position: absolute;
+						z-index: -1;
+						border-radius: 50%;
+						animation: ScaleUp 1s linear;
+					}
+
+					img {
+						animation: SlideInFromLeft 1s linear;
+					}
+				}
+
 				.profile-photo {
 					width: 20rem;
 					height: 20rem;
@@ -119,7 +135,6 @@
 					img {
 						max-width: 100%;
 						border-radius: 50%;
-						border: 1px dashed rgba(0, 0, 0, .4);
 						box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, .2);
 						transition: all .5s;
 						backface-visibility: hidden;
