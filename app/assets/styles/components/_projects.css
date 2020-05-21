@@ -9,7 +9,7 @@
 		position: relative;
 
 		.project-background {
-			background-color: rgba(58, 145, 127, .04);
+			background-color: white;
 			position: absolute;
 			top: 0;
 			left: -2vw;
@@ -128,36 +128,88 @@
 	}
 
 	&__project {
-		width: 95vw;
-		height: 100vh;
+		width: 100vw;
+		height: 75vh;
 		position: relative;
-		display: flex;
+		display: grid;
+		grid-template-columns: 35% 65%;
+		background: transparent;
+		margin-top: 10rem;
 
-		&--device {
+		&__devices {
 			position: relative;
-
-			svg {
-				width: 50rem;
-				height: 50rem;
-				stroke-width: 0;
-				opacity: .7;
-				fill: #093637;
-			}
+			display: flex;
+			align-items: center;
+			transform: rotate(-36deg);
 
 			.desktop-img {
-				position: absolute;
-				top: 10%;
-				left: 10%;
-				width: 44rem;
-				height: 27rem;
+				width: 85%;
+				height: 85%;
+				margin-right: 2rem;
 			}
 
 			.tablet-img {
-				position: absolute;
-				top: 10%;
-				left: 2%;
-				width: 44rem;
-				height: 27rem;
+				width: 40%;
+				height: 50%;
+				margin-right: 2rem;
+			}
+
+			.phone-img {
+				width: 20%;
+				height: 35%;
+			}
+		}
+
+		&__features {
+			&--container {
+				display: grid;
+				align-content: center;
+				justify-items: center;
+				grid-template-rows: 1fr 10fr;
+				margin-left: 30rem;
+				width: 55%;
+				height: 100%;
+				transform: rotate(3deg) skew(-10deg);
+
+				.feature-main {
+					border-top-left-radius: 10rem;
+					text-transform: uppercase;
+					font-size: 2rem;
+					background-color: #093637;
+					color: #fff;
+					width: 100%;
+					text-align: center;
+				}
+
+				.feature-elements {
+					width: 100%;
+					height: 100%;
+
+					.tick-icon {
+						position: absolute;
+						top: 50%;
+						right: 2%;
+						transform: translateY(-50%);
+						width: 3rem;
+						height: 3rem;
+						fill: #44a08d;
+					}
+
+					.feature {
+						transform: rotate(-1deg) skew(10deg);
+						margin-bottom: .2rem;
+						background-color: rgba(0, 0, 0, .01);
+						box-shadow: .1rem .1rem .4rem rgba(0, 0, 0, .1);
+						padding: 2rem;
+						font-family: 'Montserrat Alternates', sans-serif;
+						font-weight: 400;
+						position: relative;
+
+						&:nth-of-type(2n) {
+							background-color: rgba(0, 0, 0, .04);
+						}
+					}
+				}
 			}
 		}
 
