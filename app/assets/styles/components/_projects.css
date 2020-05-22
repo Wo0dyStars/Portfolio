@@ -1,12 +1,33 @@
+.reveal-transparent-bg {
+	width: 100%;
+	height: 50rem;
+}
+
+.transparent-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -30;
+
+	img {
+		background-size: cover;
+		width: 100vw;
+		height: 100vh;
+		filter: grayscale(.5);
+	}
+}
+
 .projects {
 	grid-column: void-left-end / void-right-start;
 	display: grid;
 	justify-content: center;
 	position: relative;
+	background-color: white;
 
 	&__container {
 		padding: 3rem;
 		position: relative;
+		margin-bottom: 5rem;
 
 		.project-background {
 			background-color: white;
@@ -140,18 +161,20 @@
 			position: relative;
 			display: flex;
 			align-items: center;
-			transform: rotate(-36deg);
+			transform: rotate(-25deg);
 
 			.desktop-img {
 				width: 85%;
 				height: 85%;
 				margin-right: 2rem;
+				animation: MarginUpAndDown 3s linear infinite;
 			}
 
 			.tablet-img {
 				width: 40%;
 				height: 50%;
 				margin-right: 2rem;
+				animation: MarginUpAndDown 3s linear infinite;
 			}
 
 			.phone-img {
@@ -193,10 +216,11 @@
 						width: 3rem;
 						height: 3rem;
 						fill: #44a08d;
+						opacity: .8;
 					}
 
 					.feature {
-						transform: rotate(-1deg) skew(10deg);
+						transform: rotate(-3deg) skew(10deg);
 						margin-bottom: .2rem;
 						background-color: rgba(0, 0, 0, .01);
 						box-shadow: .1rem .1rem .4rem rgba(0, 0, 0, .1);
@@ -204,6 +228,8 @@
 						font-family: 'Montserrat Alternates', sans-serif;
 						font-weight: 400;
 						position: relative;
+						color: rgba(0, 0, 0, .7);
+						text-transform: uppercase;
 
 						&:nth-of-type(2n) {
 							background-color: rgba(0, 0, 0, .04);

@@ -1,6 +1,7 @@
 .planning {
 	grid-column: void-left-end / void-right-start;
 	position: relative;
+	background-color: white;
 
 	&--background {
 		position: absolute;

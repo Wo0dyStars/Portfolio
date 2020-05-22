@@ -1,6 +1,7 @@
 .header {
 	grid-column: void-left-end / void-right-start;
 	position: relative;
+	background-color: white;
 
 	&__navigation-elements {
 		&__element {

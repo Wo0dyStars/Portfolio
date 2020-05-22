@@ -315,3 +315,20 @@
 		opacity: 1;
 	}
 }
+
+@keyframes MarginUpAndDown {
+	0% {
+		margin-right: 0;
+		opacity: 0.9;
+	}
+
+	50% {
+		margin-right: 3rem;
+		opacity: 0.9;
+	}
+
+	100% {
+		margin-right: 0;
+		opacity: 1;
+	}
+}

@@ -1,5 +1,6 @@
 .footer {
 	grid-column: void-left-end / void-right-start;
+	background-color: white;
 
 	background: linear-gradient(to top, #44a08d, #093637);
 	border-bottom: 3px solid rgba(9, 54, 55, .2);
