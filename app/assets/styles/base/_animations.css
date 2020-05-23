@@ -332,3 +332,33 @@
 		opacity: 1;
 	}
 }
+
+@keyframes ComeInFromTop {
+	0% {
+		transform: translateY(-6rem);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes BrightingBG {
+	0% {
+		filter: grayscale(1);
+	}
+
+	100% {
+		filter: grayscale(0);
+	}
+}
+
+@keyframes blinkTextCursor {
+	0% {
+		border-right: 3px solid rgba(0, 0, 0, .65);
+	}
+
+	100% {
+		border-right: 3px solid transparent;
+	}
+}

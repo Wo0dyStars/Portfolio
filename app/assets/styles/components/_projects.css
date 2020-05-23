@@ -13,7 +13,7 @@
 		background-size: cover;
 		width: 100vw;
 		height: 100vh;
-		filter: grayscale(.5);
+		filter: grayscale(.1);
 	}
 }
 

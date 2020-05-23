@@ -2,10 +2,13 @@ import '../styles/styles.css';
 import IconHover from './modules/IconHover';
 import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/StickyHeader';
+import TypeLetters from './modules/TypeLetters';
 import Courses from './modules/Cards';
 import Gallery from './modules/Gallery';
 
 const submit = document.querySelector('.submit-message');
+
+new TypeLetters();
 
 new StickyHeader();
 
