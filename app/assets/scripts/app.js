@@ -3,6 +3,7 @@ import IconHover from './modules/IconHover';
 import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/StickyHeader';
 import TypeLetters from './modules/TypeLetters';
+import ResourcesModal from './modules/ResourcesModal';
 import Courses from './modules/Cards';
 import Gallery from './modules/Gallery';
 
@@ -11,6 +12,19 @@ const submit = document.querySelector('.submit-message');
 new TypeLetters();
 
 new StickyHeader();
+
+let modal;
+let ResourcesLink = document.querySelector('.resources-link');
+let ModalElement = document.querySelector('.footer__resources');
+ResourcesLink.addEventListener('click', (e) => {
+	e.preventDefault();
+	if (typeof modal === 'undefined') {
+		modal = new ResourcesModal(ModalElement);
+		setTimeout(() => modal.open(), 300);
+	} else {
+		setTimeout(() => modal.open(), 300);
+	}
+});
 
 window.addEventListener('DOMContentLoaded', () => {
 	const form = document.querySelector('.message-form');
@@ -58,14 +72,15 @@ let FirstSectionIcon = document.querySelector('.section-icon');
 let headerClass = document.querySelector('.header__navigation');
 let sectionElements = document.querySelectorAll('.section__title');
 let getInTouchElement = document.querySelector('.getInTouch');
+let introductionSection = document.querySelector('.aboutMe__container__introduction');
+let introductionIcons = document.querySelector('.aboutMe__container__introduction--skillset__icons');
 
-let about = document.getElementById('about');
-
+new RevealOnScroll(sectionElements, 'reveal-section-animation');
 new RevealOnScroll(groupElements, 'reveal-animation');
 new RevealOnScroll(cardElements, 'reveal-card-animation');
-new RevealOnScroll(sectionElements, 'reveal-section-animation');
 new RevealOnScroll(getInTouchElement, 'getInTouch-animated');
 new RevealOnScroll(FirstSectionIcon, 'reveal-fixed-navbar', headerClass);
+new RevealOnScroll(introductionSection, 'reveal-icon-animation', introductionIcons);
 
 const Arrows = document.querySelectorAll('.arrow');
 

@@ -1,3 +1,28 @@
+.invisible {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.close-resources {
+	position: absolute;
+	top: 2%;
+	right: 2%;
+	font-size: 3rem;
+	font-weight: 400;
+	text-decoration: none;
+	color: black;
+	cursor: pointer;
+
+	&:hover {
+		color: rgba(0, 0, 0, .7);
+	}
+}
+
 .footer {
 	grid-column: void-left-end / void-right-start;
 	background-color: white;
@@ -11,6 +36,38 @@
 	align-items: center;
 	justify-content: center;
 	position: relative;
+
+	&__resources {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+		grid-gap: 2rem;
+		align-self: center;
+		background-color: white;
+		justify-items: center;
+		height: 80vh;
+		width: 65vw;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border: 1px solid rgba(0, 0, 0, .3);
+		box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, .6);
+		z-index: 10;
+
+		&--link {
+			width: 13rem;
+			height: 13rem;
+			margin: 2rem auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
 
 	&__backwards {
 		transform: rotate(90deg);

@@ -21,7 +21,6 @@
 	grid-column: void-left-end / void-right-start;
 	display: grid;
 	justify-content: center;
-	position: relative;
 	background-color: white;
 
 	&__container {

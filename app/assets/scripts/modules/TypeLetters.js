@@ -1,3 +1,5 @@
+// I was inspired by the code resources listed at https://css-tricks.com/snippets/css/typewriter-effect/
+
 class TypeLetters {
 	constructor() {
 		this.HTMLelement = document.querySelector('.main-message');

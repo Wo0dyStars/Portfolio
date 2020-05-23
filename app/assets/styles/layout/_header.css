@@ -91,18 +91,22 @@
 
 				&-2 {
 					background: #44a08d;
+					animation-delay: .3s;
 				}
 
 				&-3 {
 					background: #44a08d;
+					animation-delay: .6s;
 				}
 
 				&-4 {
 					background: #44a08d;
+					animation-delay: .9s;
 				}
 
 				&-5 {
 					background: #093637;
+					animation-delay: 1.2s;
 				}
 			}
 		}
@@ -183,11 +187,12 @@
 		z-index: 3;
 		left: 0;
 		text-align: left;
-		margin-left: 10%;
+		margin-left: 5%;
 		padding: 2rem;
 		color: rgba(0, 0, 0, .7);
 		font-weight: 200;
 		font-size: 2.5rem;
+		line-height: 10rem;
 
 		&--left-bracket {
 			font-size: 3rem;
@@ -215,21 +220,28 @@
 
 		.bracket {
 			color: rgba(108, 119, 8, 0.8);
+			vertical-align: middle;
+			font-size: 4rem;
 		}
 
 		.console {
-			color: rgba(228, 138, 4, .8);
+			color: #e65c00;
+			vertical-align: middle;
 		}
 
 		.log {
-			color: rgba(0, 0, 255, .8);
+			color: #093637;
+			vertical-align: middle;
 		}
 
 		&--main {
-			font-size: 2.5rem;
-			margin-left: 5rem;
+			font-size: 2rem;
 
 			.main-message {
+				margin-left: 3rem;
+				margin-right: 3rem;
+				vertical-align: middle;
+				font-size: 4rem;
 				font-weight: 400;
 				color: #093637;
 				padding-right: .2rem;
@@ -240,11 +252,12 @@
 
 	&__viewmywork {
 		margin: 5rem auto;
-		width: 18rem;
 		font-family: 'Montserrat Alternates', sans-serif;
 		position: absolute;
-		left: 18.5%;
-		top: 40%;
+		left: 0;
+		margin-left: 5%;
+		padding: 2rem;
+		top: 30%;
 
 		&--view {
 			display: flex;
@@ -258,10 +271,12 @@
 			cursor: pointer;
 			font-weight: 400;
 			transition: all .2s ease;
+			box-shadow: .1rem .1rem 1rem rgba(9, 54, 55, .4);
+			text-decoration: none;
 
 			&:hover,
 			&:focus {
-				background-color: #fff;
+				background-color: transparent;
 				color: rgba(9, 54, 55, .9);
 				border: 1px solid rgba(9, 54, 55, 1);
 			}
