@@ -23,6 +23,4 @@ body {
 .container {
 	display: grid;
 	grid-template-rows: 100vh min-content min-content min-content min-content repeat(2, minmax(80vh, min-content));
-	grid-template-columns: [void-left-end] repeat(7, [pages-start] minmax(min-content, 1fr) [pages-end])
-		[void-right-start];
 }

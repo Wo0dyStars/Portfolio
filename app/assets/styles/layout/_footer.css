@@ -37,6 +37,22 @@
 	justify-content: center;
 	position: relative;
 
+	&__personal-links {
+		display: flex;
+
+		&__link {
+			width: 10rem;
+			height: 10rem;
+			margin: 2rem;
+			background-color: white;
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
 	&__resources {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -99,7 +115,7 @@
 
 	&__copyright {
 		font-size: 1.6rem;
-		font-family: 'Montserrat Alternates', sans-serif;
+		font-family: 'Londrina Solid', cursive;
 		text-transform: uppercase;
 		font-weight: 400;
 		color: rgba(9, 54, 55, .9);

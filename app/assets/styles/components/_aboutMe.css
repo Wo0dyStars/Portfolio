@@ -73,19 +73,20 @@
 
 		&__introduction {
 			margin: 10rem;
-			height: 60%;
+			margin-top: 20rem;
+			height: 60vh;
 			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			font-family: 'Montserrat Alternates', sans-serif;
+			grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
 			position: relative;
 
 			.introduction-background {
 				position: absolute;
 				top: 0;
-				left: -25%;
+				left: -18%;
 				width: 100vw;
 				height: 100%;
 				background-color: rgba(0, 0, 0, .02);
+				border-top: 1rem solid rgba(68, 160, 141, .7);
 				z-index: 0;
 			}
 
@@ -98,19 +99,14 @@
 				display: grid;
 				justify-items: center;
 
-				.reveal-photo-animation {
-					img {
-						width: 100%;
-						height: 100%;
-						border: 3px dashed rgba(0, 0, 0, .1);
-					}
-				}
-
 				.profile-photo {
-					width: 18rem;
-					height: 18rem;
+					left: 8%;
+					top: -40%;
+					width: 32rem;
+					height: 32rem;
 					margin-bottom: 1.5rem;
-					position: relative;
+					position: absolute;
+					z-index: 2;
 
 					&:hover,
 					&:focus {
@@ -127,8 +123,6 @@
 
 					img {
 						max-width: 100%;
-						border-radius: 50%;
-						box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, .2);
 						transition: all .5s;
 						backface-visibility: hidden;
 						overflow: hidden;
@@ -144,6 +138,51 @@
 						opacity: 0;
 						visibility: hidden;
 						transition: all .5s;
+					}
+				}
+
+				.profile-paragraph {
+					font-family: 'Londrina Solid', cursive;
+					grid-row: 2 / 3;
+					box-shadow: -0.9rem -0.9rem 1rem rgba(0, 0, 0, .1);
+					position: relative;
+					font-weight: 100;
+					display: flex;
+					color: rgba(9, 54, 55, .8);
+					align-items: center;
+					padding: 1rem;
+					padding-bottom: 2rem;
+					border-top: 1px solid rgba(0, 0, 0, .3);
+					background: linear-gradient(
+						to bottom,
+						rgba(0, 0, 0, .1) 0%,
+						rgba(255, 255, 255, .6) 15%,
+						rgba(255, 255, 255, .2) 65%
+					);
+
+					&:before,
+					&:after {
+						content: "";
+						position: absolute;
+						border: 1px solid rgba(0, 0, 0, .05);
+					}
+
+					&:after {
+						width: 100%;
+						height: 20px;
+						left: -20px;
+						top: 0;
+						transform: translatey(-40px) skew(45deg);
+						background-color: rgba(0, 0, 0, .12);
+					}
+
+					&:before {
+						width: 20px;
+						height: 100%;
+						left: 0;
+						transform: translatex(-40px) translatey(-40px) skewy(45deg);
+						top: 20px;
+						background-color: rgba(0, 0, 0, .08);
 					}
 				}
 			}
