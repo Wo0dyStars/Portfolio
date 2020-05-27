@@ -173,12 +173,13 @@
 	&__bg {
 		position: absolute;
 		width: 100%;
-		bottom: 5%;
+		bottom: 0;
 		left: 0;
-		height: 20%;
+		height: 25%;
 		background: linear-gradient(to right, #2193b0, #6dd5ed);
 		z-index: 2;
-		clip-path: polygon(0% 10%, 100% 100%, 0% 100%);
+		clip-path: polygon(0% 0%, 100% 70%, 100% 100%, 0% 100%);
+		border-bottom: 2px solid #093637;
 	}
 
 	&__central-bg-light {
@@ -188,7 +189,7 @@
 		left: 3%;
 		height: 45%;
 		z-index: 3;
-		background: linear-gradient(to top, white 9%, transparent 58%);
+		background: linear-gradient(to top, white 16%, transparent 21%);
 		transform: rotate(6deg);
 		box-shadow: 0.9rem 1.1rem 1rem rgba(0, 0, 0, .1);
 		border-bottom-left-radius: 5rem;
@@ -281,9 +282,10 @@
 			font-size: 1.5rem;
 			padding: 1rem 3rem;
 			text-align: center;
-			background-color: rgba(9, 54, 55, .9);
-			color: rgba(255, 255, 255, .9);
-			border: 1px solid rgba(9, 54, 55, .2);
+			background-color: transparent;
+			color: rgba(9, 54, 55, .9);
+			border: 1px solid rgba(9, 54, 55, 1);
+
 			cursor: pointer;
 			font-weight: 400;
 			transition: all .2s ease;
@@ -292,13 +294,23 @@
 
 			&:hover,
 			&:focus {
-				background-color: transparent;
-				color: rgba(9, 54, 55, .9);
-				border: 1px solid rgba(9, 54, 55, 1);
+				background-color: rgba(9, 54, 55, .9);
+				color: rgba(255, 255, 255, .9);
+				border: 1px solid rgba(9, 54, 55, .2);
 			}
 
 			&:focus {
 				outline: none;
+			}
+
+			span {
+				position: absolute;
+				width: 1rem;
+				height: 1rem;
+				background-color: black;
+				top: 0;
+				left: 0;
+				animation: DrawRectangle 2s linear infinite;
 			}
 		}
 	}
