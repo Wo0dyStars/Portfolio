@@ -1,5 +1,6 @@
 .aboutMe {
-	grid-column: void-left-end / void-right-start;
+	grid-row: 2 / 3;
+	grid-column: 1 / -1;
 	background-color: white;
 
 	&__container {
@@ -76,17 +77,16 @@
 			margin-top: 20rem;
 			height: 60vh;
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
 			position: relative;
 
 			.introduction-background {
 				position: absolute;
 				top: 0;
-				left: -18%;
+				left: -26rem;
 				width: 100vw;
-				height: 100%;
+				height: 75vh;
 				background-color: rgba(0, 0, 0, .02);
-				border-top: 1rem solid rgba(68, 160, 141, .7);
+				border-top: 1rem solid #228b22;
 				z-index: 0;
 			}
 
@@ -95,13 +95,12 @@
 				font-size: 1.6rem;
 				letter-spacing: .1rem;
 				text-align: center;
-
+				position: relative;
 				display: grid;
 				justify-items: center;
 
 				.profile-photo {
-					left: 8%;
-					top: -40%;
+					top: -18rem;
 					width: 32rem;
 					height: 32rem;
 					margin-bottom: 1.5rem;
@@ -110,79 +109,41 @@
 
 					&:hover,
 					&:focus {
-						figcaption {
-							opacity: 1;
-							visibility: visible;
-							transform: translate(-50%, -50%);
-						}
-
 						img {
-							filter: blur(.3rem) brightness(80%);
+							filter: grayscale(0);
 						}
 					}
 
 					img {
 						max-width: 100%;
-						transition: all .5s;
-						backface-visibility: hidden;
-						overflow: hidden;
-					}
-
-					figcaption {
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						transform: translate(-50%, -20%);
-						color: #fff;
-						font-weight: 200;
-						opacity: 0;
-						visibility: hidden;
-						transition: all .5s;
+						filter: grayscale(.2);
+						transition: filter .2s;
 					}
 				}
 
 				.profile-paragraph {
-					font-family: 'Londrina Solid', cursive;
+					font-family: 'Montserrat Alternates', sans-serif;
 					grid-row: 2 / 3;
-					box-shadow: -0.9rem -0.9rem 1rem rgba(0, 0, 0, .1);
 					position: relative;
-					font-weight: 100;
+					font-weight: 200;
 					display: flex;
-					color: rgba(9, 54, 55, .8);
+					color: rgba(34, 139, 34, 1);
+					margin-top: 10rem;
 					align-items: center;
 					padding: 1rem;
 					padding-bottom: 2rem;
-					border-top: 1px solid rgba(0, 0, 0, .3);
-					background: linear-gradient(
-						to bottom,
-						rgba(0, 0, 0, .1) 0%,
-						rgba(255, 255, 255, .6) 15%,
-						rgba(255, 255, 255, .2) 65%
-					);
+					background: linear-gradient(to bottom, transparent 0%, white 40%);
+					background-size: cover;
+					border-bottom: 1px dashed rgba(34, 139, 34, .4);
 
-					&:before,
 					&:after {
 						content: "";
+						background-color: rgba(255, 255, 255, .3);
 						position: absolute;
-						border: 1px solid rgba(0, 0, 0, .05);
-					}
-
-					&:after {
-						width: 100%;
-						height: 20px;
-						left: -20px;
-						top: 0;
-						transform: translatey(-40px) skew(45deg);
-						background-color: rgba(0, 0, 0, .12);
-					}
-
-					&:before {
-						width: 20px;
-						height: 100%;
+						top: -3rem;
 						left: 0;
-						transform: translatex(-40px) translatey(-40px) skewy(45deg);
-						top: 20px;
-						background-color: rgba(0, 0, 0, .08);
+						width: 100%;
+						height: 3rem;
 					}
 				}
 			}
@@ -232,8 +193,9 @@
 
 			&--bottom-message {
 				position: absolute;
-				right: 0;
-				bottom: 30%;
+				right: 5rem;
+				bottom: -2rem;
+				color: rgba(0, 0, 0, .7);
 			}
 		}
 	}

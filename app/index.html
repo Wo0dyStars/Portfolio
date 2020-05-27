@@ -5,7 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         
+        <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Euphoria+Script&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;400;500&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300;400;900&display=swap" rel="stylesheet">
@@ -31,7 +33,7 @@
                 </ul>
             </div>
 
-            <div class="header__navigation-elements">
+            <!-- <div class="header__navigation-elements">
                 <div class="header__navigation-elements__element">
                     <a href="#about">
                         <div class=" animate__animated animate__flip header__navigation-elements__element--circle header__navigation-elements__element--circle-1">
@@ -101,12 +103,14 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere doloribus corporis molestias voluptates velit, aperiam blanditiis eveniet sint explicabo. Consequuntur!
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="header__main"></div>
+            <div class="header__bg"></div>
+            <div class="header__central-bg-light"></div>
 
             <div class="header__centertext">
-                <div class="header__centertext--main"><span class="bracket">{ </span><span class="main-message"></span><span class="bracket"> }</span></div>
+                <div class="header__centertext--main"><span class="main-message"></span></div>
             </div>
 
             <div class="header__viewmywork">
@@ -126,8 +130,14 @@
 
             <div class="section__title">About me</div>
 
-            <div class="section__description">I have recently graduated in Computing and IT at The Open University with Upper Second-class Honours. During my study time, I have shown how disciplined, dedicated and passionate I was about learning new materials. Although, I am really interested in many aspects of programming, I fell in love with web development, especially creative designs, beautiful visualizations and amazing animations. Therefore, I have gratefully decided to select this path and put my greatest effort into bringing my full potential. </div>
 
+            <div class="section__description">
+                <div class="section__description--paragraph">
+                    I have recently graduated in Computing and IT at The Open University with Upper Second-class Honours. During my study time, I have shown how disciplined, dedicated and passionate I was about learning new materials. Although, I am really interested in many aspects of programming, I fell in love with web development, especially creative designs, beautiful visualizations and amazing animations. Therefore, I have gratefully decided to select this path and put my greatest effort into bringing my full potential.                </div>
+                <div class="section__description--bg">
+                </div>
+            </div>
+            
             <div class="aboutMe__container">
                 
                 <div class="aboutMe__container__group">
@@ -173,10 +183,8 @@
                     <div class="introduction-background"></div>
 
                     <div class="aboutMe__container__introduction--personal">
-                        <figure class="profile-photo reveal-photo-animation">
-                            <div class="white-photo-bg"></div>
+                        <figure class="profile-photo">
                             <img src="assets/images/transparent-profile.png" alt="My profile photo">
-                            <figcaption>This is me</figcaption>
                         </figure>
 
                         <div class="profile-paragraph">
@@ -219,7 +227,13 @@
 
             <div class="section__title">Projects</div>
 
-            <div class="section__description">I have been constantly thinking of how to apply the recently acquired skills in the real world. There are many ideas in my mind and I am going to put these into action as soon as possible. Until then, please check this project below to see how I work. </div>
+            <div class="section__description">
+                <div class="section__description--paragraph">
+                    I have been constantly thinking of how to apply the recently acquired skills in the real world. There are many ideas in my mind and I am going to put these into action as soon as possible. Until then, please check this project below to see how I work.                </div>
+                <div class="section__description--bg">
+                </div>
+            </div>
+
 
             <div class="projects__name">House storage</div>
             <a class="projects__view-project" href="https://pacific-fortress-95051.herokuapp.com/">View project</a>
@@ -264,9 +278,7 @@
                 <div class="projects__project">
 
                     <div class="projects__project__devices">
-                        <img class="desktop-img" src="assets/images/desktop.png" alt="">
-                        <img class="tablet-img" src="assets/images/ipad.png" alt="">
-                        <img class="phone-img" src="assets/images/phone.png" alt="">
+                        <img src="assets/images/full.png" alt="">
                         
                     </div>
 
@@ -325,12 +337,6 @@
 
         </section>
 
-        <div class="reveal-transparent-bg"></div>
-
-        <div class="transparent-bg">
-            <img src="assets/images/1.jpg" alt="">
-        </div>
-
 
         <section id ="courses" class="courses page-section">
             <div class="section-icon">
@@ -341,7 +347,13 @@
 
             <div class="section__title">Courses</div>
 
-            <div class="section__description">In the past months after graduation, I have been taking online courses at Udemy, which elevated my knowledge to a much higher level. I have listed these courses with the associated learning outcomes. </div>
+            <div class="section__description">
+                <div class="section__description--paragraph">
+                    In the past months after graduation, I have been taking online courses at Udemy, which elevated my knowledge to a much higher level. I have listed these courses with the associated learning outcomes. 
+                </div>
+                <div class="section__description--bg">
+                </div>
+            </div>
 
             <!-- This section is populated by JavaScript code -->
             <div class="courses__cards"></div>
@@ -356,7 +368,12 @@
 
             <div class="section__title">Future plans</div>
 
-            <div class="section__description">There are many different technologies that I wish to learn. I love tackling new challenges and bringing improvements to my code. These are the languages that I am going to discover in the next months. </div>
+            <div class="section__description">
+                <div class="section__description--paragraph">
+                    There are many different technologies that I wish to learn. I love tackling new challenges and bringing improvements to my code. These are the languages that I am going to discover in the next months.                </div>
+                <div class="section__description--bg">
+                </div>
+            </div>
 
             <div class="planning--background"></div>
 

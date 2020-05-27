@@ -1,27 +1,6 @@
-.reveal-transparent-bg {
-	width: 100%;
-	height: 50rem;
-}
-
-.transparent-bg {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: -30;
-
-	img {
-		background-size: cover;
-		width: 100vw;
-		height: 100vh;
-		filter: grayscale(.1);
-	}
-}
-
 .projects {
-	grid-column: void-left-end / void-right-start;
-	display: grid;
-	justify-content: center;
-	background-color: white;
+	grid-row: 3 / 4;
+	grid-column: 1 / -1;
 
 	&__container {
 		padding: 3rem;
@@ -29,10 +8,12 @@
 		margin-bottom: 5rem;
 
 		.project-background {
-			background-color: white;
+			background: url("assets/images/0.png");
+			background-size: cover;
+			background-position: center;
 			position: absolute;
 			top: 0;
-			left: -2vw;
+			left: 0;
 			width: 100vw;
 			height: 100%;
 			z-index: -1;
@@ -148,64 +129,62 @@
 	}
 
 	&__project {
-		width: 100vw;
-		height: 75vh;
 		position: relative;
 		display: grid;
-		grid-template-columns: 35% 65%;
-		background: transparent;
+		grid-template-columns: 55% 45%;
 		margin-top: 10rem;
 
 		&__devices {
-			position: relative;
+			grid-row: 1/2;
 			display: flex;
 			align-items: center;
-			transform: rotate(-25deg);
+			justify-content: center;
 
-			.desktop-img {
-				width: 85%;
-				height: 85%;
-				margin-right: 2rem;
-				animation: MarginUpAndDown 3s linear infinite;
-			}
-
-			.tablet-img {
-				width: 40%;
-				height: 50%;
-				margin-right: 2rem;
-				animation: MarginUpAndDown 3s linear infinite;
-			}
-
-			.phone-img {
-				width: 20%;
-				height: 35%;
+			img {
+				max-width: 100%;
+				max-height: 100%;
 			}
 		}
 
 		&__features {
+			grid-column: 2 / 3;
 			&--container {
 				display: grid;
-				align-content: center;
-				justify-items: center;
-				grid-template-rows: 1fr 10fr;
-				margin-left: 30rem;
-				width: 55%;
-				height: 100%;
-				transform: rotate(3deg) skew(-10deg);
+				grid-template-rows: 10fr;
+				margin-left: 10rem;
+				position: relative;
 
 				.feature-main {
-					border-top-left-radius: 10rem;
+					position: absolute;
 					text-transform: uppercase;
+
 					font-size: 2rem;
 					background-color: #093637;
 					color: #fff;
-					width: 100%;
+					width: 15rem;
+					height: 4rem;
 					text-align: center;
+					z-index: 10;
+					top: 18%;
+					left: -8.5rem;
+					transform: rotate(-90deg);
+
+					&:after {
+						background-color: rgba(9, 54, 55, .85);
+						content: "";
+						width: 2rem;
+						height: 3rem;
+						top: 0%;
+						position: absolute;
+						left: -13%;
+						clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+					}
 				}
 
 				.feature-elements {
 					width: 100%;
 					height: 100%;
+					box-shadow: .1rem .1rem 2.4rem rgba(0, 0, 0, .1);
 
 					.tick-icon {
 						position: absolute;
@@ -219,9 +198,7 @@
 					}
 
 					.feature {
-						transform: rotate(-3deg) skew(10deg);
-						margin-bottom: .2rem;
-						background-color: rgba(0, 0, 0, .01);
+						background-color: white;
 						box-shadow: .1rem .1rem .4rem rgba(0, 0, 0, .1);
 						padding: 2rem;
 						font-family: 'Montserrat Alternates', sans-serif;
@@ -231,7 +208,7 @@
 						text-transform: uppercase;
 
 						&:nth-of-type(2n) {
-							background-color: rgba(0, 0, 0, .04);
+							background-color: rgba(255, 255, 255, .9);
 						}
 					}
 				}

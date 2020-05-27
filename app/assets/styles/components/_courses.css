@@ -1,5 +1,6 @@
 .courses {
-	grid-column: void-left-end / void-right-start;
+	grid-row: 4 / 5;
+	grid-column: 1 / -1;
 	background-color: white;
 
 	&__cards {

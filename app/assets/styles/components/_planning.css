@@ -1,5 +1,6 @@
 .planning {
-	grid-column: void-left-end / void-right-start;
+	grid-row: 5 / 6;
+	grid-column: 1 / -1;
 	background-color: white;
 
 	&--background {

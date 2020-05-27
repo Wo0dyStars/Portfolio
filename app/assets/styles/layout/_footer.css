@@ -24,7 +24,8 @@
 }
 
 .footer {
-	grid-column: void-left-end / void-right-start;
+	grid-row: 8 / 9;
+	grid-column: 1 / -1;
 	background-color: white;
 
 	background: linear-gradient(to top, #44a08d, #093637);
