@@ -28,7 +28,7 @@
 	grid-column: 1 / -1;
 	background-color: white;
 
-	background: linear-gradient(to top, #44a08d, #093637);
+	background: linear-gradient(to top, #2193b0, #6dd5ed);
 	border-bottom: 3px solid rgba(9, 54, 55, .2);
 	clip-path: polygon(0% 0%, 38% 5%, 50% 20%, 62% 5%, 100% 0%, 100% 100%, 0% 100%);
 

@@ -33,7 +33,7 @@
 	}
 
 	&--bottom {
-		background-color: #44a08d;
+		background: linear-gradient(to right, #2193b0, #6dd5ed);
 		padding: 2rem;
 		text-align: center;
 		color: #fff;

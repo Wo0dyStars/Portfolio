@@ -43,7 +43,7 @@
 				}
 
 				&__icon {
-					background: linear-gradient(to right, #44a08d, #093637);
+					background: linear-gradient(to right, #2193b0, #6dd5ed);
 					clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 					display: flex;
 					align-items: center;
