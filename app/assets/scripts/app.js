@@ -86,7 +86,7 @@ const Arrows = document.querySelectorAll('.arrow');
 
 Arrows.forEach((arrow) => {
 	arrow.addEventListener('click', (e) => {
-		const images = document.getElementsByClassName('project-image');
+		const images = document.getElementsByClassName('project-photos__photo');
 		let currentIndex = 0;
 		for (let i = 0; i < images.length; i++) {
 			if (images[i].classList.contains('image-on')) {
@@ -115,6 +115,63 @@ Arrows.forEach((arrow) => {
 
 		images[nextIndex].classList.remove('image-off');
 		images[nextIndex].classList.add('image-on');
+	});
+});
+
+const tabs = document.querySelectorAll('.tabs__tab');
+
+tabs.forEach((tab) => {
+	tab.addEventListener('click', (e) => {
+		// Slider must not be clicked.
+		if (e.target.classList.contains('slider')) {
+			return;
+		}
+
+		let currentID = e.target.getAttribute('name');
+		let currentActive = document.querySelector('.tab-active');
+		currentActive.classList.remove('.tab-active');
+
+		e.target.classList.add('.tab-active');
+
+		let currentVisible = document.querySelector('.tab-visible');
+		currentVisible.classList.remove('tab-visible');
+		currentVisible.classList.add('tab-invisible');
+
+		let nextTab = document.getElementById(currentID);
+		if (nextTab.classList.contains('tab-invisible')) {
+			nextTab.classList.remove('tab-invisible');
+			nextTab.classList.add('tab-visible');
+		}
+
+		// Move the slider
+		let tabsWidth = document.querySelector('.tabs').offsetWidth;
+		let sliderPosition = tabsWidth / 4 * e.target.getAttribute('index');
+
+		let slider = document.querySelector('.slider');
+		slider.style.cssText = `left: ${sliderPosition}px`;
+
+		// Add ripple effect
+		// document.querySelector('.tabs').removeChild(document.querySelector('.ripple'));
+
+		let RippleBefore = document.querySelector('.ripple');
+		if (RippleBefore) {
+			RippleBefore.parentElement.removeChild(RippleBefore);
+		}
+
+		e.target.insertAdjacentHTML('beforeend', "<span class='ripple'></span>");
+		let Ripple = document.querySelector('.ripple');
+
+		let buttonWidth = tabsWidth / 4;
+		let buttonHeight = 50;
+
+		if (buttonWidth >= buttonHeight) {
+			buttonHeight = buttonWidth;
+		} else {
+			buttonWidth = buttonHeight;
+		}
+
+		Ripple.style.cssText = `width: ${buttonWidth}px; height: ${buttonHeight}px; left: ${sliderPosition}px`;
+		Ripple.classList.add('rippleEffect');
 	});
 });
 

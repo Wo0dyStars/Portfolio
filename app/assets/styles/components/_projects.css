@@ -132,6 +132,218 @@
 		grid-template-columns: 45% 55%;
 		margin-top: 10rem;
 
+		&__details {
+			position: fixed;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			box-shadow: 1rem 1rem 10rem rgba(0, 0, 0, .8);
+			background-color: white;
+			z-index: 50;
+			width: 60vw;
+			height: 85vh;
+
+			&--overview {
+				.project-overview {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					font-size: 1.2rem;
+					color: rgba(0, 0, 0, .7);
+
+					&--title {
+						font-size: 4rem;
+						font-weight: 200;
+						color: rgba(0, 0, 0, .9);
+					}
+
+					&--description {
+						text-align: center;
+						width: 80%;
+						margin: 2rem;
+					}
+
+					&--date {
+						background-color: rgba(0, 0, 0, .1);
+						padding: 1rem;
+					}
+
+					&--subtitle {
+						margin: 2rem;
+						font-size: 1.7rem;
+					}
+
+					&--technologies {
+						display: grid;
+						grid-template-columns: repeat(auto-fit, 15rem);
+						width: 100%;
+
+						&-technology {
+							margin: 2rem;
+							padding: 2rem;
+							border: 1px dashed rgba(0, 0, 0, .1);
+						}
+					}
+				}
+			}
+
+			&--challenges {
+				.project-challenges {
+					width: 80%;
+					margin: 2rem auto;
+
+					&__challenge {
+						margin: 2rem;
+
+						&--title {
+							font-weight: 500;
+							font-size: 2.4rem;
+						}
+
+						&--paragraph {
+							color: rgba(0, 0, 0, .7);
+							text-align: justify;
+						}
+					}
+				}
+			}
+
+			&--photos {
+				.project-photos {
+					width: 100%;
+					height: 85%;
+					position: relative;
+
+					img {
+						width: 100%;
+						height: 100%;
+						background-size: cover;
+					}
+				}
+
+				.arrow {
+					position: absolute;
+					bottom: 0;
+					font-size: 7rem;
+					padding: 1rem;
+					color: rgba(0, 0, 0, .7);
+					background-color: rgba(255, 255, 255, .9);
+					cursor: pointer;
+					user-select: none;
+
+					&:hover {
+						background-color: rgba(255, 255, 255, 1);
+					}
+				}
+
+				.leftarrow {
+					left: 0;
+				}
+
+				.rightarrow {
+					right: 0;
+				}
+
+				.image-on {
+					display: block;
+					animation: moveInLeft 2s linear;
+				}
+
+				.image-off {
+					display: none;
+				}
+			}
+
+			&--code {
+				.project-code {
+					height: 85%;
+					overflow-y: scroll;
+
+					&__photo {
+						box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, .2);
+						margin: 2rem;
+
+						img {
+							width: 60%;
+							height: 60%;
+						}
+					}
+				}
+			}
+
+			.tabs {
+				display: flex;
+				justify-content: space-around;
+				position: relative;
+				overflow: hidden;
+				height: 5rem;
+
+				& > * {
+					display: flex;
+					align-items: center;
+					background: #39cccc;
+					font-size: 16px;
+					text-align: center;
+					line-height: 60px;
+					width: 100%;
+					justify-content: center;
+					color: #fff;
+					text-transform: uppercase;
+					cursor: pointer;
+					text-decoration: none;
+				}
+
+				.slider {
+					display: block;
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 25%;
+					height: 5px;
+					background: yellow;
+					transition: all 0.5s;
+				}
+
+				.ripple {
+					width: 0;
+					height: 0;
+					top: 0;
+					border-radius: 50%;
+					background: rgba(255, 255, 255, 0.4);
+					transform: scale(0);
+					position: absolute;
+					opacity: 1;
+				}
+
+				.rippleEffect {
+					animation: rippleDrop .6s linear;
+				}
+
+				@keyframes rippleDrop {
+					100% {
+						transform: scale(2);
+						opacity: 0;
+					}
+				}
+			}
+
+			.tab-visible {
+				position: absolute;
+				top: 10%;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				visibility: visible;
+				opacity: 1;
+			}
+
+			.tab-invisible {
+				visibility: hidden;
+				opacity: 0;
+			}
+		}
+
 		&__devices {
 			grid-column: 2/3;
 			display: flex;
