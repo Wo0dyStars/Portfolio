@@ -8,9 +8,17 @@
 
 html {
 	box-sizing: border-box;
-	font-size: 62.5%;
 	scroll-behavior: smooth;
+	font-size: 45%;
 	overflow-x: hidden;
+
+	@media only screen and (min-width: 800px) {
+		font-size: 56%;
+	}
+
+	@media only screen and (min-width: 1200px) {
+		font-size: 62.5%;
+	}
 }
 
 body {

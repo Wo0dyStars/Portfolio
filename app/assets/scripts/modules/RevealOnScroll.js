@@ -23,7 +23,7 @@ class RevealOnScroll {
 	}
 
 	scrolledElement(element, target = 'none') {
-		if (target != 'none') {
+		if (this.newClass == 'reveal-fixed-navbar') {
 			if ((window.scrollY + this.browserHeight) * 0.6 > element.offsetTop) {
 				target.classList.add(this.newClass);
 			} else if (window.scrollY < this.browserHeight) {
@@ -32,7 +32,11 @@ class RevealOnScroll {
 				}
 			}
 		} else if (window.scrollY + this.browserHeight > element.offsetTop) {
-			element.classList.add(this.newClass);
+			if (this.newClass == 'reveal-icon-animation') {
+				target.classList.add(this.newClass);
+			} else {
+				element.classList.add(this.newClass);
+			}
 		}
 	}
 

@@ -28,10 +28,10 @@ const path = require('path');
 // Plugins for post CSS to work as expected
 const postCSSPlugins = [
 	require('postcss-import'),
-	require('postcss-mixins'),
-	require('postcss-simple-vars'),
 	require('postcss-nested'),
-	require('autoprefixer')
+	require('postcss-simple-vars'),
+	require('autoprefixer'),
+	require('postcss-mixins')
 ];
 
 module.exports = {

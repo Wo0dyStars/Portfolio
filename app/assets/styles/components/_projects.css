@@ -17,14 +17,25 @@
 	&__container {
 		position: relative;
 		margin-bottom: 5rem;
-		box-shadow: .1rem .1rem 10rem rgba(0, 0, 0, .18);
 		width: 65vw;
+
+		@media only screen and (min-width: 800px) {
+			box-shadow: .1rem .1rem 10rem rgba(0, 0, 0, .18);
+			width: 100vw;
+			background: $Main-color-blue-light;
+			height: 100vh;
+			clip-path: polygon(0% 15%, 100% 0%, 100% 85%, 0% 100%);
+		}
 	}
 
 	&__project {
 		position: relative;
-		background-color: $Main-color-blue-light;
-		height: 65vh;
+		flex-direction: column;
+
+		@media only screen and (min-width: 800px) {
+			height: 65vh;
+			flex-direction: row;
+		}
 
 		.hide {
 			display: none;
@@ -375,14 +386,18 @@
 					transform: rotate(-90deg);
 
 					&:after {
-						background-color: rgba(0, 0, 0, .75);
-						content: "";
-						width: 1.5rem;
-						height: 3rem;
-						top: 0%;
-						position: absolute;
-						left: -1.46rem;
-						clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+						display: none;
+
+						@media only screen and (min-width: 800px) {
+							background-color: rgba(0, 0, 0, .75);
+							content: "";
+							width: 1.5rem;
+							height: 3rem;
+							top: 0%;
+							position: absolute;
+							left: -1.46rem;
+							clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+						}
 					}
 				}
 
@@ -390,16 +405,25 @@
 					width: 100%;
 					height: 100%;
 					box-shadow: .1rem .1rem 2.4rem rgba(0, 0, 0, .1);
+					text-align: center;
+
+					@media only screen and (min-width: 800px) {
+						text-align: left;
+					}
 
 					.tick-icon {
 						position: absolute;
 						top: 50%;
-						right: 2%;
+						right: 5%;
 						transform: translateY(-50%);
 						width: 3rem;
 						height: 3rem;
 						fill: $Main-color-green-light;
 						opacity: .8;
+
+						@media only screen and (min-width: 800px) {
+							right: 2%;
+						}
 					}
 
 					.feature {
