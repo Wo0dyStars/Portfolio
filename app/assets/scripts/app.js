@@ -1,69 +1,33 @@
 import '../styles/styles.css';
-import IconHover from './modules/IconHover';
 import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/StickyHeader';
 import TypeLetters from './modules/TypeLetters';
-import ResourcesModal from './modules/ResourcesModal';
-import Courses from './modules/Cards';
-import Gallery from './modules/Gallery';
+import ProjectDetails from './modules/ProjectDetails';
+import Card from './modules/content/classes/Card';
+import Courses from './modules/content/classes/CardObject';
+import FormMessage from './modules/FormMessage';
 
-const submit = document.querySelector('.submit-message');
+Courses.forEach((course) => {
+	let template = new Card(course).GenerateTemplate();
+	document.querySelector('.courses__cards').insertAdjacentHTML('beforeend', template);
+});
 
 new TypeLetters();
-
+new FormMessage();
 new StickyHeader();
 
-let modal;
-let ResourcesLink = document.querySelector('.show-project');
-let ModalElement = document.querySelector('.projects__project__details');
-ResourcesLink.addEventListener('click', (e) => {
+let project;
+let projectLink = document.querySelector('.show-project');
+let projectElement = document.querySelector('.projects__project__details');
+projectLink.addEventListener('click', (e) => {
 	e.preventDefault();
-	if (typeof modal === 'undefined') {
-		modal = new ResourcesModal(ModalElement);
-		setTimeout(() => modal.open(), 300);
+	if (typeof project === 'undefined') {
+		project = new ProjectDetails(projectElement);
+		setTimeout(() => project.open(), 10);
 	} else {
-		setTimeout(() => modal.open(), 300);
+		setTimeout(() => project.open(), 10);
 	}
 });
-
-window.addEventListener('DOMContentLoaded', () => {
-	const form = document.querySelector('.message-form');
-	const button = document.querySelector('.submit-message');
-	const status = document.querySelector('.form-status');
-
-	function success() {
-		form.reset();
-		button.style = 'display: none';
-		status.innerHTML = 'Thanks for your message. I will be in touch soon. :)';
-	}
-
-	function error() {
-		status.innerHTML = 'An error occurred with the form. Please try again!';
-	}
-
-	form.addEventListener('submit', (e) => {
-		e.preventDefault();
-		const data = new FormData(form);
-
-		const xhr = new XMLHttpRequest();
-		xhr.open(form.method, form.action);
-		xhr.setRequestHeader('Accept', 'application/json');
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState !== XMLHttpRequest.DONE) return;
-			if (xhr.status === 200) {
-				success(xhr.response, xhr.responseType);
-			} else {
-				error(xhr.status, xhr.response, xhr.responseType);
-			}
-		};
-		xhr.send(data);
-	});
-});
-
-//import Children from './modules/GridGenerator';
-
-// const icons = new IconHover();
-// const gallery = new Gallery();
 
 // Check if scrolling is working
 let groupElements = document.querySelectorAll('.aboutMe__container__group--element');

@@ -63,15 +63,17 @@
 }
 
 .getintouch-button {
+	font-family: 'Raleway', sans-serif;
 	padding: 1rem;
-	background-color: #6dd5ed;
+	background-color: $Main-color-blue-light;
 	border-radius: .3rem;
-	font-size: 1.4rem;
+	font-size: 1.5rem;
 	border: none;
 	color: white;
 	cursor: pointer;
 	text-decoration: none;
 	animation: floatLeft 3s ease-out infinite;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 
 	&:focus {
 		outline: none;
@@ -79,6 +81,28 @@
 
 	&:hover {
 		color: white !important;
+
+		span {
+			svg {
+				transform: scale(1.2);
+			}
+		}
+	}
+
+	span {
+		width: 4rem;
+		height: 3rem;
+		margin-left: 1rem;
+		margin-right: 1rem;
+		transition: all .5s ease;
+		border-right: 1px solid white;
+
+		svg {
+			width: 3rem;
+			fill: white;
+			height: 3rem;
+			transition: all .5s ease;
+		}
 	}
 }
 

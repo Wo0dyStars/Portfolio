@@ -23,12 +23,16 @@ class RevealOnScroll {
 	}
 
 	scrolledElement(element, target = 'none') {
-		if (window.scrollY + this.browserHeight > element.offsetTop) {
-			if (target == 'none') {
-				element.classList.add(this.newClass);
-			} else {
+		if (target != 'none') {
+			if ((window.scrollY + this.browserHeight) * 0.6 > element.offsetTop) {
 				target.classList.add(this.newClass);
+			} else if (window.scrollY < this.browserHeight) {
+				if (target.classList.contains(this.newClass)) {
+					target.classList.remove(this.newClass);
+				}
 			}
+		} else if (window.scrollY + this.browserHeight > element.offsetTop) {
+			element.classList.add(this.newClass);
 		}
 	}
 

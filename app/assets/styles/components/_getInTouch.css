@@ -131,6 +131,6 @@
 	}
 
 	textarea {
-		animation: FadeInFromBottom 1s linear;
+		animation: bounceIn 2s;
 	}
 }

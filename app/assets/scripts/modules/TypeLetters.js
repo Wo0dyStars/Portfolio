@@ -2,8 +2,8 @@
 
 class TypeLetters {
 	constructor() {
-		this.HTMLelement = document.querySelector('.main-message');
-		this.texts = [ 'Hello...', 'I am Peter Kertesz.', 'I am a full-stack web developer.' ];
+		this.HTMLelement = document.querySelector('.signature');
+		this.texts = [ 'Peter Kertesz.' ];
 		this.textIndex = 0;
 		this.currentText = '';
 		this.startTyping();

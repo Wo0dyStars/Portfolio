@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&display=swap" rel="stylesheet">        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
@@ -21,9 +21,11 @@
         <title>Peter Kertesz Portfolio Website</title>
     </head>
     <body class="container">
-        <!-- Use BEM approach when naming CSS classes -->
+
+        <!-- Header Section -->
         <section id="home" class="header page-section">
 
+            <!-- Navigation Section -->
             <div class="header__navigation">
                 <ul>
                     <li class="header__navigation--element active"><a href="#home">Home</a></li>
@@ -31,156 +33,90 @@
                     <li class="header__navigation--element"><a href="#projects">What have I made?</a></li>
                     <li class="header__navigation--element"><a href="#courses">What have I studied?</a></li>
                     <li class="header__navigation--element"><a href="#planning">What am I planning to do?</a></li>
-                    <li class="header__navigation--element"><a class="getintouch-button" href="#getintouch">Get in touch</a></li>
+                    <li class="header__navigation--element">
+                        <a class="getintouch-button flex" href="#getintouch">
+                            <span class="flex">
+                                <svg><use xlink:href="assets/images/icons/sprite.svg#icon-email"></use> </svg>
+                            </span>
+                            Get in touch
+                        </a>
+                    </li>
                 </ul>
             </div>
 
-            <!-- <div class="header__navigation-elements">
-                <div class="header__navigation-elements__element">
-                    <a href="#about">
-                        <div class=" animate__animated animate__flip header__navigation-elements__element--circle header__navigation-elements__element--circle-1">
-                            <svg class="navigation__icon">
-                                <use xlink:href="assets/images/icons/sprite.svg#icon-profile"></use>
-                            </svg>
-                        </div>
-                        <div class="white-bg-circle"></div>
-                    </a>
-                    <div class="header__navigation-elements__element--paragraph header__navigation-elements__element--paragraph-1">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere doloribus corporis molestias voluptates velit, aperiam blanditiis eveniet sint explicabo. Consequuntur!
-                    </div>
-                </div>
-                
-                <div class="header__navigation-elements__element">
-                    <a class="circle-bg-small" href="#projects">
-                        <div class="animate__animated animate__flip header__navigation-elements__element--circle header__navigation-elements__element--circle-2">
-                            <svg class="navigation__icon">
-                                <use xlink:href="assets/images/icons/sprite.svg#icon-document-code"></use>
-                            </svg>
-                        </div>
-                        <div class="white-bg-circle white-bg-circle-small"></div>
-                    </a>
-                    <div class="header__navigation-elements__element--paragraph header__navigation-elements__element--paragraph-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere doloribus corporis molestias voluptates velit, aperiam blanditiis eveniet sint explicabo. Consequuntur!
-                    </div>
-                </div>
-
-                <div class="header__navigation-elements__element">
-                    <a class="circle-bg-small" href="#courses">
-                        <div class="animate__animated animate__flip small-circle header__navigation-elements__element--circle header__navigation-elements__element--circle-3">
-                            <svg class="navigation__icon">
-                                <use xlink:href="assets/images/icons/sprite.svg#icon-device-laptop"></use>
-                            </svg>
-                        </div>
-                        <div class="white-bg-circle white-bg-circle-small"></div>
-                    </a>
-                    <div class="header__navigation-elements__element--paragraph header__navigation-elements__element--paragraph-3">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere doloribus corporis molestias voluptates velit, aperiam blanditiis eveniet sint explicabo. Consequuntur!
-                    </div>
-                </div>
-
-                <div class="header__navigation-elements__element">
-                    <a class="circle-bg-large" href="#planning">
-                        <div class="animate__animated animate__flip header__navigation-elements__element--circle header__navigation-elements__element--circle-4">
-                            <svg class="navigation__icon">
-                                <use xlink:href="assets/images/icons/sprite.svg#icon-sitemap"></use>
-                            </svg>
-                        </div>
-                        <div class="white-bg-circle"></div>
-                    </a>
-                    <div class="header__navigation-elements__element--paragraph header__navigation-elements__element--paragraph-4">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere doloribus corporis molestias voluptates velit, aperiam blanditiis eveniet sint explicabo. Consequuntur!
-                    </div>
-                </div>
-
-                <div class="header__navigation-elements__element">
-                    <a class="circle-bg-small" href="#getintouch">
-                        <div class="animate__animated animate__flip header__navigation-elements__element--circle header__navigation-elements__element--circle-5">
-                            <svg class="navigation__icon">
-                                <use xlink:href="assets/images/icons/sprite.svg#icon-email"></use>
-                            </svg>
-                        </div>
-                        <div class="white-bg-circle white-bg-circle-small"></div>
-                    </a>
-                    <div class="header__navigation-elements__element--paragraph header__navigation-elements__element--paragraph-5">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere doloribus corporis molestias voluptates velit, aperiam blanditiis eveniet sint explicabo. Consequuntur!
-                    </div>
-                </div>
-            </div> -->
-
-            <div class="header__main">
-
-            </div>
-            <div class="header__bg"></div>
-            <div class="header__central-bg-light"></div>
-
-            <div class="header__centertext">
-                <div class="header__centertext--main"><span class="main-message"></span></div>
-            </div>
-
-            <div class="header__viewmywork">
-                <a href="#about" class="header__viewmywork--view">
-                    Find me out
-                </a>
-                <a href="#getintouch" class="getintouch-button">Get in touch</a>
-            </div>
-
-
-            <div class="header__personal-links">
+            <div class="header__personal-links flex">
                 <a href="https://github.com/Wo0dyStars" class="github-link">
                     <img src="assets/images/resources/github.png" alt="GitHub" title="GitHub">
                 </a>
             </div>
-            
 
-            
-            
+            <div class="header__main-background"></div>
+            <div class="header__sub-background"></div>
+            <div class="header__white-sub-background"></div>
+
+            <div class="header__centertext">
+                <div class="header__centertext--main">
+                    Hello. I'm <span>Peter Kertesz.</span>
+                    <div>I'm a full-stack web developer.</div>
+                    <span class="signature"></span>
+                </div>
+            </div>
+
+            <div class="header__viewmywork">
+                <a href="#about" class="header__viewmywork--view flex">
+                    Learn me 
+                    <span class="flex">
+                        <svg><use xlink:href="assets/images/icons/sprite.svg#icon-arrow-circle-right"></use> </svg>
+                    </span>
+                </a>
+                <a href="#getintouch" class="getintouch-button flex">
+                    <span class="flex">
+                        <svg><use xlink:href="assets/images/icons/sprite.svg#icon-email"></use> </svg>
+                    </span>
+                    Get in touch
+                </a>
+            </div>
+  
         </section>
 
+        <!-- About Section -->
         <section id="about" class="aboutMe page-section">
             <div class="section-icon">
-                <svg class="aboutMe__icon">
-                    <use xlink:href="assets/images/icons/sprite.svg#icon-profile"></use>
-                </svg>
+                <svg><use xlink:href="assets/images/icons/sprite.svg#icon-profile"></use></svg>
             </div>
 
             <div class="section__title">Who am I?</div>
 
-            
             <div class="aboutMe__container">
                 
                 <div class="aboutMe__container__group">
                     <div class="aboutMe__container__group--element">
-                        <div class="aboutMe__container__group--element__icon">
-                            <svg class="aboutMe__icon">
-                                <use xlink:href="assets/images/icons/sprite.svg#icon-bulb"></use>
-                            </svg>
+                        <div class="aboutMe__container__group--element__icon flex">
+                            <svg><use xlink:href="assets/images/icons/sprite.svg#icon-bulb"></use></svg>
                         </div>
                         <div class="aboutMe__container__group--element__text">Intuitive</div>
                         <div class="aboutMe__container__group--element__description">Creative and unique ideas</div>
                     </div>
+
                     <div class="aboutMe__container__group--element">
-                        <div class="aboutMe__container__group--element__icon">
-                            <svg class="aboutMe__icon">
-                                <use xlink:href="assets/images/icons/sprite.svg#icon-important_devices"></use>
-                            </svg>
+                        <div class="aboutMe__container__group--element__icon flex">
+                            <svg><use xlink:href="assets/images/icons/sprite.svg#icon-important_devices"></use></svg>
                         </div>
                         <div class="aboutMe__container__group--element__text">Responsive</div>
                         <div class="aboutMe__container__group--element__description">Designs for all devices</div>
                     </div>
+
                     <div class="aboutMe__container__group--element">
-                        <div class="aboutMe__container__group--element__icon">
-                            <svg class="aboutMe__icon">
-                                <use xlink:href="assets/images/icons/sprite.svg#icon-schedule"></use>
-                            </svg>
+                        <div class="aboutMe__container__group--element__icon flex">
+                            <svg><use xlink:href="assets/images/icons/sprite.svg#icon-schedule"></use></svg>
                         </div>
                         <div class="aboutMe__container__group--element__text">Organized</div>
                         <div class="aboutMe__container__group--element__description">Efficient work in timely manner</div>
                     </div>
+
                     <div class="aboutMe__container__group--element">
-                        <div class="aboutMe__container__group--element__icon">
-                            <svg class="aboutMe__icon">
-                                <use xlink:href="assets/images/icons/sprite.svg#icon-suitcase"></use>
-                            </svg>
+                        <div class="aboutMe__container__group--element__icon flex">
+                            <svg><use xlink:href="assets/images/icons/sprite.svg#icon-suitcase"></use></svg>
                         </div>
                         <div class="aboutMe__container__group--element__text">Dedicated</div>
                         <div class="aboutMe__container__group--element__description">Great effort and passion</div>
@@ -195,44 +131,34 @@
                         </figure>
                     </div>
 
-                    <div class="aboutMe__container__introduction--description">
+                    <div class="aboutMe__container__introduction--description flex">
                         I have recently graduated in Computing and IT at The Open University with Upper Second-class Honours. During my study time, I have shown how disciplined, dedicated and passionate I was about learning new materials. Although, I am really interested in many aspects of programming, I fell in love with web development, especially creative designs, beautiful visualizations and amazing animations. Therefore, I have gratefully decided to select this path and put my greatest effort into bringing my full potential. 
                     </div>
 
                     <div class="aboutMe__container__introduction--skillset">
                         <div class="aboutMe__container__introduction--skillset__icons">
                             <div class="icon">
-                                <svg class="aboutMe__semiicon">
-                                    <use xlink:href="assets/images/icons/sprite.svg#icon-css3"></use>
-                                </svg>
+                                <svg><use xlink:href="assets/images/icons/sprite.svg#icon-css3"></use></svg>
                                 <span>CSS3</span>
                             </div>
 
                             <div class="icon">
-                                <svg class="aboutMe__semiicon">
-                                    <use xlink:href="assets/images/icons/sprite.svg#icon-html5"></use>
-                                </svg>
+                                <svg><use xlink:href="assets/images/icons/sprite.svg#icon-html5"></use></svg>
                                 <span>HTML5</span>
                             </div>
 
                             <div class="icon">
-                                <svg class="aboutMe__semiicon">
-                                    <use xlink:href="assets/images/icons/sprite.svg#icon-mongodb"></use>
-                                </svg>
+                                <svg><use xlink:href="assets/images/icons/sprite.svg#icon-mongodb"></use></svg>
                                 <span>MongoDB</span>
                             </div>
 
                             <div class="icon">
-                                <svg class="aboutMe__semiicon">
-                                    <use xlink:href="assets/images/icons/sprite.svg#icon-node-dot-js"></use>
-                                </svg>
+                                <svg><use xlink:href="assets/images/icons/sprite.svg#icon-node-dot-js"></use></svg>
                                 <span>Node.js</span>
                             </div>
 
                             <div class="icon">
-                                <svg class="aboutMe__semiicon">
-                                    <use xlink:href="assets/images/icons/sprite.svg#icon-javascript"></use>
-                                </svg>
+                                <svg><use xlink:href="assets/images/icons/sprite.svg#icon-javascript"></use></svg>
                                 <span>JavaScript</span>
                             </div>
                         </div>
@@ -244,8 +170,8 @@
             </div>
         </section>
         
-        <!-- PROJECTS SECTION -->
-        <section id="projects" class="projects page-section">
+        <!-- Projects Section -->
+        <section id="projects" class="projects page-section flex flex-column">
             <div class="section-icon">
                 <svg><use xlink:href="assets/images/icons/sprite.svg#icon-folder-open1"></use> </svg>
             </div>
@@ -260,22 +186,22 @@
 
             <div class="projects__name"><span>#1</span> House stocker</div>
 
-            <div class="projects__container">
-                <div class="projects__project">
+            <div class="projects__container flex">
+                <div class="projects__project flex">
                     <div class="projects__project__details hide">
 
                         <div class="close">X</div>
                         
                         <div class="tabs">
-                            <a href="#overview" name="overview" index="0" class="tabs__tab tab-active">Overview</a>
-                            <a href="#challenges" name="challenges" index="1" class="tabs__tab">Challenges</a>
-                            <a href="#photos" name="photos" index="2" class="tabs__tab">Photos</a>
-                            <a href="#code" name="code" index="3" class="tabs__tab">Sample code</a>
+                            <a href="#overview" name="overview" index="0" class="tabs__tab flex tab-active">Overview</a>
+                            <a href="#challenges" name="challenges" index="1" class="tabs__tab flex">Challenges</a>
+                            <a href="#photos" name="photos" index="2" class="tabs__tab flex">Photos</a>
+                            <a href="#code" name="code" index="3" class="tabs__tab flex">Sample code</a>
                             <div class="slider"></div>
                         </div>
 
-                        <div id="overview" class="projects__project__details--overview tab-visible">
-                            <div class="project-overview">
+                        <div id="overview" class="projects__project__details--overview  tab-visible">
+                            <div class="project-overview flex flex-column">
                                 <div class="project-overview--title">House stocker</div>
 
                                 <div class="project-overview--description">
@@ -429,11 +355,10 @@
             </div>
         </section>
 
+        <!-- Courses Section -->
         <section id ="courses" class="courses page-section">
             <div class="section-icon">
-                <svg class="aboutMe__icon">
-                    <use xlink:href="assets/images/icons/sprite.svg#icon-display"></use>
-                </svg>
+                <svg><use xlink:href="assets/images/icons/sprite.svg#icon-display"></use></svg>
             </div>
 
             <div class="section__title">What have I studied?</div>
@@ -442,19 +367,17 @@
                 <div class="section__description--paragraph">
                     In the past months after graduation, I have been taking online courses at Udemy, which elevated my knowledge to a much higher level. I have listed these courses with the associated learning outcomes. 
                 </div>
-                <div class="section__description--bg">
-                </div>
+                <div class="section__description--bg"></div>
             </div>
 
             <!-- This section is populated by JavaScript code -->
             <div class="courses__cards"></div>
         </section>
 
+        <!-- Planning Section -->
         <section id="planning" class="planning page-section">
             <div class="section-icon">
-                <svg class="aboutMe__icon">
-                    <use xlink:href="assets/images/icons/sprite.svg#icon-sitemap"></use>
-                </svg>
+                <svg><use xlink:href="assets/images/icons/sprite.svg#icon-sitemap"></use></svg>
             </div>
 
             <div class="section__title">What am I planning to do?</div>
@@ -462,18 +385,15 @@
             <div class="section__description">
                 <div class="section__description--paragraph">
                     There are many different technologies that I wish to learn. I love tackling new challenges and bringing improvements to my code. I have listed the languages that I am going to discover in the next months. However, chances are that I will dig deeper into web design (for example, Gimp or Photoshop) and dynamic user experience (SVG animations, for example SVGator) a bit later.                </div>
-                <div class="section__description--bg">
-                </div>
+                <div class="section__description--bg"></div>
             </div>
-
-            <div class="planning--background"></div>
 
             <div class="planning__container">
                 <div class="planning__container__element">
                     <div class="planning__container__element--title">TypeScript</div>
-                    <div class="planning__container__element--reasons">
+                    <div class="planning__container__element--reasons flex">
                         <div class="planning--image planning--image-1">
-                            <img src="assets/images/typescript.png" alt="">
+                            <img src="assets/images/typescript.png" alt="TypeScript" title="TypeScript">
                         </div>
 
                         <ul>
@@ -491,9 +411,9 @@
 
                 <div class="planning__container__element">
                     <div class="planning__container__element--title">Angular</div>
-                    <div class="planning__container__element--reasons">
+                    <div class="planning__container__element--reasons flex">
                         <div class="planning--image">
-                            <img src="assets/images/angular.png" alt="">
+                            <img src="assets/images/angular.png" alt="Angular" title="Angular">
                         </div>
                         
                         <ul>
@@ -511,9 +431,9 @@
 
                 <div class="planning__container__element">
                     <div class="planning__container__element--title">React</div>
-                    <div class="planning__container__element--reasons">
+                    <div class="planning__container__element--reasons flex">
                         <div class="planning--image">
-                            <img src="assets/images/react.png" alt="">
+                            <img src="assets/images/react.png" alt="React" title="React">
                         </div>
 
                         <ul>
@@ -532,7 +452,7 @@
             </div>
         </section>
 
-        <!-- Resources section -->
+        <!-- Resources Section -->
         <section class="resources">
             <div class="section__title">My resources</div>
             
@@ -628,7 +548,7 @@
             </div>
         </section>
 
-        <!-- Get in touch section -->
+        <!-- Get in touch Section -->
         <section id="getintouch" class="getInTouch page-section">
             <div class="section-icon">
                 <svg><use xlink:href="assets/images/icons/sprite.svg#icon-envelope"></use></svg>
@@ -661,7 +581,7 @@
 
         </section>
 
-        <!-- Footer section -->
+        <!-- Footer Section -->
         <footer id="footer" class="footer flex flex-column">
             <div class="footer__back">
                 <a href="#home" class="flex">

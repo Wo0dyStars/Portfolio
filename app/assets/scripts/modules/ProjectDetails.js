@@ -1,4 +1,4 @@
-class ResourcesModal {
+class ProjectDetails {
 	constructor(HTMLelement) {
 		this.element = HTMLelement;
 		this.closeX = document.querySelector('.close');
@@ -27,4 +27,4 @@ class ResourcesModal {
 	}
 }
 
-export default ResourcesModal;
+export default ProjectDetails;
