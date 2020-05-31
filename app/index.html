@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Euphoria+Script&display=swap" rel="stylesheet">
@@ -29,7 +31,7 @@
                     <li class="header__navigation--element"><a href="#projects">What have I made?</a></li>
                     <li class="header__navigation--element"><a href="#courses">What have I studied?</a></li>
                     <li class="header__navigation--element"><a href="#planning">What am I planning to do?</a></li>
-                    <li class="header__navigation--element"><a href="#getintouch">Reach me</a></li>
+                    <li class="header__navigation--element"><a class="getintouch-button" href="#getintouch">Get in touch</a></li>
                 </ul>
             </div>
 
@@ -117,13 +119,18 @@
 
             <div class="header__viewmywork">
                 <a href="#about" class="header__viewmywork--view">
-                    View my work
-                    <span></span>
+                    Find me out
                 </a>
+                <a href="#getintouch" class="getintouch-button">Get in touch</a>
             </div>
 
-            <button>Get in touch</button>
-            <button>CV</button>
+
+            <div class="header__personal-links">
+                <a href="https://github.com/Wo0dyStars" class="github-link">
+                    <img src="assets/images/resources/github.png" alt="GitHub" title="GitHub">
+                </a>
+            </div>
+            
 
             
             
@@ -132,11 +139,11 @@
         <section id="about" class="aboutMe page-section">
             <div class="section-icon">
                 <svg class="aboutMe__icon">
-                    <use xlink:href="assets/images/icons/sprite.svg#icon-question"></use>
+                    <use xlink:href="assets/images/icons/sprite.svg#icon-profile"></use>
                 </svg>
             </div>
 
-            <div class="section__title">About me</div>
+            <div class="section__title">Who am I?</div>
 
             
             <div class="aboutMe__container">
@@ -194,21 +201,40 @@
 
                     <div class="aboutMe__container__introduction--skillset">
                         <div class="aboutMe__container__introduction--skillset__icons">
-                            <svg class="aboutMe__semiicon">
-                                <use xlink:href="assets/images/icons/sprite.svg#icon-css3"></use>
-                            </svg>
-                            <svg class="aboutMe__semiicon">
-                                <use xlink:href="assets/images/icons/sprite.svg#icon-html5"></use>
-                            </svg>
-                            <svg class="aboutMe__semiicon">
-                                <use xlink:href="assets/images/icons/sprite.svg#icon-mongodb"></use>
-                            </svg>
-                            <svg class="aboutMe__semiicon">
-                                <use xlink:href="assets/images/icons/sprite.svg#icon-node-dot-js"></use>
-                            </svg>
-                            <svg class="aboutMe__semiicon">
-                                <use xlink:href="assets/images/icons/sprite.svg#icon-javascript"></use>
-                            </svg>
+                            <div class="icon">
+                                <svg class="aboutMe__semiicon">
+                                    <use xlink:href="assets/images/icons/sprite.svg#icon-css3"></use>
+                                </svg>
+                                <span>CSS3</span>
+                            </div>
+
+                            <div class="icon">
+                                <svg class="aboutMe__semiicon">
+                                    <use xlink:href="assets/images/icons/sprite.svg#icon-html5"></use>
+                                </svg>
+                                <span>HTML5</span>
+                            </div>
+
+                            <div class="icon">
+                                <svg class="aboutMe__semiicon">
+                                    <use xlink:href="assets/images/icons/sprite.svg#icon-mongodb"></use>
+                                </svg>
+                                <span>MongoDB</span>
+                            </div>
+
+                            <div class="icon">
+                                <svg class="aboutMe__semiicon">
+                                    <use xlink:href="assets/images/icons/sprite.svg#icon-node-dot-js"></use>
+                                </svg>
+                                <span>Node.js</span>
+                            </div>
+
+                            <div class="icon">
+                                <svg class="aboutMe__semiicon">
+                                    <use xlink:href="assets/images/icons/sprite.svg#icon-javascript"></use>
+                                </svg>
+                                <span>JavaScript</span>
+                            </div>
                         </div>
                         <div class="aboutMe__container__introduction--bottom-message">
                             ...with the interest to learn much more
@@ -218,65 +244,27 @@
             </div>
         </section>
         
+        <!-- PROJECTS SECTION -->
         <section id="projects" class="projects page-section">
             <div class="section-icon">
-                <svg class="aboutMe__icon">
-                    <use xlink:href="assets/images/icons/sprite.svg#icon-folder-open1"></use>
-                </svg>
+                <svg><use xlink:href="assets/images/icons/sprite.svg#icon-folder-open1"></use> </svg>
             </div>
 
-            <div class="section__title">Projects</div>
+            <div class="section__title">What have I made?</div>
 
             <div class="section__description">
                 <div class="section__description--paragraph">
                     I have been constantly thinking of how to apply the recently acquired skills in the real world. There are many ideas in my mind and I am going to put these into action as soon as possible. Until then, please check this project below to see how I work.                </div>
-                <div class="section__description--bg">
-                </div>
+                <div class="section__description--bg"></div>
             </div>
 
-            <div class="projects__name">House storage</div>
-                        <a class="projects__view-project" href="https://pacific-fortress-95051.herokuapp.com/">View project</a>
-                        <div class="projects__techs">
-                            <span>#</span>Git
-                            <span>#</span>Node
-                            <span>#</span>Express
-                            <span>#</span>HTML5
-                            <span>#</span>CSS3
-                            <span>#</span>JavaScript
-                            <span>#</span>Amazon S3
-                            <span>#</span>MongoDB
-                            <span>#</span>Heroku
-                        </div>
+            <div class="projects__name"><span>#1</span> House stocker</div>
 
             <div class="projects__container">
-                <div class="project-background"></div>
-
-                <!-- <div class="projects__description">
-                    <div class="projects__description__features">
-                        <div class="projects__description__features--feature">Register and edit profile <span class="top-corner-box"></span><span class="bottom-corner-box"></span></div>
-                        <div class="projects__description__features--feature">Collaborate within a team <span class="top-corner-box"></span><span class="bottom-corner-box"></span></div>
-                        <div class="projects__description__features--feature">Add new household items <span class="top-corner-box"></span><span class="bottom-corner-box"></span></div>
-                        <div class="projects__description__features--feature">Modify household stock <span class="top-corner-box"></span><span class="bottom-corner-box"></span></div>
-                        <div class="projects__description__features--feature">Add new purchases <span class="top-corner-box"></span><span class="bottom-corner-box"></span></div>
-                        <div class="projects__description__features--feature">See favourite items and spendings <span class="top-corner-box"></span><span class="bottom-corner-box"></span></div>
-                        <div class="projects__description__features--feature">Search items and purchases <span class="top-corner-box"></span><span class="bottom-corner-box"></span></div>
-                        <div class="projects__description__features--feature">Responsive design <span class="top-corner-box"></span><span class="bottom-corner-box"></span></div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="projects__project">
-
-
-                    <img class="projects__project--image projects__project--image-1" src="assets/images/projects/house-stocker-5.jpg" alt="">
-                    <img class="projects__project--image projects__project--image-2" src="assets/images/projects/house-stocker-1.jpg" alt="">
-                    <img class="projects__project--image projects__project--image-3" src="assets/images/projects/house-stocker-4.jpg" alt="">
-                    <img class="projects__project--image projects__project--image-4" src="assets/images/projects/house-stocker-3.jpg" alt="">
-    
-                </div> -->
-
                 <div class="projects__project">
+                    <div class="projects__project__details hide">
 
-                    <div class="projects__project__details">
+                        <div class="close">X</div>
                         
                         <div class="tabs">
                             <a href="#overview" name="overview" index="0" class="tabs__tab tab-active">Overview</a>
@@ -288,10 +276,22 @@
 
                         <div id="overview" class="projects__project__details--overview tab-visible">
                             <div class="project-overview">
-                                <div class="project-overview--title">House storage</div>
+                                <div class="project-overview--title">House stocker</div>
 
                                 <div class="project-overview--description">
                                     This application has been developed to maintain information about the currently stored items (mainly food) in the households. People can register themselves and play with their family members. It is designed to let people insert shopping lists to see how much they spend on these items. They can see what items they purchased the most and the system tells them when they run out of items.
+                                </div>
+
+                                <div class="project-overview--technologies">
+                                    <div class="technology"><span>#</span>Git</div>
+                                    <div class="technology"><span>#</span>Node</div>
+                                    <div class="technology"><span>#</span>Express</div>
+                                    <div class="technology"><span>#</span>HTML5</div>
+                                    <div class="technology"><span>#</span>CSS3</div>
+                                    <div class="technology"><span>#</span>JavaScript</div>
+                                    <div class="technology"><span>#</span>Amazon S3</div>
+                                    <div class="technology"><span>#</span>MongoDB</div>
+                                    <div class="technology"><span>#</span>Heroku</div>
                                 </div>
 
                                 <div class="project-overview--date">
@@ -299,18 +299,8 @@
                                     <div class="project-overview--date-timespan">Timespan: 31 days</div>
                                 </div>
 
-                                <div class="project-overview--subtitle">Technologies</div>
-                                <div class="project-overview--technologies">
-                                    <div class="project-overview--technologies-technology">Git</div>
-                                    <div class="project-overview--technologies-technology">Node</div>
-                                    <div class="project-overview--technologies-technology">Express</div>
-                                    <div class="project-overview--technologies-technology">HTML5</div>
-                                    <div class="project-overview--technologies-technology">CSS3</div>
-                                    <div class="project-overview--technologies-technology">JavaScript</div>
-                                    <div class="project-overview--technologies-technology">Amazon S3</div>
-                                    <div class="project-overview--technologies-technology">MongoDB</div>
-                                    <div class="project-overview--technologies-technology">Heroku</div>
-                                </div>
+                                <a class="project-overview--view" href="https://pacific-fortress-95051.herokuapp.com/">View project</a>
+
                             </div>
                         </div>
 
@@ -334,12 +324,16 @@
 
                         <div id="photos" class="projects__project__details--photos tab-invisible">
                             <div class="project-photos">
-                                <span class="arrow leftarrow">&larr;</span>
-                                <img class="project-photos__photo project-photos__photo--1 image-on" src="assets/images/projects/house-stocker-5.jpg" alt="">
-                                <img class="project-photos__photo project-photos__photo--2 image-off" src="assets/images/projects/house-stocker-1.jpg" alt="">
-                                <img class="project-photos__photo project-photos__photo--3 image-off" src="assets/images/projects/house-stocker-4.jpg" alt="">
-                                <img class="project-photos__photo project-photos__photo--4 image-off" src="assets/images/projects/house-stocker-3.jpg" alt="">
-                                <span class="arrow rightarrow">&rarr;</span>
+                                <svg class="arrow leftarrow"><use xlink:href="assets/images/icons/sprite.svg#icon-arrow-circle-left"></use></svg>
+                                <img class="project-photos__photo project-photos__photo--5 image-on" src="assets/images/projects/house-storage-1.png" alt="">
+                                <img class="project-photos__photo project-photos__photo--5 image-off" src="assets/images/projects/house-storage-2.png" alt="">
+                                <img class="project-photos__photo project-photos__photo--5 image-off" src="assets/images/projects/house-storage-3.png" alt="">
+                                <img class="project-photos__photo project-photos__photo--5 image-off" src="assets/images/projects/house-storage-4.png" alt="">
+                                <img class="project-photos__photo project-photos__photo--5 image-off" src="assets/images/projects/house-storage-5.png" alt="">
+                                <img class="project-photos__photo project-photos__photo--5 image-off" src="assets/images/projects/house-storage-6.png" alt="">
+                                <img class="project-photos__photo project-photos__photo--5 image-off" src="assets/images/projects/house-storage-7.png" alt="">
+                                <img class="project-photos__photo project-photos__photo--5 image-off" src="assets/images/projects/house-storage-8.png" alt="">
+                                <svg class="arrow rightarrow"><use xlink:href="assets/images/icons/sprite.svg#icon-arrow-circle-right"></use></svg>
                             </div>
                         </div>
 
@@ -372,11 +366,6 @@
                             </div>
                         </div>
 
-                    </div>
-
-                    <div class="projects__project__devices">
-                        <img src="assets/images/desktop.png" alt="">
-                        
                     </div>
 
                     <div class="projects__project__features">
@@ -428,12 +417,17 @@
                        </div>
                     </div>
 
+                    <div class="projects__project__element">
+                        <img src="assets/images/projects/house-stocker.png" alt="">
+                        <div class="project-link">
+                            <div class="mask"></div>
+                            <div class="show-project">Show project</div>
+                        </div>
+                    </div>
+
                 </div>
-
             </div>
-
         </section>
-
 
         <section id ="courses" class="courses page-section">
             <div class="section-icon">
@@ -442,7 +436,7 @@
                 </svg>
             </div>
 
-            <div class="section__title">Courses</div>
+            <div class="section__title">What have I studied?</div>
 
             <div class="section__description">
                 <div class="section__description--paragraph">
@@ -463,11 +457,11 @@
                 </svg>
             </div>
 
-            <div class="section__title">Future plans</div>
+            <div class="section__title">What am I planning to do?</div>
 
             <div class="section__description">
                 <div class="section__description--paragraph">
-                    There are many different technologies that I wish to learn. I love tackling new challenges and bringing improvements to my code. These are the languages that I am going to discover in the next months.                </div>
+                    There are many different technologies that I wish to learn. I love tackling new challenges and bringing improvements to my code. I have listed the languages that I am going to discover in the next months. However, chances are that I will dig deeper into web design (for example, Gimp or Photoshop) and dynamic user experience (SVG animations, for example SVGator) a bit later.                </div>
                 <div class="section__description--bg">
                 </div>
             </div>
@@ -538,14 +532,13 @@
             </div>
         </section>
 
+        <!-- Resources section -->
         <section class="resources">
-
-            <div class="resources__title">Resources</div>
+            <div class="section__title">My resources</div>
             
             <div class="resources__container">
-
                 <div class="resources__container__resource">
-                    <div class="resources__container__resource--logo">
+                    <div class="resources__container__resource--logo flex">
                         <a href="https://developer.mozilla.org/en-US/">
                             <img src="assets/images/resources/mdn.jpg" alt="HTML5, CSS3 and JavaScript references" title="HTML5, CSS3 and JavaScript references">
                         </a>
@@ -556,7 +549,7 @@
                 </div>
 
                 <div class="resources__container__resource">
-                    <div class="resources__container__resource--logo">
+                    <div class="resources__container__resource--logo flex">
                         <a href="https://stackoverflow.com/">
                             <img src="assets/images/resources/stackoverflow.png" alt="Stack overflow" title="Stack overflow">
                         </a>
@@ -567,7 +560,7 @@
                 </div>
 
                 <div class="resources__container__resource">
-                    <div class="resources__container__resource--logo">
+                    <div class="resources__container__resource--logo flex">
                         <a href="https://code.visualstudio.com/">
                             <img src="assets/images/resources/vsc.png" alt="Visual Studio Code" title="Visual Studio Code">
                         </a>
@@ -578,7 +571,7 @@
                 </div>
 
                 <div class="resources__container__resource">
-                    <div class="resources__container__resource--logo">
+                    <div class="resources__container__resource--logo flex">
                         <a href="https://fonts.google.com/">
                             <img src="assets/images/resources/google-fonts.png" alt="Google Fonts" title="Google Fonts">
                         </a>
@@ -589,7 +582,7 @@
                 </div>
 
                 <div class="resources__container__resource">
-                    <div class="resources__container__resource--logo">
+                    <div class="resources__container__resource--logo flex">
                         <a href="https://uigradients.com/">
                             <img src="assets/images/resources/uigradients.jpg" alt="UI Gradients" title="UI Gradients">
                         </a>
@@ -600,7 +593,7 @@
                 </div>
 
                 <div class="resources__container__resource">
-                    <div class="resources__container__resource--logo">
+                    <div class="resources__container__resource--logo flex">
                         <a href="https://unsplash.com/">
                             <img src="assets/images/resources/unsplash.png" alt="Unsplash" title="Unsplash">
                         </a>
@@ -611,7 +604,7 @@
                 </div>
 
                 <div class="resources__container__resource">
-                    <div class="resources__container__resource--logo">
+                    <div class="resources__container__resource--logo flex">
                         <a href="https://icomoon.io/" class="footer__resources--link">
                             <img src="assets/images/resources/icomoon.png" alt="Icomoon" title="Icomoon">
                         </a>
@@ -622,7 +615,7 @@
                 </div>
 
                 <div class="resources__container__resource">
-                    <div class="resources__container__resource--logo">
+                    <div class="resources__container__resource--logo flex">
                         <a href="https://animate.style/">
                             <img src="assets/images/resources/animate-css.jpeg" alt="Animate.css" title="Animate.css">
                         </a>
@@ -633,18 +626,18 @@
                 </div>
 
             </div>
-
         </section>
 
+        <!-- Get in touch section -->
         <section id="getintouch" class="getInTouch page-section">
             <div class="section-icon">
-                <svg class="aboutMe__icon">
-                    <use xlink:href="assets/images/icons/sprite.svg#icon-envelope"></use>
-                </svg>
+                <svg><use xlink:href="assets/images/icons/sprite.svg#icon-envelope"></use></svg>
             </div>
             
-            <div class="getInTouch__container">
+            <div class="getInTouch__container flex flex-column">
                 <div class="getInTouch__container--title">Send me a message</div>
+
+                <!-- External form processing -->
                 <form class="message-form" action="https://formspree.io/xlepggln" method="POST" autocomplete="off">
                     <div class="form-group">
                         <input type="text" class="form-name" name="name" placeholder="Your name" required>
@@ -662,68 +655,24 @@
                     </div>
                     
                     <button class="submit-message">Send message</button>
-                    <p class="form-status"></p>
+                    <p class="form-status flex"></p>
                 </form>
             </div>
 
         </section>
 
-        <footer id="footer" class="footer">
-            <div class="footer__backwards">
-                <a href="#about">
+        <!-- Footer section -->
+        <footer id="footer" class="footer flex flex-column">
+            <div class="footer__back">
+                <a href="#home" class="flex">
                     <span class="large">&#10094;</span>
                     <span class="medium">&#10094;</span>
                     <span class="small">&#10094;</span>
                 </a>
             </div>
 
-            <div class="footer__personal-links">
-                <div class="footer__personal-links__link">
-                    <a class="resources-link">MY RESOURCES</a>
-                </div>
-
-                <div class="footer__personal-links__link">
-                    <a class="cv-library-link">CV-Library</a>
-                </div>
-
-                <div class="footer__personal-links__link">
-                    <a href="https://github.com/Wo0dyStars" class="github-link">
-                        <img src="assets/images/resources/github.jpg" alt="GitHub" title="GitHub">
-                    </a>
-                </div>
-            </div>
-
             <div class="footer__copyright">Peter Kertesz <span>&copy;</span> 2020 </div>
-
         </footer>
-
-        <div class="footer__resources invisible">
-            <a class="close-resources">X</a>
-            <a href="https://animate.style/" class="footer__resources--link">
-                <img src="assets/images/resources/animate-css.jpeg" alt="Animate.css" title="Animate.css">
-            </a>
-            <a href="https://developer.mozilla.org/en-US/" class="footer__resources--link">
-                <img src="assets/images/resources/mdn.jpg" alt="HTML5, CSS3 and JavaScript references" title="HTML5, CSS3 and JavaScript references">
-            </a>
-            <a href="https://stackoverflow.com/" class="footer__resources--link">
-                <img src="assets/images/resources/stackoverflow.png" alt="Stack overflow" title="Stack overflow">
-            </a>
-            <a href="https://code.visualstudio.com/" class="footer__resources--link">
-                <img src="assets/images/resources/vsc.png" alt="Visual Studio Code" title="Visual Studio Code">
-            </a>
-            <a href="https://fonts.google.com/" class="footer__resources--link">
-                <img src="assets/images/resources/google-fonts.png" alt="Google Fonts" title="Google Fonts">
-            </a>
-            <a href="https://uigradients.com/" class="footer__resources--link">
-                <img src="assets/images/resources/uigradients.jpg" alt="UI Gradients" title="UI Gradients">
-            </a>
-            <a href="https://unsplash.com/" class="footer__resources--link">
-                <img src="assets/images/resources/unsplash.png" alt="Unsplash" title="Unsplash">
-            </a>
-            <a href="https://icomoon.io/" class="footer__resources--link">
-                <img src="assets/images/resources/icomoon.png" alt="Icomoon" title="Icomoon">
-            </a>
-        </div>
 
         <script type="text/JavaScript" src="bundled.js"></script>
     </body>

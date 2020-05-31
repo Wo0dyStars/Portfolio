@@ -1,28 +1,9 @@
-.getInTouch-animated {
-	.getInTouch__container {
-		animation: MoveDownSlowly 2s linear;
-	}
-
-	input[type="text"] {
-		animation: SlideInFromLeft 1s linear;
-	}
-
-	input[type="email"] {
-		animation: SlideInFromRight 1s linear;
-	}
-
-	textarea {
-		animation: FadeInFromBottom 1s linear;
-	}
-}
-
 .getInTouch {
 	display: flex;
 	justify-content: space-around;
 	position: relative;
+	height: 70vh;
 	background-color: white;
-	height: 100%;
-	margin-top: 10rem;
 
 	&__container {
 		width: 30vw;
@@ -31,14 +12,10 @@
 		box-shadow: .1rem .1rem 1rem rgba(255, 255, 255, .4);
 		border-radius: 3rem;
 		position: absolute;
-		bottom: -150%;
+		bottom: -30%;
 		z-index: 5;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
 
 		&--title {
-			font-family: 'Montserrat Alternates', sans-serif;
 			font-size: 1.5rem;
 			margin-bottom: 1rem;
 			font-weight: 400;
@@ -53,7 +30,6 @@
 		.form-group {
 			width: 100%;
 			position: relative;
-
 			margin: 1rem auto;
 			box-shadow: .1rem .1rem .4rem rgba(0, 0, 0, .03);
 
@@ -137,8 +113,24 @@
 			color: rgba(0, 0, 0, .8);
 			font-size: 1.1rem;
 			margin: 1rem auto;
-			display: flex;
-			justify-content: center;
 		}
+	}
+}
+
+.getInTouch-animated {
+	.getInTouch__container {
+		animation: MoveDownSlowly 2s linear;
+	}
+
+	input[type="text"] {
+		animation: SlideInFromLeft 1s linear;
+	}
+
+	input[type="email"] {
+		animation: SlideInFromRight 1s linear;
+	}
+
+	textarea {
+		animation: FadeInFromBottom 1s linear;
 	}
 }

@@ -39,11 +39,14 @@
 		color: #fff;
 		text-transform: uppercase;
 		letter-spacing: .1rem;
+		border-bottom-left-radius: 2rem;
+		border-bottom-right-radius: 2rem;
 
 		a:link,
 		a:visited {
 			color: #093637;
 			text-decoration: none;
+			font-weight: 700;
 
 			&:hover {
 				color: #fff;
@@ -66,6 +69,11 @@
 			grid-template-columns: 1fr;
 			position: relative;
 			box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, .1);
+			border-radius: 2rem;
+
+			&:hover {
+				animation: pulse 1s;
+			}
 
 			&--title {
 				background-color: #093637;
@@ -75,6 +83,8 @@
 				display: flex;
 				justify-content: center;
 				padding-top: 2rem;
+				border-top-left-radius: 2rem;
+				border-top-right-radius: 2rem;
 			}
 
 			&--reasons {

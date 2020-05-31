@@ -1,12 +1,10 @@
 .aboutMe {
-	grid-row: 2 / 3;
-	grid-column: 1 / -1;
 	background-color: white;
 
 	&__container {
 		width: 80%;
 		height: 100%;
-		margin: 15rem auto;
+		margin: 12rem auto;
 
 		&__group {
 			display: flex;
@@ -91,10 +89,12 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
+				text-align: center;
 				border-bottom: 1px dashed rgba(0, 0, 0, .1);
 				font-size: 1.4rem;
-				font-family: 'Montserrat Alternates', sans-serif;
 				padding: 1rem;
+				font-weight: 300;
+				color: rgba(0, 0, 0, .8);
 			}
 
 			&--personal {
@@ -152,23 +152,23 @@
 				position: relative;
 
 				.reveal-icon-animation {
-					svg:nth-of-type(1) {
+					.icon:nth-of-type(1) {
 						animation: zoomInDown 1.7s;
 					}
 
-					svg:nth-of-type(2) {
+					.icon:nth-of-type(2) {
 						animation: zoomInDown 2.5s;
 					}
 
-					svg:nth-of-type(3) {
+					.icon:nth-of-type(3) {
 						animation: zoomInDown 2.9s;
 					}
 
-					svg:nth-of-type(4) {
+					.icon:nth-of-type(4) {
 						animation: zoomInDown 3.3s;
 					}
 
-					svg:nth-of-type(5) {
+					.icon:nth-of-type(5) {
 						animation: zoomInDown 3.8s;
 					}
 				}
@@ -177,15 +177,56 @@
 					display: flex;
 					align-items: center;
 					justify-content: space-evenly;
+					overflow: hidden;
+
+					.icon {
+						position: relative;
+
+						&:hover {
+							span {
+								opacity: 1;
+								visibility: visible;
+								transform: translateX(-50%) translateY(0);
+							}
+						}
+
+						&:nth-of-type(1) span {
+							background-color: #1572b6;
+						}
+
+						&:nth-of-type(2) span {
+							background-color: #e34f26;
+						}
+
+						&:nth-of-type(3) span {
+							background-color: #47a248;
+						}
+
+						&:nth-of-type(4) span {
+							background-color: #339933;
+						}
+
+						&:nth-of-type(5) span {
+							background-color: #f7df1e;
+						}
+
+						span {
+							position: absolute;
+							top: -4rem;
+							left: 50%;
+							transform: translateX(-50%) translateY(-30rem);
+							padding: 1rem;
+							color: white;
+							opacity: 0;
+							visibility: hidden;
+							transition: transform .1s ease, opacity 1s ease;
+							font-weight: 500;
+						}
+					}
 
 					.aboutMe__semiicon {
 						width: 9rem;
 						height: 9rem;
-						transition: all .3s ease-in-out;
-
-						&:hover {
-							transform: translateY(-1rem);
-						}
 					}
 				}
 			}

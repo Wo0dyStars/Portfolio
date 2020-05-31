@@ -1,28 +1,28 @@
 class ResourcesModal {
 	constructor(HTMLelement) {
 		this.element = HTMLelement;
-		this.closeX = document.querySelector('.close-resources');
+		this.closeX = document.querySelector('.close');
 		this.events();
 	}
 
 	events() {
-		this.closeX.addEventListener('click', () => this.close());
+		this.closeX.addEventListener('click', () => setTimeout(() => this.close(), 300));
 		document.addEventListener('keyup', (event) => this.keyPressed(event));
 	}
 
 	open() {
-		this.element.classList.add('visible');
-		this.element.classList.remove('invisible');
+		this.element.classList.add('show');
+		this.element.classList.remove('hide');
 	}
 
 	close() {
-		this.element.classList.remove('visible');
-		this.element.classList.add('invisible');
+		this.element.classList.remove('show');
+		this.element.classList.add('hide');
 	}
 
 	keyPressed(event) {
 		if (event.keyCode == 27) {
-			this.close();
+			setTimeout(() => this.close(), 300);
 		}
 	}
 }

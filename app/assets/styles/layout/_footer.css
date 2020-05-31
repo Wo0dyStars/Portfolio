@@ -1,101 +1,16 @@
-.invisible {
-	opacity: 0;
-	visibility: hidden;
-}
-
-.visible {
-	opacity: 1;
-	visibility: visible;
-}
-
-.close-resources {
-	position: absolute;
-	top: 2%;
-	right: 2%;
-	font-size: 3rem;
-	font-weight: 400;
-	text-decoration: none;
-	color: black;
-	cursor: pointer;
-
-	&:hover {
-		color: rgba(0, 0, 0, .7);
-	}
-}
-
 .footer {
-	grid-row: 8 / 9;
-	grid-column: 1 / -1;
-	background-color: white;
-
-	background: linear-gradient(to top, #2193b0, #6dd5ed);
-	border-bottom: 3px solid rgba(9, 54, 55, .2);
+	position: relative;
+	background: linear-gradient(to top, $Main-color-blue-dark, $Main-color-blue-light);
 	clip-path: polygon(0% 0%, 38% 5%, 50% 20%, 62% 5%, 100% 0%, 100% 100%, 0% 100%);
 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-
-	&__personal-links {
-		display: flex;
-
-		&__link {
-			width: 10rem;
-			height: 10rem;
-			margin: 2rem;
-			background-color: white;
-
-			img {
-				width: 100%;
-				height: 100%;
-			}
-		}
-	}
-
-	&__resources {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-		grid-gap: 2rem;
-		align-self: center;
-		background-color: white;
-		justify-items: center;
-		height: 80vh;
-		width: 65vw;
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		border: 1px solid rgba(0, 0, 0, .3);
-		box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, .6);
-		z-index: 10;
-
-		&--link {
-			width: 13rem;
-			height: 13rem;
-			margin: 2rem auto;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
-			img {
-				width: 100%;
-				height: 100%;
-			}
-		}
-	}
-
-	&__backwards {
+	&__back {
 		transform: rotate(90deg);
 		margin: 4rem;
 		margin-top: 20rem;
 
 		a {
 			text-decoration: none;
-			display: flex;
-			align-items: center;
-			animation: bounceX 5s infinite;
+			animation: float 3s ease-out infinite;
 
 			.large {
 				font-size: 5rem;
@@ -115,11 +30,11 @@
 	}
 
 	&__copyright {
-		font-size: 1.6rem;
-		font-family: 'Londrina Solid', cursive;
-		text-transform: uppercase;
-		font-weight: 400;
-		color: rgba(9, 54, 55, .9);
+		font-size: 2.2rem;
+		letter-spacing: -.1rem;
+		color: rgba(255, 255, 255, .4);
+		margin-bottom: 2rem;
+		font-weight: 300;
 
 		span {
 			color: #fff;

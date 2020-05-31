@@ -387,3 +387,60 @@
 		left: 0%;
 	}
 }
+
+@keyframes animateBottom {
+	from {
+		top: 0px;
+		opacity: 1;
+	}
+	to {
+		top: 300px;
+		opacity: 0;
+	}
+}
+
+@keyframes slide {
+	from {
+		height: 0;
+	}
+	to {
+		height: 85vh;
+	}
+}
+
+@keyframes slideOut {
+	from {
+		height: 85vh;
+	}
+	to {
+		height: 0;
+	}
+}
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(300px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes floatRight {
+	50% {
+		transform: translate(.4rem, 0);
+	}
+}
+
+@keyframes floatLeft {
+	50% {
+		transform: translate(-.4rem, 0);
+	}
+}
+
+@keyframes float {
+	50% {
+		transform: translateX(2rem);
+	}
+}
