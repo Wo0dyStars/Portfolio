@@ -2,7 +2,11 @@
 	perspective: 100rem;
 	margin: 1rem;
 	position: relative;
-	height: 40rem;
+	height: 50rem;
+
+	@media only screen and (min-width: 800px) {
+		height: 40rem;
+	}
 
 	&__side {
 		transition: all .8s ease;

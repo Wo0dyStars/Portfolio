@@ -6,7 +6,7 @@
 
 	&__checkbox {
 		position: absolute;
-		z-index: 11;
+		z-index: 12;
 		top: 0;
 		left: 0;
 	}
@@ -17,7 +17,8 @@
 
 	&__checkbox:checked ~ &__navigation ul {
 		opacity: 1;
-		height: 40rem;
+		height: 50vh;
+		visibility: visible;
 	}
 
 	&__checkbox:checked + &__button &__icon {
@@ -35,12 +36,12 @@
 	}
 
 	&__button {
-		height: 8rem;
+		height: 8vh;
 		width: 8rem;
 		position: fixed;
 		top: 0;
 		left: 0;
-		z-index: 11;
+		z-index: 13;
 		text-align: center;
 		cursor: pointer;
 
@@ -50,13 +51,15 @@
 	}
 
 	&__icon {
-		position: relative;
-		margin-top: 3.5rem;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 
 		&,
 		&::before,
 		&::after {
-			width: 4rem;
+			width: 75%;
 			height: .5rem;
 			background-color: white;
 			display: inline-block;
@@ -71,11 +74,11 @@
 		}
 
 		&::before {
-			top: -1rem;
+			top: -1.2rem;
 		}
 
 		&::after {
-			top: 1rem;
+			top: 1.2rem;
 		}
 	}
 
@@ -104,12 +107,12 @@
 
 	&__navigation {
 		border-bottom: 3px solid $Main-color-green-light;
-		height: 8rem;
+		height: 8vh;
 		position: fixed;
 		background: $Main-color-green-dark;
 		bottom: 92vh;
 		left: 0;
-		z-index: 10;
+		z-index: 11;
 		font-weight: 100;
 		font-family: 'Raleway', sans-serif;
 		width: 100%;
@@ -131,8 +134,10 @@
 			display: flex;
 			flex-direction: column;
 			transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+			visibility: hidden;
 
 			@media only screen and (min-width: 800px) {
+				visibility: visible;
 				transition: none;
 				top: 0;
 				flex-direction: row;
@@ -219,25 +224,11 @@
 		}
 	}
 
-	&__top-background {
-		position: absolute;
-		background: linear-gradient(to right, $Main-color-blue-dark, $Main-color-blue-light);
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 5%;
-		z-index: 5;
-
-		@media only screen and (min-width: 800px) {
-			display: none;
-		}
-	}
-
 	&__sub-background {
 		background: linear-gradient(to right, $Main-color-blue-dark, $Main-color-blue-light);
 		bottom: 0;
 		left: 0;
-		height: 20%;
+		height: 14%;
 		width: 100%;
 		z-index: 2;
 		position: absolute;
@@ -249,26 +240,27 @@
 	}
 
 	&__white-sub-background {
-		display: none;
+		display: block;
+		position: absolute;
+		width: 88%;
+		bottom: 8%;
+		left: 3rem;
+		height: 45%;
+		z-index: 3;
+		background: linear-gradient(to top, white 14%, transparent 15%);
+		box-shadow: 0.9rem 1.1rem 1rem rgba(0, 0, 0, .1);
+		border-bottom-left-radius: 5rem;
+		border-bottom-right-radius: 5rem;
 
 		@media only screen and (min-width: 800px) {
-			display: block;
-			position: absolute;
 			width: 72%;
 			bottom: 13%;
-			left: 3rem;
-			height: 45%;
-			z-index: 3;
-			background: linear-gradient(to top, white 16%, transparent 17%);
 			transform: rotate(6deg);
-			box-shadow: 0.9rem 1.1rem 1rem rgba(0, 0, 0, .1);
-			border-bottom-left-radius: 5rem;
-			border-bottom-right-radius: 5rem;
+			background: linear-gradient(to top, white 16%, transparent 17%);
 		}
 	}
 
 	&__centertext {
-		font-family: 'Londrina Solid', cursive;
 		position: absolute;
 		top: 8%;
 		z-index: 3;
@@ -276,8 +268,6 @@
 		text-align: left;
 		margin-left: 5%;
 		padding: 2rem;
-		color: rgba(0, 0, 0, .7);
-		font-weight: 200;
 		line-height: 10rem;
 
 		@media only screen and (min-width: 800px) {
@@ -288,13 +278,18 @@
 			font-family: 'Raleway', sans-serif;
 			margin-right: 3rem;
 			vertical-align: middle;
-			font-size: 3.1rem;
+			font-size: 2.5rem;
 			line-height: 3.2rem;
 			font-weight: 800;
-			letter-spacing: -.2rem;
+			letter-spacing: -.1rem;
 			color: $Main-color-green-dark;
 			padding-right: .2rem;
 			text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6);
+
+			@media only screen and (min-width: 800px) {
+				font-size: 3.1rem;
+				letter-spacing: -.2rem;
+			}
 
 			span {
 				color: $Main-color-green-light;
@@ -306,8 +301,12 @@
 			}
 
 			.signature {
-				font-size: 4.2rem;
+				font-size: 3.5rem;
 				font-family: 'Dancing Script', sans-serif;
+
+				@media only screen and (min-width: 800px) {
+					font-size: 4.2rem;
+				}
 			}
 		}
 	}
@@ -321,7 +320,7 @@
 		margin-left: 5%;
 		padding: 2rem;
 		top: 20%;
-		z-index: 4;
+		z-index: 10;
 
 		@media only screen and (min-width: 800px) {
 			top: 35%;
@@ -330,7 +329,7 @@
 		&--view {
 			display: flex;
 			margin-right: 1rem;
-			font-size: 2rem;
+			font-size: 1.5rem;
 			padding: 1rem 2rem;
 			text-align: center;
 
@@ -345,6 +344,10 @@
 			transition: all .5s ease, color 0s ease;
 			box-shadow: .1rem .1rem 1rem rgba($Main-color-green-dark, .4);
 			text-decoration: none;
+
+			@media only screen and (min-width: 800px) {
+				font-size: 2rem;
+			}
 
 			&:hover,
 			&:focus {
