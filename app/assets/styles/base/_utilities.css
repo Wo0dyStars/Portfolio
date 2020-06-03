@@ -63,7 +63,7 @@
 			width: 100%;
 			height: 100%;
 			z-index: 1;
-			background: url("assets/images/a.png") no-repeat;
+			background: url("assets/images/desc-bg.png") no-repeat;
 			background-size: contain;
 		}
 	}

@@ -20,8 +20,6 @@
 		width: 100vw;
 
 		@media only screen and (min-width: 900px) {
-			box-shadow: .1rem .1rem 10rem rgba(0, 0, 0, .18);
-			background: $Main-color-blue-light;
 			height: 100vh;
 		}
 	}
