@@ -55,7 +55,7 @@
 			width: 95vw;
 			height: 95vh;
 
-			@media only screen and (min-width: 900px) {
+			@media only screen and (min-width: 1200px) {
 				width: 60vw;
 				height: 85vh;
 			}
@@ -307,7 +307,6 @@
 
 		&__element {
 			width: 90%;
-			height: 40rem;
 			align-self: center;
 			position: relative;
 
@@ -417,6 +416,14 @@
 					transform: rotate(-90deg);
 
 					@media only screen and (min-width: 650px) {
+						display: block;
+					}
+
+					@media only screen and (min-width: 900px) {
+						display: none;
+					}
+
+					@media only screen and (min-width: 1200px) {
 						display: block;
 					}
 
