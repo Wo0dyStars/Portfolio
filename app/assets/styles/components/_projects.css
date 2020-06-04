@@ -152,7 +152,7 @@
 						height: 85%;
 					}
 
-					img {
+					&__photo {
 						width: 100%;
 						height: 100%;
 						background-size: cover;
@@ -170,7 +170,6 @@
 					user-select: none;
 					width: 9rem;
 					height: 9rem;
-					fill: white;
 					z-index: 2;
 				}
 
