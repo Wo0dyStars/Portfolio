@@ -101,6 +101,7 @@
 	border: none;
 	color: white;
 	cursor: pointer;
+	height: 4rem;
 	text-decoration: none;
 	animation: floatLeft 3s ease-out infinite;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);

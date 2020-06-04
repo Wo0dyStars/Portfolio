@@ -274,10 +274,11 @@
 		left: 3rem;
 		height: 45%;
 		z-index: 3;
-		background: linear-gradient(to top, white 14%, transparent 15%);
+		background: linear-gradient(to top, white 19%, transparent 21%);
 		box-shadow: 0.9rem 1.1rem 1rem rgba(0, 0, 0, .1);
 		border-bottom-left-radius: 5rem;
 		border-bottom-right-radius: 5rem;
+		transform: rotate(5deg);
 
 		@media only screen and (min-width: 650px) {
 			width: 81%;
