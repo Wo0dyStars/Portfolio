@@ -9,6 +9,7 @@
 
 		@media only screen and (min-width: 650px) {
 			width: 80%;
+			margin-top: 12rem;
 		}
 
 		@media only screen and (min-width: 900px) {
@@ -123,11 +124,13 @@
 				border-bottom: 1px dashed rgba(0, 0, 0, .1);
 				font-size: 1.4rem;
 				padding: 1rem;
+				padding-bottom: 2rem;
 				font-weight: 400;
 				color: rgba(0, 0, 0, .8);
 
 				@media only screen and (min-width: 650px) {
 					margin-top: 4rem;
+					padding-bottom: 1rem;
 				}
 			}
 
@@ -169,6 +172,11 @@
 			&--skillset {
 				display: grid;
 				position: relative;
+				padding-top: 2rem;
+
+				@media only screen and (min-width: 650px) {
+					padding-top: 0;
+				}
 
 				.reveal-icon-animation {
 					.icon:nth-of-type(1) {
