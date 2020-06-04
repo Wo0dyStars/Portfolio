@@ -22,6 +22,7 @@
 
 .section__description {
 	display: flex;
+	font-family: 'Montserrat Alternates', sans-serif;
 	align-items: center;
 	font-size: 1.4rem;
 	color: rgba(0, 0, 0, .7);

@@ -123,14 +123,14 @@
 				text-align: center;
 				border-bottom: 1px dashed rgba(0, 0, 0, .1);
 				font-size: 1.4rem;
-				padding: 1rem;
+				padding-top: -2rem;
 				padding-bottom: 2rem;
 				font-weight: 400;
 				color: rgba(0, 0, 0, .8);
 
 				@media only screen and (min-width: 650px) {
 					margin-top: 4rem;
-					padding-bottom: 1rem;
+					padding: 1rem;
 				}
 			}
 
