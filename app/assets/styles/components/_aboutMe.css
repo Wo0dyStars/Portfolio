@@ -117,11 +117,12 @@
 			}
 
 			&--description {
+				font-family: 'Montserrat Alternates', sans-serif;
 				text-align: center;
 				border-bottom: 1px dashed rgba(0, 0, 0, .1);
 				font-size: 1.4rem;
 				padding: 1rem;
-				font-weight: 300;
+				font-weight: 400;
 				color: rgba(0, 0, 0, .8);
 
 				@media only screen and (min-width: 650px) {

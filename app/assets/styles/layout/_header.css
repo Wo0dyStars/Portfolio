@@ -130,7 +130,7 @@
 			background: $Main-color-green-dark;
 			position: absolute;
 			z-index: 50;
-			top: 8rem;
+			top: 0;
 			display: flex;
 			flex-direction: column;
 			transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);

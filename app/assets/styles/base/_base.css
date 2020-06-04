@@ -25,6 +25,12 @@ body {
 	font-weight: 300;
 	line-height: 1.6;
 	color: #000;
+
+	& > * {
+		&:focus {
+			outline: none;
+		}
+	}
 }
 
 .container {

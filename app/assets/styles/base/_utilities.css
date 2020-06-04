@@ -1,4 +1,5 @@
 .section__title {
+	font-family: 'Montserrat Alternates', sans-serif;
 	font-size: 2rem;
 	border-bottom: 2px dashed rgba(9, 54, 55, .05);
 	color: rgba(9, 54, 55, .9);
@@ -6,6 +7,7 @@
 	margin: auto;
 	margin-bottom: 2rem;
 	text-align: center;
+	font-weight: 200;
 	padding: 2rem;
 
 	@media only screen and (min-width: 900px) {
@@ -71,9 +73,13 @@
 
 .section-icon {
 	margin: 1rem auto;
-	margin-top: 11rem;
+	margin-top: 7rem;
 	width: 10rem;
 	height: 10rem;
+
+	@media only screen and (min-width: 900px) {
+		margin-top: 11rem;
+	}
 
 	img {
 		width: 10rem;
@@ -108,7 +114,8 @@
 
 	@media only screen and (min-width: 900px) {
 		font-size: 1.5rem;
-		padding: 1rem;
+		width: 17rem;
+		height: 9vh;
 	}
 
 	&:focus {
@@ -130,6 +137,7 @@
 		height: 3rem;
 		margin-left: 1rem;
 		margin-right: 1rem;
+		padding-right: 2rem;
 		transition: all .5s ease;
 		border-right: 1px solid white;
 
