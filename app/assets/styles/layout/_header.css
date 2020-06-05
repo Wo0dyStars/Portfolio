@@ -17,7 +17,7 @@
 
 	&__checkbox:checked ~ &__navigation ul {
 		opacity: 1;
-		height: 60vh;
+		height: 40rem;
 		visibility: visible;
 	}
 
@@ -36,7 +36,7 @@
 	}
 
 	&__button {
-		height: 8vh;
+		height: 6rem;
 		width: 8rem;
 		position: fixed;
 		top: 0;
@@ -107,7 +107,7 @@
 
 	&__navigation {
 		border-bottom: 3px solid $Main-color-green-light;
-		height: 8vh;
+		height: 6rem;
 		position: fixed;
 		background: $Main-color-green-dark;
 		top: 0;
@@ -120,7 +120,6 @@
 		@media only screen and (min-width: 650px) {
 			position: absolute;
 			top: 100vh;
-			height: 8vh;
 		}
 
 		ul {
@@ -135,6 +134,7 @@
 			flex-direction: column;
 			transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 			visibility: hidden;
+			border-bottom: 3px solid $Main-color-green-light;
 
 			@media only screen and (min-width: 650px) {
 				visibility: visible;
@@ -145,8 +145,9 @@
 				align-items: center;
 				height: 100%;
 				list-style: none;
-				width: 80%;
+				width: 100%;
 				opacity: 1;
+				border-bottom: none;
 			}
 
 			.active {
@@ -197,30 +198,13 @@
 			}
 
 			li:last-child {
-				width: 100%;
 				display: flex;
 				justify-content: center;
-				padding-bottom: 1rem;
-				padding: 3rem;
-				border-bottom: 3px solid $Main-color-green-light;
 
 				@media only screen and (min-width: 650px) {
 					border-bottom: none;
 					display: block;
 					padding-bottom: 0;
-					position: absolute;
-					right: -16rem;
-					width: 15rem;
-				}
-
-				@media only screen and (min-width: 900px) {
-					right: -22rem;
-					width: 17rem;
-				}
-
-				@media only screen and (min-width: 1200px) {
-					right: -25rem;
-					width: 17rem;
 				}
 			}
 		}
@@ -274,7 +258,7 @@
 		left: 3rem;
 		height: 45%;
 		z-index: 3;
-		background: linear-gradient(to top, white 19%, transparent 19%);
+		background: linear-gradient(to top, white 21%, transparent 21%);
 		box-shadow: 0.9rem 1.1rem 1rem rgba(0, 0, 0, .1);
 		border-bottom-left-radius: 5rem;
 		border-bottom-right-radius: 5rem;
@@ -284,7 +268,7 @@
 			width: 81%;
 			bottom: 13%;
 			transform: rotate(6deg);
-			background: linear-gradient(to top, white 16%, transparent 20%);
+			background: linear-gradient(to top, white 20%, rgba(255, 255, 255, .2) 21%, transparent 20%);
 		}
 	}
 
@@ -330,6 +314,10 @@
 				letter-spacing: -.2rem;
 			}
 
+			@media only screen and (max-height: 500px) and (max-width: 1200px) {
+				font-size: 2rem;
+			}
+
 			span {
 				color: $Main-color-green-light;
 			}
@@ -345,6 +333,10 @@
 
 				@media only screen and (min-width: 650px) {
 					font-size: 4.2rem;
+				}
+
+				@media only screen and (max-height: 500px) and (max-width: 1200px) {
+					font-size: 2.2rem;
 				}
 			}
 		}
@@ -373,6 +365,10 @@
 			margin-left: 5%;
 		}
 
+		@media only screen and (max-height: 500px) and (max-width: 1200px) {
+			top: 35%;
+		}
+
 		&--view {
 			display: flex;
 			margin-right: 1rem;
@@ -385,6 +381,7 @@
 			border: 3px solid $Main-color-green-dark;
 			border-radius: .3rem;
 			-webkit-font-smoothing: antialiased;
+			background-color: white;
 
 			cursor: pointer;
 			font-weight: 700;
@@ -398,6 +395,11 @@
 
 			@media only screen and (min-width: 900px) {
 				font-size: 2rem;
+			}
+
+			@media only screen and (max-height: 500px) and (max-width: 1200px) {
+				font-size: 1.2rem;
+				padding: 0.7rem;
 			}
 
 			&:hover,
