@@ -65,6 +65,18 @@ new RevealOnScroll(FirstSectionIcon, 'reveal-fixed-navbar', headerClass);
 new RevealOnScroll(introductionSection, 'reveal-icon-animation', introductionIcons);
 
 // **********************************************************
+// HIDE NAVIGATION BAR WHEN AN ELEMENT CLICKED
+// **********************************************************
+let NavigationCheckbox = document.querySelector('.header__checkbox');
+let NavigationElements = document.querySelectorAll('.header__navigation--element');
+
+NavigationElements.forEach((element) => {
+	element.addEventListener('click', (e) => {
+		NavigationCheckbox.checked = false;
+	});
+});
+
+// **********************************************************
 // ENABLE SMOOTH SCROLLING
 // SOURCE FROM https://css-tricks.com/snippets/jquery/smooth-scrolling/
 // **********************************************************
