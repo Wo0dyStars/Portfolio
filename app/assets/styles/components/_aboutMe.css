@@ -135,6 +135,7 @@
 					padding: 1rem;
 					display: flex;
 					align-items: flex-end;
+					margin-top: -12rem;
 				}
 
 				@media only screen and (min-width: 900px) {
@@ -182,6 +183,7 @@
 				display: grid;
 				position: relative;
 				padding-top: 2rem;
+				height: 20rem;
 
 				@media only screen and (min-width: 650px) {
 					margin-top: 5rem;
