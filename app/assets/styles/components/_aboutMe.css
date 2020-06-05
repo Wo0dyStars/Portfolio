@@ -129,7 +129,6 @@
 				color: rgba(0, 0, 0, .8);
 
 				@media only screen and (min-width: 650px) {
-					margin-top: 4rem;
 					padding: 1rem;
 				}
 			}
@@ -175,7 +174,8 @@
 				padding-top: 2rem;
 
 				@media only screen and (min-width: 650px) {
-					padding-top: 0;
+					padding-top: 5rem;
+					padding-bottom: 5rem;
 				}
 
 				.reveal-icon-animation {

@@ -106,8 +106,11 @@
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 	padding-bottom: 2rem;
 	width: 18rem;
-	margin-right: 2rem;
 	height: 7rem;
+
+	@media only screen and (min-width: 650px) {
+		margin-right: 2rem;
+	}
 
 	&:focus {
 		outline: none;
