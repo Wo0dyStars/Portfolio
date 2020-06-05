@@ -50,8 +50,10 @@
 			box-shadow: 1rem 1rem 10rem rgba(0, 0, 0, .8);
 			background-color: white;
 			z-index: 50;
-			width: 95vw;
+			width: 100vw;
 			height: 95vh;
+			border-bottom-left-radius: 5rem;
+			border-bottom-right-radius: 5rem;
 
 			@media only screen and (min-width: 1200px) {
 				width: 60vw;
@@ -144,11 +146,19 @@
 			&--photos {
 				.project-photos {
 					width: 100%;
-					height: 70%;
+					height: 40%;
 					position: relative;
 					overflow: hidden;
 
 					@media only screen and (min-width: 650px) {
+						height: 65%;
+					}
+
+					@media only screen and (min-width: 900px) {
+						height: 85%;
+					}
+
+					@media only screen and (max-height: 500px) and (max-width: 1200px) {
 						height: 85%;
 					}
 
@@ -165,7 +175,7 @@
 					bottom: 0;
 					padding: 1rem;
 					color: rgba(0, 0, 0, .7);
-					background-color: $Main-color-blue-dark;
+					background-color: rgba(0, 0, 0, .1);
 					cursor: pointer;
 					user-select: none;
 					width: 9rem;
@@ -218,8 +228,8 @@
 
 			.close {
 				position: absolute;
-				bottom: 0;
-				right: 0;
+				bottom: .1rem;
+				right: 5rem;
 				font-size: 1.6rem;
 				padding: .2rem 1rem;
 				z-index: 5;
