@@ -35,7 +35,7 @@
 
 		@media only screen and (max-height: 500px) and (max-width: 1200px) {
 			height: 40rem;
-			bottom: -50%;
+			bottom: -60%;
 		}
 
 		&--title {
