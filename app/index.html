@@ -65,9 +65,8 @@
 
             <div class="header__centertext">
                 <div class="header__centertext--main">
-                    Hello. I'm <span>Peter Kertesz.</span>
+                    Hello. I'm <span class="signature"></span>
                     <div>I'm a full-stack web developer.</div>
-                    <span class="signature"></span>
                 </div>
             </div>
 
@@ -129,9 +128,12 @@
                 <div class="aboutMe__container__introduction">
 
                     <div class="aboutMe__container__introduction--personal">
-                        <figure class="profile-photo">
-                            <img src="assets/images/profile.png" alt="My profile photo">
-                        </figure>
+                        <picture class="profile-photo">
+                            <source srcset="assets/images/profile-large.png 1920w" media="(min-width: 1200px)">
+                            <source srcset="assets/images/profile-medium.png 1380w" media="(min-width: 900px)">
+                            <source srcset="assets/images/profile-small.png 990w" media="(min-width: 650px)">
+                            <img srcset="assets/images/profile-smallest.png 640w" alt="My profile photo">
+                        </picture>
                     </div>
 
                     <div class="aboutMe__container__introduction--description flex">

@@ -71,7 +71,7 @@ let NavigationCheckbox = document.querySelector('.header__checkbox');
 let NavigationElements = document.querySelectorAll('.header__navigation--element');
 
 NavigationElements.forEach((element) => {
-	element.addEventListener('click', (e) => {
+	element.addEventListener('click', () => {
 		NavigationCheckbox.checked = false;
 	});
 });
