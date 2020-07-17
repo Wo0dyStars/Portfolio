@@ -14,6 +14,7 @@
 @import "components/_card";
 @import "components/_planning";
 @import "components/_resources";
+@import "components/_mixitup";
 
 @import "layout/_header";
 @import "layout/_footer";

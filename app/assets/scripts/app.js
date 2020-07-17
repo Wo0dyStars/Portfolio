@@ -2,6 +2,7 @@
 // IMPORT CSS AND EXTERNAL JS FILES
 // **********************************************************
 import '../styles/styles.css';
+import mixitup from 'mixitup';
 import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/StickyHeader';
 import TypeLetters from './modules/TypeLetters';
@@ -28,6 +29,12 @@ new FormMessage();
 new StickyHeader();
 new TabNavigation();
 new ImageSlides();
+
+mixitup('.mixitup', {
+	animation: {
+		easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)'
+	}
+});
 
 // **********************************************************
 // LISTENING TO PROJECT DETAILS MODAL
