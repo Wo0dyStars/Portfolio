@@ -115,12 +115,14 @@ class Modal {
 		date.textContent = this.projects[id].date;
 		link.setAttribute('href', this.projects[id].link);
 
-		this.projects[id].images.forEach((image) => {
-			const slide = document.createElement('div');
-			slide.setAttribute('class', 'carousel-container__slide');
-			slide.style.background = `${image} center center/cover`;
-			this.carousel.appendChild(slide);
-		});
+		if (!this.slides.length) {
+			this.projects[id].images.forEach((image) => {
+				const slide = document.createElement('div');
+				slide.setAttribute('class', 'carousel-container__slide');
+				slide.style.background = `${image} center center/cover`;
+				this.carousel.appendChild(slide);
+			});
+		}
 
 		this.slides = document.querySelectorAll('.carousel-container__slide');
 
