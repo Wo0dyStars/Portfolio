@@ -12,6 +12,8 @@ import Courses from './modules/content/classes/CardObject';
 import FormMessage from './modules/FormMessage';
 import TabNavigation from './modules/TabNavigation';
 import ImageSlides from './modules/ImageSlides';
+import Projects from './modules/content/classes/Projects';
+import Modal from './modules/Modal';
 
 // **********************************************************
 // GENERATE CARDS IN HTML
@@ -29,10 +31,14 @@ new FormMessage();
 new StickyHeader();
 new TabNavigation();
 new ImageSlides();
+new Modal(Projects);
 
 mixitup('.mixitup', {
 	animation: {
 		easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)'
+	},
+	load: {
+		filter: '.html-css, .angular, .nodejs'
 	}
 });
 

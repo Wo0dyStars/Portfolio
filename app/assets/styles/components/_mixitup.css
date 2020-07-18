@@ -10,22 +10,29 @@
 	margin: 3rem auto;
 	padding: 0;
 	list-style: none;
-	font-size: 1.6rem;
+	font-size: 2rem;
 
 	li {
 		float: left;
 
 		span {
 			display: block;
-			padding: 5px 20px;
+			padding: .7rem 3rem;
+			margin: 0 1rem;
 			text-decoration: none;
 			color: #666;
 			cursor: pointer;
+			transition: background .6s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+			&:hover {
+				border-bottom: 5px solid $Main-color-blue-dark;
+			}
 		}
 
-		span.active {
-			background: #e95a44;
+		span.mixitup-control-active {
+			background: $Main-color-green-dark;
 			color: #fff;
+			border-bottom: 5px solid $Main-color-blue-dark;
 		}
 	}
 }
@@ -49,47 +56,232 @@
 
 	.label {
 		position: absolute;
-		width: 100%;
-		height: 40px;
-		bottom: -40px;
-		-webkit-transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
-		transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
-		z-index: 10;
-		opacity: 0;
-		visibility: hidden;
-	}
-
-	.label-bg {
-		background: #e95a44;
-		width: 100%;
-		height: 100%;
-		position: absolute;
 		top: 0;
 		left: 0;
-		z-index: -1;
+		width: 100%;
+		text-align: center;
+		transition: all 0.3s ease-in-out;
+		z-index: 2;
+		opacity: 0;
+
+		&-text {
+			&__name {
+				font-weight: 700;
+				font-size: 2.6rem;
+				color: $Main-color-green-dark;
+				letter-spacing: -.2rem;
+			}
+
+			&__tech {
+				font-size: 1.6rem;
+				color: $Main-color-blue-dark;
+				font-weight: 100;
+			}
+		}
 	}
 
-	.label-text {
-		color: #fff;
-		position: relative;
-		z-index: 500;
-		padding: 5px 8px;
-	}
+	.button {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		border: 2px solid $Main-color-blue-dark;
+		transition: all 0.3s ease-in-out;
+		font-size: 1.6rem;
+		margin: 0 auto;
+		padding: .6rem 0;
+		opacity: 0;
+		width: 16rem;
+		text-align: center;
+		cursor: pointer;
 
-	.text-category {
-		display: block;
-		font-size: 9px;
+		&:hover {
+			background: $Main-color-blue-dark;
+			color: #fff;
+		}
 	}
 
 	&:hover {
-		.label {
-			bottom: 0;
-			opacity: 1;
-			visibility: visible;
+		img {
+			opacity: 0;
 		}
 
-		img {
-			top: -30px;
+		.label {
+			opacity: 1;
+			top: 25%;
+		}
+
+		.button {
+			bottom: 25%;
+			opacity: 1;
 		}
 	}
+}
+
+.modal-container {
+	height: 100vh;
+	position: fixed;
+	width: 100vw;
+	z-index: 100;
+	pointer-events: none;
+
+	&__background {
+		background: rgba(0, 0, 0, .5);
+		height: 100%;
+		left: 0;
+		opacity: 0;
+		top: 0;
+		position: absolute;
+		transition: opacity .5s;
+		width: 100%;
+	}
+
+	&__modal {
+		align-items: flex-start;
+		background-color: #fff;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+		box-sizing: border-box;
+		color: #333;
+		height: 80vh;
+		opacity: 0;
+		position: relative;
+		text-align: left;
+		transform: scale(0.8);
+		transition: all .5s;
+	}
+
+	.close-modal {
+		bottom: 2.5rem;
+		color: #bbb;
+		cursor: pointer;
+		font-size: 1.6rem;
+		font-weight: 800;
+		position: absolute;
+		right: 1rem;
+	}
+
+	&__information {
+		border-top: 3px solid #1b242f;
+		box-sizing: border-box;
+		color: #444;
+		padding: 15px 10px 85px 10px;
+
+		&--title {
+			font-family: "Raleway-bold";
+			font-size: 16pt;
+			line-height: 20pt;
+		}
+
+		&--tag {
+			border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+			color: #c0c0c0;
+			display: block;
+			font-family: "Raleway-bold";
+			font-size: 8pt;
+			font-weight: 300;
+			padding-bottom: 15px;
+		}
+
+		&--detail {
+			font-size: 9pt;
+			line-height: 14pt;
+			margin-top: 13px;
+		}
+	}
+
+	.button {
+		background: #e31b6d;
+		border: 0;
+		bottom: 20px;
+		color: #fff;
+		cursor: pointer;
+		font-size: 10pt;
+		font-weight: 600;
+		left: 10px;
+		padding: 11px 30px;
+		pointer-events: none;
+		position: absolute;
+		transition: all 0.5s;
+		visibility: hidden;
+	}
+
+	.button.visible {
+		pointer-events: initial;
+		visibility: visible;
+	}
+
+	.button:hover {
+		background: #fff;
+		color: #e31b6d;
+	}
+}
+
+.modal-container.visible {
+	pointer-events: initial;
+}
+
+.modal-container.visible .modal-container__modal {
+	opacity: 1;
+	transform: scale(1);
+}
+.modal-container.visible .modal-container__background {
+	opacity: 1;
+}
+
+.carousel-container {
+	height: 450px;
+	margin: 0 auto;
+	position: relative;
+
+	&__window {
+		background: #222;
+		overflow: hidden;
+		position: relative;
+	}
+
+	&__carousel {
+		position: relative;
+		top: 0;
+		width: 10000px;
+		box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.25);
+	}
+
+	&__slide {
+		cursor: pointer;
+		display: flex;
+		flex-direction: column;
+		float: left;
+		height: 450px;
+		justify-content: center;
+		background-size: cover;
+	}
+
+	&__previous,
+	&__next {
+		position: absolute;
+		bottom: 0;
+		cursor: pointer;
+		background-color: rgba(0, 0, 0, .2);
+		width: 6rem;
+		height: 6rem;
+
+		img {
+			width: 3rem;
+			margin: 0 auto;
+			height: 100%;
+			display: flex;
+		}
+	}
+
+	&__previous {
+		left: 0;
+	}
+
+	&__next {
+		right: 0;
+	}
+}
+
+.transition {
+	transition: 0.7s;
 }
