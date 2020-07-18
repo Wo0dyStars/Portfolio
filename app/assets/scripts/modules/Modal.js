@@ -102,13 +102,18 @@ class Modal {
 	}
 
 	populateModal(id) {
+		// MAIN INFORMATION
 		let title = document.querySelector('.modal-container__information--title');
 		let detail = document.querySelector('.modal-container__information--detail');
 		let tag = document.querySelector('.modal-container__information--tag');
+		let link = document.querySelector('.modal-container__link__website');
+		let date = document.querySelector('.modal-container__information--date');
 
 		title.textContent = this.projects[id].title;
 		detail.textContent = this.projects[id].detail;
 		tag.textContent = this.projects[id].tag;
+		date.textContent = this.projects[id].date;
+		link.setAttribute('href', this.projects[id].link);
 
 		this.projects[id].images.forEach((image) => {
 			const slide = document.createElement('div');
@@ -118,6 +123,27 @@ class Modal {
 		});
 
 		this.slides = document.querySelectorAll('.carousel-container__slide');
+
+		// CODE SAMPLES
+		let codeSamples = document.querySelector('.modal-container__code');
+
+		this.projects[id].sampleCode.forEach((code) => {
+			const title = document.createElement('div');
+			title.setAttribute('class', 'modal-container__code--title');
+			title.innerHTML = code.title;
+			codeSamples.appendChild(title);
+
+			const description = document.createElement('div');
+			description.setAttribute('class', 'modal-container__code--description');
+			description.innerHTML = code.description;
+			codeSamples.appendChild(description);
+
+			const image = document.createElement('img');
+			image.setAttribute('src', code.photo);
+			image.setAttribute('alt', code.title);
+			image.setAttribute('title', code.title);
+			codeSamples.appendChild(image);
+		});
 	}
 }
 
