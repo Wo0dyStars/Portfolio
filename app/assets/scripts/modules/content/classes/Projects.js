@@ -49,7 +49,7 @@ const Projects = {
 		tag: 'Angular application using Express routes deployed in Elastic Beanstalk',
 		date: '04/07/2020 - 17/07/2020',
 		detail:
-			'This application has been developed to maintain information about the currently stored items (mainly food) in the households. People can register themselves and play with their family members. It is designed to let people insert shopping lists to see how much they spend on these items. They can see what items they purchased the most and the system tells them when they run out of items.',
+			'This project has been built to get some practical sense using Angular and understand the principles of communicating with Node server. The content is designed for shared houses, where people wish to find better ways of dealing with conflicts of interest, lack of space and cultural differences. House members can keep a record of who did what and earn points for their activities. This way, they can easily find out if there is uneven amount of contribution.',
 		link: 'http://sharedhouse-env.eba-ymfiekfv.eu-west-2.elasticbeanstalk.com/',
 		images: [
 			"url('assets/images/projects/sharedHouse/image3.png')",
@@ -63,34 +63,68 @@ const Projects = {
 		],
 		sampleCode: [
 			{
-				title: 'Search request route handler',
+				title: 'Angular main routing module',
 				description:
-					"In this code, you can see how I used Express with Node to handle a search request for 'Items' made by the user. I used regex to search the 'name' field in the 'Items' documents, which results with any finding that matches the provided text, even partially. For example, the search word 'app' would find the item name 'apple' as well. Flash messages help sending immediate feedback to the user whether the query was successful or not.",
+					"In this code, I specified the routes the Angular app would use. The path 'authorization' leads to the Sign in/Sign up module, the 'confirmation:id' is necessary for the email verification when the users clicks on the verification code. The path 'users' contains all the subroutes where the main application features exist. I also implemented lazyloading, which means if a user only visits the authorization page, they will not download the rest of the application.",
 				photo: 'assets/images/projects/sharedHouse/project-code-1.png'
 			},
 			{
-				title: 'Mongoose Schema definition',
+				title: 'Email validation in Authorization template',
 				description:
-					"In this example, I will show how I declared a Mongoose Schema for 'Teams'. This is the structure how the database saves data about the registered teams in the application. For example, a team has a list of users that belong to the team and requests as well, which indicates the list of users who wish to join this team. This part was a challenge for me, since querying this structure is complicated.",
+					"I shared this example, because it shows how I was thinking in validating the user inputs. The user receives immediate response for their provided values, so they will know how to correct them. The 'emailNotAvailable' directive (not built-in) checks the given email whether or not it exists in the database already. The bootstrap classes 'alert-danger' and 'alert-success' show messages in nice format.",
 				photo: 'assets/images/projects/sharedHouse/project-code-2.png'
 			},
 			{
-				title: 'CSS Sass structure',
+				title: 'HTTP Request to Node server from Authorization service module',
 				description:
-					"This example shows how I used nested structure in CSS Sass. The way I named my classes in HTML allowed me to dig deeper in the name chain. For example, '&-avatar' stands for '.user-profile__main-avatar'. This is a simple way of keeping things organized.",
+					'This is important, because the Angular front-end communicates with the Node.js server via HTTP calls. In this example, there is a POST request towards the server for creating a new user, which receives user credentials and current URL. The response, as specified in the request in TypeScript format, will be a message (error or success) and the newly created userID. The message Subject variable is helpful for carrying information across multiple components, so in the Authorization component, I can display it easily.',
 				photo: 'assets/images/projects/sharedHouse/project-code-3.png'
 			},
 			{
-				title: 'EJS view',
+				title: 'Home routers on server-side',
 				description:
-					'The following example is a piece of the markup code written in EJS, which is useful for combining JavaScript-like code with HTML. This is where I display purchases to the users and EJS helps me iterate over a list of information.',
+					'I am showing this code snippet to illustrate how I am structuring my code. There are several routes for which I am calling the controllers. This way the code is more transparent.',
 				photo: 'assets/images/projects/sharedHouse/project-code-4.png'
 			},
 			{
-				title: 'EJS view',
+				title: 'Create User controller on server-side',
 				description:
-					'The following example is a piece of the markup code written in EJS, which is useful for combining JavaScript-like code with HTML. This is where I display purchases to the users and EJS helps me iterate over a list of information.',
+					'The following code implements the controller for creating a new user. It receives the password, which it gets hashed by Bcrypt and only the hashed password will be stored in the database. I am using Crypto to generate a new token for the user, which will be sent to them by using NodeMailer. The email constructs a verification email which will redirect the user to the front-end and next it sends request to the server with the confirmation code. And if that is valid then the user gets verified and therefore can log into the application.',
 				photo: 'assets/images/projects/sharedHouse/project-code-5.png'
+			}
+		]
+	},
+
+	portfolio: {
+		title: 'Portfolio',
+		tag: 'HTML / CSS dynamic site with a touch of JavaScript deployed in GitHub',
+		date: '03/04/2020 - ',
+		detail:
+			'This project is an ongoing process which showcases my current knowledge and skills in my Web Development career. As soon as I learn new skills or better practical ways of laying out elements or information, I will update this very soon.',
+		link: 'http://sharedhouse-env.eba-ymfiekfv.eu-west-2.elasticbeanstalk.com/',
+		images: [
+			"url('assets/images/projects/portfolio/image1.png')",
+			"url('assets/images/projects/portfolio/image2.png')",
+			"url('assets/images/projects/portfolio/image3.png')"
+		],
+		sampleCode: [
+			{
+				title: 'Webpack configuration',
+				description:
+					'This is my webpack configuration, which is mainly responsible for transforming and minifying CSS files and placing the output in the HTML file.',
+				photo: 'assets/images/projects/portfolio/project-code-1.png'
+			},
+			{
+				title: 'BEM methodology in the template',
+				description:
+					'This is meant to show how I am naming my classes in order to work smoothly with CSS. It tends to be longer than normal class names, but I mainly work on styling rather than template, so this approach is best for me.',
+				photo: 'assets/images/projects/portfolio/project-code-2.png'
+			},
+			{
+				title: 'Sass selector structure',
+				description:
+					'This example demonstrates how deep I can travel with this way of referencing. Increased transparency and neat layout.',
+				photo: 'assets/images/projects/portfolio/project-code-3.png'
 			}
 		]
 	}
