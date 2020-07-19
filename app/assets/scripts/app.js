@@ -37,7 +37,7 @@ mixitup('.mixitup', {
 		easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)'
 	},
 	load: {
-		filter: '.html-css, .angular, .nodejs'
+		filter: '.nodejs, .html5, .sass, .angular, .mongoose, .javascript'
 	}
 });
 

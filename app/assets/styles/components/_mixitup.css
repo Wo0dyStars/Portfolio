@@ -7,32 +7,48 @@
 }
 
 #filters {
-	margin: 3rem auto;
+	margin: 6rem auto;
 	padding: 0;
 	list-style: none;
-	font-size: 2rem;
+	font-size: 1.6rem;
+	font-family: 'Montserrat Alternates', sans-serif;
+	font-weight: 400;
 
 	li {
 		float: left;
+		flex-direction: column;
+
+		&:not(:last-child) {
+			border-right: 1px dashed rgba(0, 0, 0, .05);
+		}
+
+		&:first-child {
+			border: 1px solid rgba(0, 0, 0, .06);
+			border-right: none;
+		}
 
 		span {
 			display: block;
 			padding: .7rem 3rem;
 			margin: 0 1rem;
 			text-decoration: none;
-			color: #666;
+			color: rgba(0, 0, 0, .5);
 			cursor: pointer;
-			transition: background .6s cubic-bezier(0.645, 0.045, 0.355, 1);
+			transition: color 0s, all .6s cubic-bezier(0.645, 0.045, 0.355, 1);
+			border-bottom: 2px solid transparent;
 
-			&:hover {
-				border-bottom: 5px solid $Main-color-blue-dark;
+			&:hover:not(:first-child) {
+				border-bottom: 2px solid $Main-color-blue-dark;
+				color: $Main-color-blue-dark;
 			}
 		}
 
+		span.mixitup-control-active:not(:first-child) {
+			border-bottom: 2px solid $Main-color-blue-dark;
+		}
+
 		span.mixitup-control-active {
-			background: $Main-color-green-dark;
-			color: #fff;
-			border-bottom: 5px solid $Main-color-blue-dark;
+			color: $Main-color-blue-dark;
 		}
 	}
 }

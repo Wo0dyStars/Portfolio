@@ -15,6 +15,7 @@
 @import "components/_planning";
 @import "components/_resources";
 @import "components/_mixitup";
+@import "components/_timeline";
 
 @import "layout/_header";
 @import "layout/_footer";
