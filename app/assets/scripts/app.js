@@ -31,7 +31,6 @@ new FormMessage();
 new StickyHeader();
 new TabNavigation();
 new ImageSlides();
-new Modal(Projects);
 
 mixitup('.mixitup', {
 	animation: {
@@ -45,6 +44,19 @@ mixitup('.mixitup', {
 // **********************************************************
 // LISTENING TO PROJECT DETAILS MODAL
 // **********************************************************
+let modal;
+const mixItUpButtons = document.querySelectorAll('.mixitup .button');
+mixItUpButtons.forEach((button) => {
+	button.addEventListener('click', (e) => {
+		e.preventDefault();
+
+		modal = new Modal(Projects);
+		modal.populateModal(e.target.getAttribute('id'));
+		modal.modalContainer.classList.add('visible');
+		modal.setDimensions();
+	});
+});
+
 let project;
 let projectLink = document.querySelector('.show-project');
 let projectElement = document.querySelector('.projects__project__details');

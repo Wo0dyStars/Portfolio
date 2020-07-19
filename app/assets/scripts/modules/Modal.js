@@ -34,14 +34,6 @@ class Modal {
 	}
 
 	events() {
-		this.mixItUpButtons.forEach((button) => {
-			button.addEventListener('click', (e) => {
-				this.populateModal(e.target.getAttribute('id'));
-				this.modalContainer.classList.add('visible');
-				this.setDimensions();
-			});
-		});
-
 		this.previousButton.addEventListener('click', () => {
 			this.onShift(1);
 		});
@@ -52,10 +44,18 @@ class Modal {
 
 		this.close.addEventListener('click', () => {
 			this.modalContainer.classList.remove('visible');
+			this.slides.forEach((slide) => {
+				slide.remove();
+			});
+			document.querySelector('.modal-container__code').innerHTML = '';
 		});
 
 		this.background.addEventListener('click', () => {
 			this.modalContainer.classList.remove('visible');
+			this.slides.forEach((slide) => {
+				slide.remove();
+			});
+			document.querySelector('.modal-container__code').innerHTML = '';
 		});
 
 		this.carousel.addEventListener('mousedown', (event) => {
@@ -119,7 +119,7 @@ class Modal {
 			this.projects[id].images.forEach((image) => {
 				const slide = document.createElement('div');
 				slide.setAttribute('class', 'carousel-container__slide');
-				slide.style.background = `${image} center center/cover`;
+				slide.style.backgroundImage = `${image}`;
 				this.carousel.appendChild(slide);
 			});
 		}
