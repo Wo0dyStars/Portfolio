@@ -51,13 +51,19 @@ let groupElements = document.querySelectorAll('.aboutMe__container__group--eleme
 let FirstSectionIcon = document.querySelector('.section-icon');
 let headerClass = document.querySelector('.header__navigation');
 let sectionElements = document.querySelectorAll('.section__title');
+let floatbarElements = document.querySelectorAll('.section__floatbar');
 let getInTouchElement = document.querySelector('.getInTouch');
+let mixitupElement = document.querySelector('.mixitup');
+let timelineElement = document.querySelector('.courses');
 let introductionSection = document.querySelector('.aboutMe__container__introduction');
 let introductionIcons = document.querySelector('.aboutMe__container__introduction--skillset__icons');
 
 new RevealOnScroll(sectionElements, 'reveal-section-animation');
+new RevealOnScroll(floatbarElements, 'reveal-floatbar-animation');
 new RevealOnScroll(groupElements, 'reveal-animation');
 new RevealOnScroll(getInTouchElement, 'getInTouch-animated');
+new RevealOnScroll(mixitupElement, 'reveal-portfolio-animation');
+new RevealOnScroll(timelineElement, 'reveal-timeline-animation');
 new RevealOnScroll(FirstSectionIcon, 'reveal-fixed-navbar', headerClass);
 new RevealOnScroll(introductionSection, 'reveal-icon-animation', introductionIcons);
 

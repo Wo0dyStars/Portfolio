@@ -214,6 +214,10 @@
 					.icon:nth-of-type(5) {
 						animation: zoomInDown 3.8s;
 					}
+
+					.icon:nth-of-type(6) {
+						animation: zoomInDown 4.2s;
+					}
 				}
 
 				&__icons {
@@ -251,6 +255,10 @@
 
 						&:nth-of-type(5) span {
 							background-color: #f7df1e;
+						}
+
+						&:nth-of-type(6) span {
+							background-color: #dd0031;
 						}
 
 						span {

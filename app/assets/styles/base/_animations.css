@@ -16,13 +16,12 @@
 		opacity: 0;
 	}
 
-	90% {
-		transform: translateX(0);
+	70% {
 		opacity: 1;
 	}
 
 	95% {
-		transform: rotateY(45deg);
+		transform: rotateY(70deg);
 	}
 
 	100% {

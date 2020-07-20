@@ -158,7 +158,7 @@
 			opacity: 0;
 			height: 0;
 			width: 100%;
-			background: $Main-color-green-dark;
+			background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
 			position: absolute;
 			z-index: 50;
 			top: 0;

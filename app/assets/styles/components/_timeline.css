@@ -1,7 +1,49 @@
+.reveal-timeline-animation {
+	.timeline__container {
+		&--year {
+			animation: zoomInDown 4s;
+		}
+
+		&__timeline {
+			animation: jackInTheBox 3s;
+
+			&--month {
+				&-right {
+					animation: fadeInRight 3s;
+				}
+
+				&-left {
+					animation: fadeInLeft 3s;
+				}
+			}
+
+			&--left {
+				.timeline__container__timeline--content {
+					animation: zoomInLeft 4s;
+				}
+			}
+
+			&--right {
+				.timeline__container__timeline--content {
+					animation: zoomInRight 4s;
+				}
+			}
+
+			&--content {
+				.progress {
+					&-bar {
+						animation: animate-positive 5s;
+					}
+				}
+			}
+		}
+	}
+}
+
 .timeline__container {
 	width: 100%;
-	background: rgba(0, 0, 0, .01);
 	position: relative;
+	margin-top: 20rem;
 
 	&--tick {
 		margin-left: .5rem;
@@ -228,7 +270,6 @@
 				&-bar {
 					width: 85%;
 					height: 5rem;
-					animation: animate-positive 2s;
 					position: relative;
 					border-top-right-radius: 10rem;
 					border-bottom-right-radius: 10rem;

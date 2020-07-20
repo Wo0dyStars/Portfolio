@@ -1,29 +1,40 @@
+.mixitup__container {
+	margin-top: 5rem;
+}
+
 .mixitup {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 40rem);
 	overflow: hidden;
 	justify-content: center;
 	align-content: center;
+	background-color: white;
+	min-height: 50vh;
+	border-left: 2rem solid #203a43;
+	border-right: 2rem solid #203a43;
 }
 
 #filters {
-	margin: 6rem auto;
-	padding: 0;
+	margin: 6rem 0;
+	padding: 2rem;
 	list-style: none;
 	font-size: 1.6rem;
 	font-family: 'Montserrat Alternates', sans-serif;
 	font-weight: 400;
+	background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
 
 	li {
 		float: left;
 		flex-direction: column;
 
 		&:not(:last-child) {
-			border-right: 1px dashed rgba(0, 0, 0, .05);
+			border-right: 1px dashed rgba(255, 255, 255, .1);
 		}
 
 		&:first-child {
-			border: 1px solid rgba(0, 0, 0, .06);
+			border: 1px solid rgba(255, 255, 255, .1);
 			border-right: none;
 		}
 
@@ -32,7 +43,7 @@
 			padding: .7rem 3rem;
 			margin: 0 1rem;
 			text-decoration: none;
-			color: rgba(0, 0, 0, .5);
+			color: rgba(255, 255, 255, .7);
 			cursor: pointer;
 			transition: color 0s, all .6s cubic-bezier(0.645, 0.045, 0.355, 1);
 			border-bottom: 2px solid transparent;
@@ -49,6 +60,22 @@
 
 		span.mixitup-control-active {
 			color: $Main-color-blue-dark;
+		}
+	}
+}
+
+.reveal-portfolio-animation {
+	.portfolio {
+		&:nth-child(1) {
+			animation: fadeInUpBig 1.5s;
+		}
+
+		&:nth-child(2) {
+			animation: fadeInUpBig 2s;
+		}
+
+		&:nth-child(3) {
+			animation: fadeInUpBig 2.5s;
 		}
 	}
 }

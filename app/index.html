@@ -39,7 +39,7 @@
                     <li class="header__navigation--element"><a href="#about">Who am I?</a></li>
                     <li class="header__navigation--element"><a href="#projects">What have I made?</a></li>
                     <li class="header__navigation--element"><a href="#courses">What have I studied?</a></li>
-                    <li class="header__navigation--element"><a href="#planning">What am I planning?</a></li>
+                    <li class="header__navigation--element"><a href="#resources">Resources</a></li>
                     <li class="header__navigation--element">
                         <a class="getintouch-button flex" href="#getintouch">
                             <span class="flex">
@@ -88,6 +88,7 @@
             </div>
 
             <div class="section__title">Who am I?</div>
+            <div class="section__floatbar"></div>
 
             <div class="aboutMe__container">
                 
@@ -166,6 +167,11 @@
                                 <img src="assets/images/icons/javascript.svg" alt="JavaScript icon">
                                 <span class="flex">JavaScript</span>
                             </div>
+
+                            <div class="icon">
+                                <img src="assets/images/icons/angular.svg" alt="Angular icon">
+                                <span class="flex">Angular</span>
+                            </div>
                         </div>
                         <div class="aboutMe__container__introduction--bottom-message">
                             ...with the interest to learn much more
@@ -176,99 +182,94 @@
         </section>
         
         <!-- Projects Section -->
-        <section id="projects" class="projects page-section flex flex-column">
+        <section id="projects">
             <div class="section-icon">
                 <img src="assets/images/icons/folder-open.svg" alt="Folder open icon">
             </div>
 
             <div class="section__title">What have I made?</div>
-
-            <div class="section__description">
-                <div class="section__description--paragraph">
-                    I have been constantly thinking of how to apply the recently acquired skills in the real world. There are many ideas in my mind and I am going to put these into action as soon as possible. Until then, please check this project below to see how I work.                </div>
-                <div class="section__description--bg"></div>
-            </div>
+            <div class="section__floatbar"></div>
 
             
-        </section> 
 
-        <ul id="filters">
-            <li class="flex"><span class="filter" data-filter=".nodejs, .html5, .sass, .angular, .mongoose, .javascript">ALL</span></li>
-            <li class="flex">
-                <img src="assets/images/icons/html5.svg" alt="HTML5 icon">
-                <span class="filter" data-filter=".html5">HTML5</span>
-            </li>
-            <li class="flex">
-                <img src="assets/images/icons/sass.svg" alt="Sass icon">
-                <span class="filter" data-filter=".sass">Sass</span>
-            </li>
-            <li class="flex">
-                <img src="assets/images/icons/angular.svg" alt="Angular icon">
-                <span class="filter" data-filter=".angular">Angular</span>
-            </li>
-            <li class="flex">
-                <img src="assets/images/icons/node-dot-js.svg" alt="Node.js icon">
-                <span class="filter" data-filter=".nodejs">Node.js</span>
-            </li>
-            <li class="flex">
-                <img src="assets/images/icons/mongodb.svg" alt="Mongoose icon">
-                <span class="filter" data-filter=".mongoose">Mongoose</span>
-            </li>
-            <li class="flex">
-                <img src="assets/images/icons/javascript.svg" alt="JavaScript icon">
-                <span class="filter" data-filter=".javascript">JavaScript</span>
-            </li>
-        </ul>
-
-        <div class="mixitup">
-            <div class="mix nodejs sass mongoose portfolio" data-order="1">
-                <div class="portfolio-wrapper">		
-                    <img src="assets/images/projects/houseStocker/main.png" alt="" />
-					
-					<div class="label">
-						<div class="label-text">
-							<div class="label-text__name">House Stocker</div>
-							<span class="label-text__tech">Node.js / Express / Sass / Mongoose</span>
-						</div>
+            <div class="mixitup__container">
+                <ul id="filters">
+                    <li class="flex"><span class="filter" data-filter=".nodejs, .html5, .sass, .angular, .mongoose, .javascript">ALL</span></li>
+                    <li class="flex">
+                        <img src="assets/images/icons/html5.svg" alt="HTML5 icon">
+                        <span class="filter" data-filter=".html5">HTML5</span>
+                    </li>
+                    <li class="flex">
+                        <img src="assets/images/icons/sass.svg" alt="Sass icon">
+                        <span class="filter" data-filter=".sass">Sass</span>
+                    </li>
+                    <li class="flex">
+                        <img src="assets/images/icons/angular.svg" alt="Angular icon">
+                        <span class="filter" data-filter=".angular">Angular</span>
+                    </li>
+                    <li class="flex">
+                        <img src="assets/images/icons/node-dot-js.svg" alt="Node.js icon">
+                        <span class="filter" data-filter=".nodejs">Node.js</span>
+                    </li>
+                    <li class="flex">
+                        <img src="assets/images/icons/mongodb.svg" alt="Mongoose icon">
+                        <span class="filter" data-filter=".mongoose">Mongoose</span>
+                    </li>
+                    <li class="flex">
+                        <img src="assets/images/icons/javascript.svg" alt="JavaScript icon">
+                        <span class="filter" data-filter=".javascript">JavaScript</span>
+                    </li>
+                </ul>
+    
+                <div class="mixitup">
+                    <div class="mix nodejs sass mongoose portfolio" data-order="1">
+                        <div class="portfolio-wrapper">		
+                            <img src="assets/images/projects/houseStocker/main.png" alt="" />
+                            
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="label-text__name">House Stocker</div>
+                                    <span class="label-text__tech">Node.js / Express / Sass / Mongoose</span>
+                                </div>
+                            </div>
+                            
+                            <div class="button" id="houseStocker">Show project</div>
+                        </div>
+                    </div>
+    
+                    <div class="mix angular nodejs mongoose sass portfolio" data-order="2">
+                        <div class="portfolio-wrapper">				
+                            <img src="assets/images/projects/sharedHouse/image1.png" alt="" />
+                            
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="label-text__name">Shared house</div>
+                                    <span class="label-text__tech">Angular / Node.js / Express / Bootstrap / Mongoose</span>
+                                </div>
+                            </div>
+                            
+                            <div class="button" id="sharedHouse">Show project</div>
+                        </div>
                     </div>
                     
-                    <div class="button" id="houseStocker">Show project</div>
-				</div>
-            </div>
-
-            <div class="mix angular nodejs mongoose sass portfolio" data-order="2">
-                <div class="portfolio-wrapper">				
-                    <img src="assets/images/projects/sharedHouse/image1.png" alt="" />
-					
-					<div class="label">
-						<div class="label-text">
-							<div class="label-text__name">Shared house</div>
-							<span class="label-text__tech">Angular / Node.js / Express / Bootstrap / Mongoose</span>
-						</div>
+                    <div class="mix html5 sass javascript portfolio" data-order="3">
+                        <div class="portfolio-wrapper">				
+                            <img src="assets/images/projects/portfolio.png" alt="" />
+                            
+                            <div class="label">
+                                <div class="label-text">
+                                    <div class="label-text__name">Portfolio</div>
+                                    <span class="label-text__tech">HTML5 / Sass / JavaScript / Webpack</span>
+                                </div>
+                            </div>
+                            
+                            <div class="button" id="portfolio">Show project</div>
+                        </div>
                     </div>
                     
-                    <div class="button" id="sharedHouse">Show project</div>
                 </div>
-            </div>
-            
-            <div class="mix html5 sass javascript portfolio" data-order="3">
-                <div class="portfolio-wrapper">				
-                    <img src="assets/images/projects/portfolio.png" alt="" />
-					
-					<div class="label">
-						<div class="label-text">
-							<div class="label-text__name">Portfolio</div>
-							<span class="label-text__tech">HTML5 / Sass / JavaScript / Webpack</span>
-						</div>
-                    </div>
-                    
-                    <div class="button" id="portfolio">Show project</div>
-                </div>
-            </div>
-            
         </div>
-
-       
+        </section> 
 
         <!-- Courses Section -->
         <section id ="courses" class="courses page-section">
@@ -277,13 +278,9 @@
             </div>
 
             <div class="section__title">What have I studied?</div>
+            <div class="section__floatbar"></div>
 
-            <div class="section__description">
-                <div class="section__description--paragraph">
-                    In the past months after graduation, I have been taking online courses at Udemy, which elevated my knowledge to a much higher level. I have listed these courses with the associated learning outcomes. 
-                </div>
-                <div class="section__description--bg"></div>
-            </div>
+           
 
             <div class="timeline__container">
                 <div class="timeline__container--year">2020</div>
@@ -492,8 +489,9 @@
         </section>
 
         <!-- Resources Section -->
-        <section class="resources">
+        <section id="resources" class="resources">
             <div class="section__title">My resources</div>
+            <div class="section__floatbar"></div>
             
             <div class="resources__container">
                 <div class="resources__container__resource">
