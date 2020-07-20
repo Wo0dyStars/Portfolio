@@ -6,10 +6,8 @@ import mixitup from 'mixitup';
 import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/StickyHeader';
 import TypeLetters from './modules/TypeLetters';
-import ProjectDetails from './modules/ProjectDetails';
 import FormMessage from './modules/FormMessage';
 import TabNavigation from './modules/TabNavigation';
-import ImageSlides from './modules/ImageSlides';
 import Projects from './modules/content/classes/Projects';
 import Modal from './modules/Modal';
 
@@ -20,7 +18,6 @@ new TypeLetters();
 new FormMessage();
 new StickyHeader();
 new TabNavigation();
-new ImageSlides();
 
 mixitup('.mixitup', {
 	animation: {
@@ -45,19 +42,6 @@ mixItUpButtons.forEach((button) => {
 		modal.modalContainer.classList.add('visible');
 		modal.setDimensions();
 	});
-});
-
-let project;
-let projectLink = document.querySelector('.show-project');
-let projectElement = document.querySelector('.projects__project__details');
-projectLink.addEventListener('click', (e) => {
-	e.preventDefault();
-	if (typeof project === 'undefined') {
-		project = new ProjectDetails(projectElement);
-		setTimeout(() => project.open(), 10);
-	} else {
-		setTimeout(() => project.open(), 10);
-	}
 });
 
 // **********************************************************

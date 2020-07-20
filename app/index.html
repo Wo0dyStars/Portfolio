@@ -189,159 +189,7 @@
                 <div class="section__description--bg"></div>
             </div>
 
-            <div class="projects__name"><span>#1</span> House stocker</div>
-
-            <div class="projects__container flex">
-                <div class="projects__project flex">
-                    <div class="projects__project__details hide">
-
-                        <div class="close">X</div>
-                        
-                        <div class="tabs">
-                            <a href="#overview" name="overview" index="0" class="tabs__tab flex tab-active">Overview</a>
-                            <a href="#challenges" name="challenges" index="1" class="tabs__tab flex">Challenges</a>
-                            <a href="#photos" name="photos" index="2" class="tabs__tab flex">Photos</a>
-                            <a href="#code" name="code" index="3" class="tabs__tab flex">Sample code</a>
-                            <div class="slider"></div>
-                        </div>
-
-                        <div id="overview" class="projects__project__details--overview  tab-visible">
-                            <div class="project-overview flex flex-column">
-                                <div class="project-overview--title">House stocker</div>
-
-                                <div class="project-overview--description">
-                                    This application has been developed to maintain information about the currently stored items (mainly food) in the households. People can register themselves and play with their family members. It is designed to let people insert shopping lists to see how much they spend on these items. They can see what items they purchased the most and the system tells them when they run out of items.
-                                </div>
-
-                                <div class="project-overview--technologies">
-                                    <div class="technology"><span>#</span>Git</div>
-                                    <div class="technology"><span>#</span>Node</div>
-                                    <div class="technology"><span>#</span>Express</div>
-                                    <div class="technology"><span>#</span>HTML5</div>
-                                    <div class="technology"><span>#</span>CSS3</div>
-                                    <div class="technology"><span>#</span>JavaScript</div>
-                                    <div class="technology"><span>#</span>Amazon S3</div>
-                                    <div class="technology"><span>#</span>MongoDB</div>
-                                    <div class="technology"><span>#</span>Heroku</div>
-                                </div>
-
-                                <div class="project-overview--date">
-                                    <span class="project-overview--date-completion">Completion date: 10/04/2020 - 10/05/2020</span>
-                                    <div class="project-overview--date-timespan">Timespan: 31 days</div>
-                                </div>
-
-                                <a class="project-overview--view" href="https://pacific-fortress-95051.herokuapp.com/">View project</a>
-
-                            </div>
-                        </div>
-
-                        <div id="challenges" class="projects__project__details--challenges tab-invisible">
-                            <div class="project-challenges">
-                                <div class="project-challenges__challenge">
-                                    <div class="project-challenges__challenge--title">MongoDB database queries</div>
-                                    <div class="project-challenges__challenge--paragraph">
-                                        From the online course, we have touched upon the basic queries, including finding a document or removing a document. For this application, I needed to apply a little more complex queries, often combining multiple ones. Since I used mongoose, the MongoDB official documentation was not always clear to me. However, maybe with not the greatest solutions, but I managed to find answers to my problems.
-                                    </div>
-                                </div>
-
-                                <div class="project-challenges__challenge">
-                                    <div class="project-challenges__challenge--title">Deploy application</div>
-                                    <div class="project-challenges__challenge--paragraph">
-                                        I have never done this before, only seen it once in an online course with a really simple example. However, deploying Node application to Heroku is really simple.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="photos" class="projects__project__details--photos tab-invisible">
-                            <div class="project-photos">
-                                <!-- <img class="arrow leftarrow" src="assets/images/icons/arrow-circle-left.svg" alt="Left arrow icon">
-                                <img class="project-photos__photo project-photos__photo--5 image-on" src="assets/images/projects/house-storage-1.png" alt="">
-                                <img class="project-photos__photo project-photos__photo--5 image-off" src="assets/images/projects/house-storage-2.png" alt="">
-                                <img class="project-photos__photo project-photos__photo--5 image-off" src="assets/images/projects/house-storage-3.png" alt="">
-                                <img class="project-photos__photo project-photos__photo--5 image-off" src="assets/images/projects/house-storage-4.png" alt="">
-                                <img class="project-photos__photo project-photos__photo--5 image-off" src="assets/images/projects/house-storage-5.png" alt="">
-                                <img class="project-photos__photo project-photos__photo--5 image-off" src="assets/images/projects/house-storage-6.png" alt="">
-                                <img class="project-photos__photo project-photos__photo--5 image-off" src="assets/images/projects/house-storage-7.png" alt="">
-                                <img class="project-photos__photo project-photos__photo--5 image-off" src="assets/images/projects/house-storage-8.png" alt="">
-                                <img class="arrow rightarrow" src="assets/images/icons/arrow-circle-right.svg" alt="Right arrow icon"> -->
-                            </div>
-                        </div>
-
-                        <div id="code" class="projects__project__details--code tab-invisible">
-                            <div class="project-code">
-
-                                <!-- <div class="project-code__photo">
-                                    <div class="project-code__photo--title">Search request route handler</div>
-                                    <div class="project-code__photo--description">In this code, you can see how I used Express with Node to handle a search request for "Items" made by the user. I used regex to search the "name" field in the "Items" documents, which results with any finding that matches the provided text, even partially. For example, the search word "app" would find the item name "apple" as well. Flash messages help sending immediate feedback to the user whether the query was successful or not.</div>
-                                    <img src="assets/images/projects/project-code-1.png" alt="Item search post route example" title="Item search post route example">
-                                </div>
-
-                                <div class="project-code__photo">
-                                    <div class="project-code__photo--title">Mongoose Schema definition</div>
-                                    <div class="project-code__photo--description">In this example, I will show how I declared a Mongoose Schema for "Teams". This is the structure how the database saves data about the registered teams in the application. For example, a team has a list of users that belong to the team and requests as well, which indicates the list of users who wish to join this team. This part was a challenge for me, since querying this structure is complicated. </div>
-                                    <img src="assets/images/projects/project-code-2.png" alt="Mongoose Schema definition" title="Mongoose Schema definition">
-                                </div>
-
-                                <div class="project-code__photo">
-                                    <div class="project-code__photo--title">CSS Sass structure</div>
-                                    <div class="project-code__photo--description">This example shows how I used nested structure in CSS Sass. The way I named my classes in HTML allowed me to dig deeper in the name chain. For example, "&-avatar" stands for ".user-profile__main-avatar". This is a simple way of keeping things organized.</div>
-                                    <img src="assets/images/projects/project-code-3.png" alt="CSS Sass structure example" title="CSS Sass structure example">
-                                </div>
-
-                                <div class="project-code__photo">
-                                    <div class="project-code__photo--title">EJS view</div>
-                                    <div class="project-code__photo--description">The following example is a piece of the markup code written in EJS, which is useful for combining JavaScript-like code with HTML. This is where I display purchases to the users and EJS helps me iterate over a list of information.</div>
-                                    <img src="assets/images/projects/project-code-4.png" alt="EJS view example" title="EJS view example">
-                                </div> -->
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="projects__project__features">
-
-                       <div class="projects__project__features--container">
-                           <div class="feature-main">Features</div>
-                           <div class="feature-elements">
-                               <div class="feature">Register new users and edit their profile
-                                    <img class="tick-icon" src="assets/images/icons/check-square-o.svg" alt="Tick icon">
-                                </div>
-                               <div class="feature">Collaborate within a team to achieve goals
-                                    <img class="tick-icon" src="assets/images/icons/check-square-o.svg" alt="Tick icon">
-                               </div>
-                               <div class="feature">Add new household items into the database
-                                    <img class="tick-icon" src="assets/images/icons/check-square-o.svg" alt="Tick icon">
-                               </div>
-                               <div class="feature">Modify household stock as users consume
-                                    <img class="tick-icon" src="assets/images/icons/check-square-o.svg" alt="Tick icon">
-                               </div>
-                               <div class="feature">Add new purchases by inserting shopping lists
-                                    <img class="tick-icon" src="assets/images/icons/check-square-o.svg" alt="Tick icon">
-                               </div>
-                               <div class="feature">See favourite items and spendings in user profile
-                                    <img class="tick-icon" src="assets/images/icons/check-square-o.svg" alt="Tick icon">
-                               </div>
-                               <div class="feature">Search items and purchases
-                                    <img class="tick-icon" src="assets/images/icons/check-square-o.svg" alt="Tick icon">
-                               </div>
-                               <div class="feature">Responsive design
-                                    <img class="tick-icon" src="assets/images/icons/check-square-o.svg" alt="Tick icon">
-                               </div>
-                           </div>
-                       </div>
-                    </div>
-
-                    <div class="projects__project__element">
-                        <!-- <img src="assets/images/projects/house-stocker.png" alt=""> -->
-                        <div class="project-link">
-                            <div class="mask"></div>
-                            <div class="show-project">Show project</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            
         </section> 
 
         <ul id="filters">
@@ -420,9 +268,22 @@
             
         </div>
 
+       
 
-        <br><br><br><br>
-        <section>
+        <!-- Courses Section -->
+        <section id ="courses" class="courses page-section">
+            <div class="section-icon">
+                <img src="assets/images/icons/display.svg" alt="Display icon">
+            </div>
+
+            <div class="section__title">What have I studied?</div>
+
+            <div class="section__description">
+                <div class="section__description--paragraph">
+                    In the past months after graduation, I have been taking online courses at Udemy, which elevated my knowledge to a much higher level. I have listed these courses with the associated learning outcomes. 
+                </div>
+                <div class="section__description--bg"></div>
+            </div>
 
             <div class="timeline__container">
                 <div class="timeline__container--year">2020</div>
@@ -628,26 +489,6 @@
                     </div>
                 </div>
             </div>
-
-        </section>
-       
-
-        <!-- Courses Section -->
-        <section id ="courses" class="courses page-section">
-            <div class="section-icon">
-                <img src="assets/images/icons/display.svg" alt="Display icon">
-            </div>
-
-            <div class="section__title">What have I studied?</div>
-
-            <div class="section__description">
-                <div class="section__description--paragraph">
-                    In the past months after graduation, I have been taking online courses at Udemy, which elevated my knowledge to a much higher level. I have listed these courses with the associated learning outcomes. 
-                </div>
-                <div class="section__description--bg"></div>
-            </div>
-
-            
         </section>
 
         <!-- Planning Section -->
