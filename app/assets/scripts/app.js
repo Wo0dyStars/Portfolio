@@ -7,21 +7,11 @@ import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/StickyHeader';
 import TypeLetters from './modules/TypeLetters';
 import ProjectDetails from './modules/ProjectDetails';
-import Card from './modules/content/classes/Card';
-import Courses from './modules/content/classes/CardObject';
 import FormMessage from './modules/FormMessage';
 import TabNavigation from './modules/TabNavigation';
 import ImageSlides from './modules/ImageSlides';
 import Projects from './modules/content/classes/Projects';
 import Modal from './modules/Modal';
-
-// **********************************************************
-// GENERATE CARDS IN HTML
-// **********************************************************
-Courses.forEach((course) => {
-	let template = new Card(course).GenerateTemplate();
-	document.querySelector('.courses__cards').insertAdjacentHTML('beforeend', template);
-});
 
 // **********************************************************
 // INVOKING EXTERNAL JS CLASSES
@@ -74,7 +64,6 @@ projectLink.addEventListener('click', (e) => {
 // ACTIVATE ANIMATIONS ON SCROLLING
 // **********************************************************
 let groupElements = document.querySelectorAll('.aboutMe__container__group--element');
-let cardElements = document.querySelectorAll('.card');
 let FirstSectionIcon = document.querySelector('.section-icon');
 let headerClass = document.querySelector('.header__navigation');
 let sectionElements = document.querySelectorAll('.section__title');
@@ -84,7 +73,6 @@ let introductionIcons = document.querySelector('.aboutMe__container__introductio
 
 new RevealOnScroll(sectionElements, 'reveal-section-animation');
 new RevealOnScroll(groupElements, 'reveal-animation');
-new RevealOnScroll(cardElements, 'reveal-card-animation');
 new RevealOnScroll(getInTouchElement, 'getInTouch-animated');
 new RevealOnScroll(FirstSectionIcon, 'reveal-fixed-navbar', headerClass);
 new RevealOnScroll(introductionSection, 'reveal-icon-animation', introductionIcons);
