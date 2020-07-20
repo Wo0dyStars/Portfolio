@@ -1,38 +1,44 @@
 .reveal-timeline-animation {
 	.timeline__container {
-		&--year {
-			animation: zoomInDown 4s;
-		}
-
 		&__timeline {
-			animation: jackInTheBox 3s;
-
-			&--month {
-				&-right {
-					animation: fadeInRight 3s;
-				}
-
-				&-left {
-					animation: fadeInLeft 3s;
-				}
-			}
-
-			&--left {
-				.timeline__container__timeline--content {
-					animation: zoomInLeft 4s;
-				}
-			}
-
-			&--right {
-				.timeline__container__timeline--content {
-					animation: zoomInRight 4s;
-				}
-			}
-
 			&--content {
 				.progress {
 					&-bar {
 						animation: animate-positive 5s;
+					}
+				}
+			}
+		}
+	}
+
+	@media only screen and (min-width: 900px) {
+		.timeline__container {
+			&--year {
+				animation: zoomInDown 4s;
+			}
+
+			&__timeline {
+				animation: jackInTheBox 3s;
+
+				&--month {
+					&-right {
+						animation: fadeInRight 3s;
+					}
+
+					&-left {
+						animation: fadeInLeft 3s;
+					}
+				}
+
+				&--left {
+					.timeline__container__timeline--content {
+						animation: zoomInLeft 4s;
+					}
+				}
+
+				&--right {
+					.timeline__container__timeline--content {
+						animation: zoomInRight 4s;
 					}
 				}
 			}
@@ -55,6 +61,7 @@
 
 	&--year {
 		position: absolute;
+		display: none;
 		top: 0%;
 		left: 50%;
 		transform: translate(-50%, -50%);
@@ -64,24 +71,39 @@
 		font-size: 2rem;
 		z-index: 2;
 		border-radius: 2rem;
+
+		@media only screen and (min-width: 900px) {
+			display: block;
+		}
 	}
 
 	&__wrapper {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
 		grid-auto-rows: 30rem;
 		position: relative;
+		grid-row-gap: 15rem;
+
+		@media only screen and (min-width: 900px) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-row-gap: 3rem;
+		}
 	}
 
 	&__timeline {
 		position: relative;
 
 		&--month {
-			display: flex;
+			display: none;
 			align-items: center;
 			color: $Main-color-green-dark;
 			font-size: 2rem;
 			font-family: 'Montserrat Alternates', sans-serif;
+			position: absolute;
+
+			@media only screen and (min-width: 900px) {
+				position: relative;
+				display: flex;
+			}
 
 			&-right {
 				margin-left: 10rem;
@@ -99,11 +121,16 @@
 			transform: translateY(-50%);
 			color: white;
 			background-color: white;
-			width: 10rem;
-			height: 10rem;
+			width: 7rem;
+			height: 7rem;
 			border-radius: 50%;
 			z-index: 1;
 			border: 5px solid $Main-color-green-dark;
+
+			@media only screen and (min-width: 900px) {
+				width: 10rem;
+				height: 10rem;
+			}
 
 			&__workflow {
 				border: 5px solid $Main-color-green-light;
@@ -117,47 +144,56 @@
 				font-size: 1.6rem;
 
 				img {
-					width: 6rem;
-					height: 6rem;
+					width: 4rem;
+					height: 4rem;
+
+					@media only screen and (min-width: 900px) {
+						width: 6rem;
+						height: 6rem;
+					}
 				}
 			}
 		}
 
 		&--left {
-			&:after {
-				content: "";
-				height: 100%;
-				width: 1rem;
-				position: absolute;
-				top: 0%;
-				right: -.5rem;
-				border-right: 5px dashed $Main-color-green-dark;
-				z-index: 0;
-			}
-
-			.timeline__container__timeline--date {
-				right: -5.1rem;
-			}
-
-			.timeline__container__timeline--content {
+			@media only screen and (min-width: 900px) {
 				&:after {
-					right: -15rem;
-					background: linear-gradient(to left, $Main-color-green-dark 30%, white 30%);
+					content: "";
+					height: 100%;
+					width: 1rem;
+					position: absolute;
+					top: 0%;
+					right: -.5rem;
+					border-right: 5px dashed $Main-color-green-dark;
+					z-index: 0;
+				}
+
+				.timeline__container__timeline--date {
+					right: -5.1rem;
+				}
+
+				.timeline__container__timeline--content {
+					&:after {
+						right: -15rem;
+						background: linear-gradient(to left, $Main-color-green-dark 30%, white 30%);
+					}
 				}
 			}
 		}
 
 		&--right {
-			border-left: 5px dashed $Main-color-green-dark;
+			@media only screen and (min-width: 900px) {
+				border-left: 5px dashed $Main-color-green-dark;
 
-			.timeline__container__timeline--date {
-				left: -5.1rem;
-			}
+				.timeline__container__timeline--date {
+					left: -5.1rem;
+				}
 
-			.timeline__container__timeline--content {
-				&:after {
-					left: -15rem;
-					background: linear-gradient(to right, $Main-color-green-light 30%, white 30%);
+				.timeline__container__timeline--content {
+					&:after {
+						left: -15rem;
+						background: linear-gradient(to right, $Main-color-green-light 30%, white 30%);
+					}
 				}
 			}
 		}
@@ -166,10 +202,14 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			width: 55%;
+			width: 90%;
 			transform: translate(-50%, -50%);
 			border-radius: 2rem;
 			box-shadow: .1rem .1rem 1rem rgba(0, 0, 0, .1);
+
+			@media only screen and (min-width: 900px) {
+				width: 55%;
+			}
 
 			&:after {
 				content: '';

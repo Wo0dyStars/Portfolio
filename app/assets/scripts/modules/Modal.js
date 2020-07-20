@@ -69,6 +69,7 @@ class Modal {
 	}
 
 	setDimensions() {
+		this.slideWidth = this.slideWidth > window.innerWidth ? window.innerWidth : this.slideWidth;
 		this.carouselContainer.style.width = this.slideWidth + 'px';
 		if (this.slides.length) {
 			this.slides.forEach((slide) => (slide.style.width = this.slideWidth + 'px'));
