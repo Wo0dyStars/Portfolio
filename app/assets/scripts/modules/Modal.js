@@ -1,3 +1,5 @@
+import debounce from 'lodash/debounce';
+
 class Modal {
 	constructor(projects) {
 		this.slideWidth = 700;
@@ -34,6 +36,13 @@ class Modal {
 	}
 
 	events() {
+		window.addEventListener(
+			'resize',
+			debounce(() => {
+				this.setDimensions();
+			})
+		);
+
 		this.previousButton.addEventListener('click', () => {
 			this.onShift(1);
 		});
@@ -69,7 +78,7 @@ class Modal {
 	}
 
 	setDimensions() {
-		this.slideWidth = this.slideWidth > window.innerWidth ? window.innerWidth : this.slideWidth;
+		this.slideWidth = 700 > window.innerWidth ? window.innerWidth : 700;
 		this.carouselContainer.style.width = this.slideWidth + 'px';
 		if (this.slides.length) {
 			this.slides.forEach((slide) => (slide.style.width = this.slideWidth + 'px'));
@@ -91,7 +100,6 @@ class Modal {
 
 		this.carousel.classList.add('transition');
 		this.carousel.style.transform = `translateX(${direction * this.slideWidth}px)`;
-		console.log(this.carousel);
 
 		setTimeout(function() {
 			if (direction === 1) $('.carousel-container__slide:first').before($('.carousel-container__slide:last'));

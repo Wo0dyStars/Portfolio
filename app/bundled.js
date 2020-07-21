@@ -1,6 +1,50 @@
 /******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	function webpackJsonpCallback(data) {
+/******/ 		var chunkIds = data[0];
+/******/ 		var moreModules = data[1];
+/******/
+/******/
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, resolves = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 				resolves.push(installedChunks[chunkId][0]);
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+/******/ 				modules[moduleId] = moreModules[moduleId];
+/******/ 			}
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(data);
+/******/
+/******/ 		while(resolves.length) {
+/******/ 			resolves.shift()();
+/******/ 		}
+/******/
+/******/ 	};
+/******/
+/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 	// Promise = chunk loading, 0 = chunk loaded
+/******/ 	var installedChunks = {
+/******/ 		"main": 0
+/******/ 	};
+/******/
+/******/
+/******/
+/******/ 	// script path function
+/******/ 	function jsonpScriptSrc(chunkId) {
+/******/ 		return __webpack_require__.p + "" + chunkId + ".bundled.js"
+/******/ 	}
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -26,6 +70,67 @@
 /******/ 		return module.exports;
 /******/ 	}
 /******/
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId) {
+/******/ 		var promises = [];
+/******/
+/******/
+/******/ 		// JSONP chunk loading for javascript
+/******/
+/******/ 		var installedChunkData = installedChunks[chunkId];
+/******/ 		if(installedChunkData !== 0) { // 0 means "already installed".
+/******/
+/******/ 			// a Promise means "currently loading".
+/******/ 			if(installedChunkData) {
+/******/ 				promises.push(installedChunkData[2]);
+/******/ 			} else {
+/******/ 				// setup Promise in chunk cache
+/******/ 				var promise = new Promise(function(resolve, reject) {
+/******/ 					installedChunkData = installedChunks[chunkId] = [resolve, reject];
+/******/ 				});
+/******/ 				promises.push(installedChunkData[2] = promise);
+/******/
+/******/ 				// start chunk loading
+/******/ 				var script = document.createElement('script');
+/******/ 				var onScriptComplete;
+/******/
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.src = jsonpScriptSrc(chunkId);
+/******/
+/******/ 				// create error before stack unwound to get useful stacktrace later
+/******/ 				var error = new Error();
+/******/ 				onScriptComplete = function (event) {
+/******/ 					// avoid mem leaks in IE.
+/******/ 					script.onerror = script.onload = null;
+/******/ 					clearTimeout(timeout);
+/******/ 					var chunk = installedChunks[chunkId];
+/******/ 					if(chunk !== 0) {
+/******/ 						if(chunk) {
+/******/ 							var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 							var realSrc = event && event.target && event.target.src;
+/******/ 							error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 							error.name = 'ChunkLoadError';
+/******/ 							error.type = errorType;
+/******/ 							error.request = realSrc;
+/******/ 							chunk[1](error);
+/******/ 						}
+/******/ 						installedChunks[chunkId] = undefined;
+/******/ 					}
+/******/ 				};
+/******/ 				var timeout = setTimeout(function(){
+/******/ 					onScriptComplete({ type: 'timeout', target: script });
+/******/ 				}, 120000);
+/******/ 				script.onerror = script.onload = onScriptComplete;
+/******/ 				document.head.appendChild(script);
+/******/ 			}
+/******/ 		}
+/******/ 		return Promise.all(promises);
+/******/ 	};
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -79,6 +184,16 @@
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
+/******/ 	// on error function for async loading
+/******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
+/******/
+/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+/******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+/******/ 	jsonpArray.push = webpackJsonpCallback;
+/******/ 	jsonpArray = jsonpArray.slice();
+/******/ 	for(var i = 0; i < jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+/******/ 	var parentJsonpFunction = oldJsonpFunction;
+/******/
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = "./app/assets/scripts/app.js");
@@ -94,7 +209,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/styles.css */ \"./app/assets/styles/styles.css\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var mixitup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mixitup */ \"./node_modules/mixitup/dist/mixitup.js\");\n/* harmony import */ var mixitup__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(mixitup__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/RevealOnScroll */ \"./app/assets/scripts/modules/RevealOnScroll.js\");\n/* harmony import */ var _modules_StickyHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/StickyHeader */ \"./app/assets/scripts/modules/StickyHeader.js\");\n/* harmony import */ var _modules_TypeLetters__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/TypeLetters */ \"./app/assets/scripts/modules/TypeLetters.js\");\n/* harmony import */ var _modules_FormMessage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/FormMessage */ \"./app/assets/scripts/modules/FormMessage.js\");\n/* harmony import */ var _modules_TabNavigation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/TabNavigation */ \"./app/assets/scripts/modules/TabNavigation.js\");\n/* harmony import */ var _modules_content_classes_Projects__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/content/classes/Projects */ \"./app/assets/scripts/modules/content/classes/Projects.js\");\n/* harmony import */ var _modules_Modal__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/Modal */ \"./app/assets/scripts/modules/Modal.js\");\n// **********************************************************\r\n// IMPORT CSS AND EXTERNAL JS FILES\r\n// **********************************************************\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// **********************************************************\r\n// INVOKING EXTERNAL JS CLASSES\r\n// **********************************************************\r\nnew _modules_TypeLetters__WEBPACK_IMPORTED_MODULE_4__[\"default\"]();\r\nnew _modules_FormMessage__WEBPACK_IMPORTED_MODULE_5__[\"default\"]();\r\nnew _modules_StickyHeader__WEBPACK_IMPORTED_MODULE_3__[\"default\"]();\r\nnew _modules_TabNavigation__WEBPACK_IMPORTED_MODULE_6__[\"default\"]();\r\n\r\nmixitup__WEBPACK_IMPORTED_MODULE_1___default()('.mixitup', {\r\n\tanimation: {\r\n\t\teasing: 'cubic-bezier(0.645, 0.045, 0.355, 1)'\r\n\t},\r\n\tload: {\r\n\t\tfilter: '.nodejs, .html5, .sass, .angular, .mongoose, .javascript'\r\n\t}\r\n});\r\n\r\n// **********************************************************\r\n// LISTENING TO PROJECT DETAILS MODAL\r\n// **********************************************************\r\nlet modal;\r\nconst mixItUpButtons = document.querySelectorAll('.mixitup .button');\r\nmixItUpButtons.forEach((button) => {\r\n\tbutton.addEventListener('click', (e) => {\r\n\t\te.preventDefault();\r\n\r\n\t\tmodal = new _modules_Modal__WEBPACK_IMPORTED_MODULE_8__[\"default\"](_modules_content_classes_Projects__WEBPACK_IMPORTED_MODULE_7__[\"default\"]);\r\n\t\tmodal.populateModal(e.target.getAttribute('id'));\r\n\t\tmodal.modalContainer.classList.add('visible');\r\n\t\tmodal.setDimensions();\r\n\t});\r\n});\r\n\r\n// **********************************************************\r\n// ACTIVATE ANIMATIONS ON SCROLLING\r\n// **********************************************************\r\nlet groupElements = document.querySelectorAll('.aboutMe__container__group--element');\r\nlet FirstSectionIcon = document.querySelector('.section-icon');\r\nlet headerClass = document.querySelector('.header__navigation');\r\nlet sectionElements = document.querySelectorAll('.section__title');\r\nlet floatbarElements = document.querySelectorAll('.section__floatbar');\r\nlet getInTouchElement = document.querySelector('.getInTouch');\r\n// let mixitupElement = document.querySelector('.mixitup__container');\r\nlet timelineElement = document.querySelector('.courses');\r\nlet introductionSection = document.querySelector('.aboutMe__container__introduction');\r\nlet introductionIcons = document.querySelector('.aboutMe__container__introduction--skillset__icons');\r\n\r\nnew _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__[\"default\"](sectionElements, 'reveal-section-animation');\r\nnew _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__[\"default\"](floatbarElements, 'reveal-floatbar-animation');\r\nnew _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__[\"default\"](groupElements, 'reveal-animation');\r\nnew _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__[\"default\"](getInTouchElement, 'getInTouch-animated');\r\n// new RevealOnScroll(mixitupElement, 'reveal-portfolio-animation');\r\nnew _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__[\"default\"](timelineElement, 'reveal-timeline-animation');\r\nnew _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__[\"default\"](FirstSectionIcon, 'reveal-fixed-navbar', headerClass);\r\nnew _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__[\"default\"](introductionSection, 'reveal-icon-animation', introductionIcons);\r\n\r\n// **********************************************************\r\n// HIDE NAVIGATION BAR WHEN AN ELEMENT CLICKED\r\n// **********************************************************\r\nlet NavigationCheckbox = document.querySelector('.header__checkbox');\r\nlet NavigationElements = document.querySelectorAll('.header__navigation--element');\r\n\r\nNavigationElements.forEach((element) => {\r\n\telement.addEventListener('click', () => {\r\n\t\tNavigationCheckbox.checked = false;\r\n\t});\r\n});\r\n\r\n// **********************************************************\r\n// ENABLE SMOOTH SCROLLING\r\n// SOURCE FROM https://css-tricks.com/snippets/jquery/smooth-scrolling/\r\n// **********************************************************\r\n$('a[href*=\"#\"]')\r\n\t.not('[href=\"#overview\"]')\r\n\t.not('[href=\"#challenges\"]')\r\n\t.not('[href=\"#photos\"]')\r\n\t.not('[href=\"#code\"]')\r\n\t.not('[href=\"#0\"]')\r\n\t.click(function(event) {\r\n\t\tif (\r\n\t\t\tlocation.pathname.replace(/^\\//, '') == this.pathname.replace(/^\\//, '') &&\r\n\t\t\tlocation.hostname == this.hostname\r\n\t\t) {\r\n\t\t\tvar target = $(this.hash);\r\n\t\t\ttarget = target.length ? target : $('[name=' + this.hash.slice(1) + ']');\r\n\r\n\t\t\tif (target.length) {\r\n\t\t\t\tevent.preventDefault();\r\n\t\t\t\t$('html, body').animate(\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tscrollTop: target.offset().top\r\n\t\t\t\t\t},\r\n\t\t\t\t\t500,\r\n\t\t\t\t\tfunction() {\r\n\t\t\t\t\t\tvar $target = $(target);\r\n\t\t\t\t\t\t$target.focus();\r\n\r\n\t\t\t\t\t\tif ($target.is(':focus')) {\r\n\t\t\t\t\t\t\treturn false;\r\n\t\t\t\t\t\t} else {\r\n\t\t\t\t\t\t\t$target.attr('tabindex', '-1');\r\n\t\t\t\t\t\t\t$target.focus();\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t);\r\n\t\t\t}\r\n\t\t}\r\n\t});\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/styles.css */ \"./app/assets/styles/styles.css\");\n/* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var mixitup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mixitup */ \"./node_modules/mixitup/dist/mixitup.js\");\n/* harmony import */ var mixitup__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(mixitup__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/RevealOnScroll */ \"./app/assets/scripts/modules/RevealOnScroll.js\");\n/* harmony import */ var _modules_StickyHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/StickyHeader */ \"./app/assets/scripts/modules/StickyHeader.js\");\n/* harmony import */ var _modules_TypeLetters__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/TypeLetters */ \"./app/assets/scripts/modules/TypeLetters.js\");\n/* harmony import */ var _modules_FormMessage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/FormMessage */ \"./app/assets/scripts/modules/FormMessage.js\");\n/* harmony import */ var _modules_TabNavigation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/TabNavigation */ \"./app/assets/scripts/modules/TabNavigation.js\");\n/* harmony import */ var _modules_content_classes_Projects__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/content/classes/Projects */ \"./app/assets/scripts/modules/content/classes/Projects.js\");\n// **********************************************************\r\n// IMPORT CSS AND EXTERNAL JS FILES\r\n// **********************************************************\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n// **********************************************************\r\n// INVOKING EXTERNAL JS CLASSES\r\n// **********************************************************\r\nnew _modules_TypeLetters__WEBPACK_IMPORTED_MODULE_4__[\"default\"]();\r\nnew _modules_FormMessage__WEBPACK_IMPORTED_MODULE_5__[\"default\"]();\r\nnew _modules_StickyHeader__WEBPACK_IMPORTED_MODULE_3__[\"default\"]();\r\nnew _modules_TabNavigation__WEBPACK_IMPORTED_MODULE_6__[\"default\"]();\r\n\r\nmixitup__WEBPACK_IMPORTED_MODULE_1___default()('.mixitup', {\r\n\tanimation: {\r\n\t\teasing: 'cubic-bezier(0.645, 0.045, 0.355, 1)'\r\n\t},\r\n\tload: {\r\n\t\tfilter: '.nodejs, .html5, .sass, .angular, .mongoose, .javascript'\r\n\t}\r\n});\r\n\r\n// **********************************************************\r\n// LISTENING TO PROJECT DETAILS MODAL\r\n// **********************************************************\r\nlet modal;\r\nconst mixItUpButtons = document.querySelectorAll('.mixitup .button');\r\nmixItUpButtons.forEach((button) => {\r\n\tbutton.addEventListener('click', (e) => {\r\n\t\te.preventDefault();\r\n\t\t__webpack_require__.e(/*! import() | modal */ \"modal\").then(__webpack_require__.bind(null, /*! ./modules/Modal */ \"./app/assets/scripts/modules/Modal.js\"))\r\n\t\t\t.then((x) => {\r\n\t\t\t\tmodal = new x.default(_modules_content_classes_Projects__WEBPACK_IMPORTED_MODULE_7__[\"default\"]);\r\n\t\t\t\tmodal.populateModal(e.target.getAttribute('id'));\r\n\t\t\t\tmodal.modalContainer.classList.add('visible');\r\n\t\t\t\tmodal.setDimensions();\r\n\t\t\t})\r\n\t\t\t.catch(() => console.log('There was a problem opening the modal.'));\r\n\t});\r\n});\r\n\r\n// **********************************************************\r\n// ACTIVATE ANIMATIONS ON SCROLLING\r\n// **********************************************************\r\nlet groupElements = document.querySelectorAll('.aboutMe__container__group--element');\r\nlet FirstSectionIcon = document.querySelector('.section-icon');\r\nlet headerClass = document.querySelector('.header__navigation');\r\nlet sectionElements = document.querySelectorAll('.section__title');\r\nlet floatbarElements = document.querySelectorAll('.section__floatbar');\r\nlet getInTouchElement = document.querySelector('.getInTouch');\r\n// let mixitupElement = document.querySelector('.mixitup__container');\r\nlet timelineElement = document.querySelector('.courses');\r\nlet introductionSection = document.querySelector('.aboutMe__container__introduction');\r\nlet introductionIcons = document.querySelector('.aboutMe__container__introduction--skillset__icons');\r\n\r\nnew _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__[\"default\"](sectionElements, 'reveal-section-animation');\r\nnew _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__[\"default\"](floatbarElements, 'reveal-floatbar-animation');\r\nnew _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__[\"default\"](groupElements, 'reveal-animation');\r\nnew _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__[\"default\"](getInTouchElement, 'getInTouch-animated');\r\n// new RevealOnScroll(mixitupElement, 'reveal-portfolio-animation');\r\nnew _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__[\"default\"](timelineElement, 'reveal-timeline-animation');\r\nnew _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__[\"default\"](FirstSectionIcon, 'reveal-fixed-navbar', headerClass);\r\nnew _modules_RevealOnScroll__WEBPACK_IMPORTED_MODULE_2__[\"default\"](introductionSection, 'reveal-icon-animation', introductionIcons);\r\n\r\n// **********************************************************\r\n// HIDE NAVIGATION BAR WHEN AN ELEMENT CLICKED\r\n// **********************************************************\r\nlet NavigationCheckbox = document.querySelector('.header__checkbox');\r\nlet NavigationElements = document.querySelectorAll('.header__navigation--element');\r\n\r\nNavigationElements.forEach((element) => {\r\n\telement.addEventListener('click', () => {\r\n\t\tNavigationCheckbox.checked = false;\r\n\t});\r\n});\r\n\r\n// **********************************************************\r\n// ENABLE SMOOTH SCROLLING\r\n// SOURCE FROM https://css-tricks.com/snippets/jquery/smooth-scrolling/\r\n// **********************************************************\r\n$('a[href*=\"#\"]')\r\n\t.not('[href=\"#overview\"]')\r\n\t.not('[href=\"#challenges\"]')\r\n\t.not('[href=\"#photos\"]')\r\n\t.not('[href=\"#code\"]')\r\n\t.not('[href=\"#0\"]')\r\n\t.click(function(event) {\r\n\t\tif (\r\n\t\t\tlocation.pathname.replace(/^\\//, '') == this.pathname.replace(/^\\//, '') &&\r\n\t\t\tlocation.hostname == this.hostname\r\n\t\t) {\r\n\t\t\tvar target = $(this.hash);\r\n\t\t\ttarget = target.length ? target : $('[name=' + this.hash.slice(1) + ']');\r\n\r\n\t\t\tif (target.length) {\r\n\t\t\t\tevent.preventDefault();\r\n\t\t\t\t$('html, body').animate(\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tscrollTop: target.offset().top\r\n\t\t\t\t\t},\r\n\t\t\t\t\t500,\r\n\t\t\t\t\tfunction() {\r\n\t\t\t\t\t\tvar $target = $(target);\r\n\t\t\t\t\t\t$target.focus();\r\n\r\n\t\t\t\t\t\tif ($target.is(':focus')) {\r\n\t\t\t\t\t\t\treturn false;\r\n\t\t\t\t\t\t} else {\r\n\t\t\t\t\t\t\t$target.attr('tabindex', '-1');\r\n\t\t\t\t\t\t\t$target.focus();\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t);\r\n\t\t\t}\r\n\t\t}\r\n\t});\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/app.js?");
 
 /***/ }),
 
@@ -107,18 +222,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\nclass FormMessage {\r\n\tconstructor() {\r\n\t\tthis.events();\r\n\t}\r\n\r\n\tevents() {\r\n\t\twindow.addEventListener('DOMContentLoaded', () => {\r\n\t\t\tconst form = document.querySelector('.message-form');\r\n\t\t\tconst button = document.querySelector('.submit-message');\r\n\t\t\tconst status = document.querySelector('.form-status');\r\n\r\n\t\t\tfunction success() {\r\n\t\t\t\tform.reset();\r\n\t\t\t\tbutton.style = 'display: none';\r\n\t\t\t\tstatus.innerHTML = 'Thanks for your message. I will be in touch soon. :)';\r\n\t\t\t}\r\n\r\n\t\t\tfunction error() {\r\n\t\t\t\tstatus.innerHTML = 'An error occurred with the form. Please try again!';\r\n\t\t\t}\r\n\r\n\t\t\tform.addEventListener('submit', (e) => {\r\n\t\t\t\te.preventDefault();\r\n\t\t\t\tconst data = new FormData(form);\r\n\r\n\t\t\t\tconst xhr = new XMLHttpRequest();\r\n\t\t\t\txhr.open(form.method, form.action);\r\n\t\t\t\txhr.setRequestHeader('Accept', 'application/json');\r\n\t\t\t\txhr.onreadystatechange = function() {\r\n\t\t\t\t\tif (xhr.readyState !== XMLHttpRequest.DONE) return;\r\n\t\t\t\t\tif (xhr.status === 200) {\r\n\t\t\t\t\t\tsuccess(xhr.response, xhr.responseType);\r\n\t\t\t\t\t} else {\r\n\t\t\t\t\t\terror(xhr.status, xhr.response, xhr.responseType);\r\n\t\t\t\t\t}\r\n\t\t\t\t};\r\n\t\t\t\txhr.send(data);\r\n\t\t\t});\r\n\t\t});\r\n\t}\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (FormMessage);\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/FormMessage.js?");
-
-/***/ }),
-
-/***/ "./app/assets/scripts/modules/Modal.js":
-/*!*********************************************!*\
-  !*** ./app/assets/scripts/modules/Modal.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nclass Modal {\r\n\tconstructor(projects) {\r\n\t\tthis.slideWidth = 700;\r\n\t\tthis.draggingFrom = 0;\r\n\t\tthis.draggingTo = 0;\r\n\t\tthis.threshold = this.slideWidth / 3;\r\n\t\tthis.projects = projects;\r\n\r\n\t\t// DOM ELEMENTS\r\n\t\tthis.mixItUpButtons = document.querySelectorAll('.mixitup .button');\r\n\t\tthis.modalContainer = document.querySelector('.modal-container');\r\n\t\tthis.carouselContainer = document.querySelector('.carousel-container');\r\n\t\tthis.carousel = document.querySelector('#carousel');\r\n\t\tthis.slides = [];\r\n\t\tthis.close = document.querySelector('.close-modal');\r\n\t\tthis.background = document.querySelector('.modal-container__background');\r\n\r\n\t\tthis.previousButton = document.querySelector('#previousButton');\r\n\t\tthis.nextButton = document.querySelector('#nextButton');\r\n\r\n\t\tthis.moveMouse = (e) => {\r\n\t\t\tthis.draggingTo = e.pageX;\r\n\t\t\tthis.carousel.style.transform = `translateX(${this.getDraggingPosition()}px)`;\r\n\t\t};\r\n\r\n\t\tthis.upMouse = () => {\r\n\t\t\tif (this.getDraggingPosition() > this.threshold) return this.onShift(1);\r\n\t\t\tif (this.getDraggingPosition() < -this.threshold) return this.onShift(-1);\r\n\r\n\t\t\tthis.onShift(0);\r\n\t\t};\r\n\r\n\t\tthis.events();\r\n\t}\r\n\r\n\tevents() {\r\n\t\tthis.previousButton.addEventListener('click', () => {\r\n\t\t\tthis.onShift(1);\r\n\t\t});\r\n\r\n\t\tthis.nextButton.addEventListener('click', () => {\r\n\t\t\tthis.onShift(-1);\r\n\t\t});\r\n\r\n\t\tthis.close.addEventListener('click', () => {\r\n\t\t\tthis.modalContainer.classList.remove('visible');\r\n\t\t\tthis.slides.forEach((slide) => {\r\n\t\t\t\tslide.remove();\r\n\t\t\t});\r\n\t\t\tdocument.querySelector('.modal-container__code').innerHTML = '';\r\n\t\t});\r\n\r\n\t\tthis.background.addEventListener('click', () => {\r\n\t\t\tthis.modalContainer.classList.remove('visible');\r\n\t\t\tthis.slides.forEach((slide) => {\r\n\t\t\t\tslide.remove();\r\n\t\t\t});\r\n\t\t\tdocument.querySelector('.modal-container__code').innerHTML = '';\r\n\t\t});\r\n\r\n\t\tthis.carousel.addEventListener('mousedown', (event) => {\r\n\t\t\tif (this.carousel.classList.contains('transition')) return;\r\n\r\n\t\t\tthis.draggingFrom = event.pageX;\r\n\t\t\tthis.carousel.addEventListener('mousemove', this.moveMouse);\r\n\r\n\t\t\tdocument.addEventListener('mouseup', this.upMouse);\r\n\t\t});\r\n\t}\r\n\r\n\tsetDimensions() {\r\n\t\tthis.slideWidth = this.slideWidth > window.innerWidth ? window.innerWidth : this.slideWidth;\r\n\t\tthis.carouselContainer.style.width = this.slideWidth + 'px';\r\n\t\tif (this.slides.length) {\r\n\t\t\tthis.slides.forEach((slide) => (slide.style.width = this.slideWidth + 'px'));\r\n\t\t}\r\n\t\tthis.carousel.style.left = this.slideWidth * -1 + 'px';\r\n\t}\r\n\r\n\tgetDraggingPosition() {\r\n\t\treturn this.draggingTo - this.draggingFrom;\r\n\t}\r\n\r\n\tonShift(direction) {\r\n\t\tif (this.carousel.classList.contains('transition')) return;\r\n\r\n\t\tthis.draggingTo = this.draggingFrom;\r\n\r\n\t\tdocument.removeEventListener('mouseup', this.upMouse);\r\n\t\tthis.carousel.removeEventListener('mousemove', this.moveMouse);\r\n\r\n\t\tthis.carousel.classList.add('transition');\r\n\t\tthis.carousel.style.transform = `translateX(${direction * this.slideWidth}px)`;\r\n\t\tconsole.log(this.carousel);\r\n\r\n\t\tsetTimeout(function() {\r\n\t\t\tif (direction === 1) $('.carousel-container__slide:first').before($('.carousel-container__slide:last'));\r\n\t\t\tif (direction === -1) $('.carousel-container__slide:last').after($('.carousel-container__slide:first'));\r\n\r\n\t\t\tthis.carousel.classList.remove('transition');\r\n\t\t\tthis.carousel.style.transform = 'translateX(0px)';\r\n\t\t}, 700);\r\n\t}\r\n\r\n\tpopulateModal(id) {\r\n\t\t// MAIN INFORMATION\r\n\t\tlet title = document.querySelector('.modal-container__information--title');\r\n\t\tlet detail = document.querySelector('.modal-container__information--detail');\r\n\t\tlet tag = document.querySelector('.modal-container__information--tag');\r\n\t\tlet link = document.querySelector('.modal-container__link__website');\r\n\t\tlet date = document.querySelector('.modal-container__information--date');\r\n\r\n\t\ttitle.textContent = this.projects[id].title;\r\n\t\tdetail.textContent = this.projects[id].detail;\r\n\t\ttag.textContent = this.projects[id].tag;\r\n\t\tdate.textContent = this.projects[id].date;\r\n\t\tlink.setAttribute('href', this.projects[id].link);\r\n\r\n\t\tif (!this.slides.length) {\r\n\t\t\tthis.projects[id].images.forEach((image) => {\r\n\t\t\t\tconst slide = document.createElement('div');\r\n\t\t\t\tslide.setAttribute('class', 'carousel-container__slide');\r\n\t\t\t\tslide.style.backgroundImage = `${image}`;\r\n\t\t\t\tthis.carousel.appendChild(slide);\r\n\t\t\t});\r\n\t\t}\r\n\r\n\t\tthis.slides = document.querySelectorAll('.carousel-container__slide');\r\n\r\n\t\t// CODE SAMPLES\r\n\t\tlet codeSamples = document.querySelector('.modal-container__code');\r\n\r\n\t\tthis.projects[id].sampleCode.forEach((code) => {\r\n\t\t\tconst title = document.createElement('div');\r\n\t\t\ttitle.setAttribute('class', 'modal-container__code--title');\r\n\t\t\ttitle.innerHTML = code.title;\r\n\t\t\tcodeSamples.appendChild(title);\r\n\r\n\t\t\tconst description = document.createElement('div');\r\n\t\t\tdescription.setAttribute('class', 'modal-container__code--description');\r\n\t\t\tdescription.innerHTML = code.description;\r\n\t\t\tcodeSamples.appendChild(description);\r\n\r\n\t\t\tconst image = document.createElement('img');\r\n\t\t\timage.setAttribute('src', code.photo);\r\n\t\t\timage.setAttribute('alt', code.title);\r\n\t\t\timage.setAttribute('title', code.title);\r\n\t\t\tcodeSamples.appendChild(image);\r\n\t\t});\r\n\t}\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (Modal);\r\n\n\n//# sourceURL=webpack:///./app/assets/scripts/modules/Modal.js?");
 
 /***/ }),
 

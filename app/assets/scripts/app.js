@@ -9,7 +9,6 @@ import TypeLetters from './modules/TypeLetters';
 import FormMessage from './modules/FormMessage';
 import TabNavigation from './modules/TabNavigation';
 import Projects from './modules/content/classes/Projects';
-import Modal from './modules/Modal';
 
 // **********************************************************
 // INVOKING EXTERNAL JS CLASSES
@@ -36,11 +35,14 @@ const mixItUpButtons = document.querySelectorAll('.mixitup .button');
 mixItUpButtons.forEach((button) => {
 	button.addEventListener('click', (e) => {
 		e.preventDefault();
-
-		modal = new Modal(Projects);
-		modal.populateModal(e.target.getAttribute('id'));
-		modal.modalContainer.classList.add('visible');
-		modal.setDimensions();
+		import(/* webpackChunkName: "modal" */ './modules/Modal')
+			.then((x) => {
+				modal = new x.default(Projects);
+				modal.populateModal(e.target.getAttribute('id'));
+				modal.modalContainer.classList.add('visible');
+				modal.setDimensions();
+			})
+			.catch(() => console.log('There was a problem opening the modal.'));
 	});
 });
 
