@@ -32,6 +32,15 @@ class Modal {
 			this.onShift(0);
 		};
 
+		this.downMouse = (e) => {
+			if (this.carousel.classList.contains('transition')) return;
+
+			this.draggingFrom = e.pageX;
+			this.carousel.addEventListener('mousemove', this.moveMouse);
+
+			document.addEventListener('mouseup', this.upMouse);
+		};
+
 		this.events();
 	}
 
@@ -52,29 +61,25 @@ class Modal {
 		});
 
 		this.close.addEventListener('click', () => {
-			this.modalContainer.classList.remove('visible');
-			this.slides.forEach((slide) => {
-				slide.remove();
-			});
-			document.querySelector('.modal-container__code').innerHTML = '';
+			this.closeModal();
 		});
 
 		this.background.addEventListener('click', () => {
-			this.modalContainer.classList.remove('visible');
-			this.slides.forEach((slide) => {
-				slide.remove();
-			});
-			document.querySelector('.modal-container__code').innerHTML = '';
+			this.closeModal();
 		});
 
-		this.carousel.addEventListener('mousedown', (event) => {
-			if (this.carousel.classList.contains('transition')) return;
+		this.carousel.addEventListener('mousedown', this.downMouse);
+	}
 
-			this.draggingFrom = event.pageX;
-			this.carousel.addEventListener('mousemove', this.moveMouse);
-
-			document.addEventListener('mouseup', this.upMouse);
+	closeModal() {
+		this.modalContainer.classList.remove('visible');
+		this.slides.forEach((slide) => {
+			slide.remove();
 		});
+		document.querySelector('.modal-container__code').innerHTML = '';
+		document.removeEventListener('mouseup', this.upMouse);
+		this.carousel.removeEventListener('mousemove', this.moveMouse);
+		this.carousel.removeEventListener('mousedown', this.downMouse);
 	}
 
 	setDimensions() {
