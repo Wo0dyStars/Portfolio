@@ -72,14 +72,16 @@ class Modal {
 	}
 
 	closeModal() {
-		this.modalContainer.classList.remove('visible');
-		this.slides.forEach((slide) => {
-			slide.remove();
-		});
-		document.querySelector('.modal-container__code').innerHTML = '';
-		document.removeEventListener('mouseup', this.upMouse);
 		this.carousel.removeEventListener('mousemove', this.moveMouse);
 		this.carousel.removeEventListener('mousedown', this.downMouse);
+		this.modalContainer.classList.remove('visible');
+		setTimeout(() => {
+			this.slides.forEach((slide) => {
+				slide.remove();
+			});
+			document.querySelector('.modal-container__code').innerHTML = '';
+			document.removeEventListener('mouseup', this.upMouse);
+		}, 1000);
 	}
 
 	setDimensions() {

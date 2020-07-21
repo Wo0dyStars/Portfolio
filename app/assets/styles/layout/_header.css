@@ -158,7 +158,9 @@
 			opacity: 0;
 			height: 0;
 			width: 100%;
-			background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+			background-blend-mode: screen;
+			background: linear-gradient(to right, #0f2027, #203a43, #2c5364),
+				url("assets/images/bg-images/main.png") center/contain no-repeat;
 			position: absolute;
 			z-index: 50;
 			top: 0;
@@ -166,10 +168,11 @@
 			flex-direction: column;
 			transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 			visibility: hidden;
-			border-bottom: 3px solid $Main-color-green-light;
+			border-bottom: 6px solid $Main-color-green-light;
 			overflow: hidden;
 
 			@media only screen and (min-width: 650px) {
+				background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
 				visibility: visible;
 				transition: none;
 				top: 0;
@@ -190,6 +193,14 @@
 
 				.getintouch-button {
 					color: white !important;
+				}
+			}
+
+			li {
+				background-color: rgba(0, 0, 0, .8);
+
+				@media only screen and (min-width: 650px) {
+					background-color: transparent;
 				}
 			}
 

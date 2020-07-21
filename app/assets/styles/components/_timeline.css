@@ -117,12 +117,12 @@
 
 		&--date {
 			position: absolute;
-			top: 50%;
+			top: 0;
 			transform: translateY(-50%);
 			color: white;
 			background-color: white;
-			width: 7rem;
-			height: 7rem;
+			width: 8rem;
+			height: 8rem;
 			border-radius: 50%;
 			z-index: 1;
 			border: 5px solid $Main-color-green-dark;
@@ -130,6 +130,7 @@
 			@media only screen and (min-width: 900px) {
 				width: 10rem;
 				height: 10rem;
+				top: 50%;
 			}
 
 			&__workflow {
@@ -176,6 +177,14 @@
 					&:after {
 						right: -15rem;
 						background: linear-gradient(to left, $Main-color-green-dark 30%, white 30%);
+
+						@media only screen and (min-width: 1600px) {
+							right: -20rem;
+						}
+
+						@media only screen and (min-width: 2100px) {
+							right: -25rem;
+						}
 					}
 				}
 			}
@@ -193,6 +202,14 @@
 					&:after {
 						left: -15rem;
 						background: linear-gradient(to right, $Main-color-green-light 30%, white 30%);
+
+						@media only screen and (min-width: 1600px) {
+							left: -20rem;
+						}
+
+						@media only screen and (min-width: 2100px) {
+							left: -25rem;
+						}
 					}
 				}
 			}
@@ -222,6 +239,10 @@
 				position: absolute;
 				top: 50%;
 				z-index: -3;
+
+				@media only screen and (min-width: 1600px) {
+					width: 40rem;
+				}
 			}
 
 			&-title {
@@ -229,10 +250,15 @@
 				font-size: 1.7rem;
 				color: rgba(255, 255, 255, 1);
 				font-weight: 800;
+				text-align: center;
 				padding: 2rem;
 				border-top-left-radius: 2rem;
 				border-top-right-radius: 2rem;
 				clip-path: polygon(0 0, 100% 0%, 100% 78%, 0% 100%);
+
+				@media only screen and (min-width: 900px) {
+					text-align: left;
+				}
 
 				&__darkblue {
 					background: $Main-color-green-dark;
@@ -273,8 +299,8 @@
 
 			.progress {
 				position: absolute;
-				bottom: -3rem;
-				left: -3rem;
+				bottom: -2rem;
+				left: 0;
 				height: 5rem;
 				background-color: white;
 				width: 100%;
@@ -285,6 +311,12 @@
 				align-items: center;
 				border: 1px solid rgba(254, 201, 63, .4);
 				box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, .6);
+				backface-visibility: hidden;
+
+				@media only screen and (min-width: 900px) {
+					bottom: -3rem;
+					left: -3rem;
+				}
 
 				&-title {
 					width: 15%;
