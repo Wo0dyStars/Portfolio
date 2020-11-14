@@ -115,7 +115,7 @@
 	text-decoration: none;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 	width: 18rem;
-	height: 7rem;
+	height: 4rem;
 
 	@media only screen and (min-width: 650px) {
 		margin-right: 2rem;

@@ -24,14 +24,14 @@ class RevealOnScroll {
 
 	scrolledElement(element, target = 'none') {
 		if (this.newClass == 'reveal-fixed-navbar') {
-			if ((window.scrollY + this.browserHeight) * 0.6 > element.offsetTop) {
+			if ((window.scrollY + this.browserHeight) * 0.45 > element.offsetTop) {
 				target.classList.add(this.newClass);
 			} else if (window.scrollY < this.browserHeight) {
 				if (target.classList.contains(this.newClass)) {
 					target.classList.remove(this.newClass);
 				}
 			}
-		} else if (window.scrollY + this.browserHeight > element.offsetTop) {
+		} else if (window.scrollY + this.browserHeight * 1.3 > element.offsetTop) {
 			if (this.newClass == 'reveal-icon-animation') {
 				target.classList.add(this.newClass);
 			} else {
