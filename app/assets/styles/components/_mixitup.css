@@ -35,7 +35,8 @@
 	}
 
 	@media only screen and (min-width: 900px) {
-		grid-template-columns: repeat(7, 1fr);
+		grid-template-columns: repeat(6, 1fr);
+		grid-gap: 2rem;
 	}
 
 	li {
@@ -94,6 +95,7 @@
 		top: 0;
 		-webkit-transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1);
 		transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1);
+		backface-visibility: hidden;
 
 		@media only screen and (min-width: 650px) {
 			width: 40rem;
@@ -367,7 +369,7 @@
 	position: relative;
 
 	@media only screen and (min-width: 650px) {
-		height: 450px;
+		height: 550px;
 	}
 
 	&__window {
@@ -393,7 +395,7 @@
 		background-size: cover;
 
 		@media only screen and (min-width: 650px) {
-			height: 450px;
+			height: 550px;
 		}
 	}
 

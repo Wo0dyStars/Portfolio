@@ -130,6 +130,7 @@ class Modal {
 		tag.textContent = this.projects[id].tag;
 		date.textContent = this.projects[id].date;
 		link.setAttribute('href', this.projects[id].link);
+		link.setAttribute('target', "_blank");
 
 		if (!this.slides.length) {
 			this.projects[id].images.forEach((image) => {

@@ -7,14 +7,11 @@ const Projects = {
 			'This application has been developed to maintain information about the currently stored items (mainly food) in the households. People can register themselves and play with their family members. It is designed to let people insert shopping lists to see how much they spend on these items. They can see what items they purchased the most and the system tells them when they run out of items.',
 		link: 'https://pacific-fortress-95051.herokuapp.com/',
 		images: [
-			"url('assets/images/projects/houseStocker/house-storage-2.png')",
-			"url('assets/images/projects/houseStocker/house-storage-1.png')",
-			"url('assets/images/projects/houseStocker/house-storage-3.png')",
-			"url('assets/images/projects/houseStocker/house-storage-4.png')",
-			"url('assets/images/projects/houseStocker/house-storage-5.png')",
-			"url('assets/images/projects/houseStocker/house-storage-6.png')",
-			"url('assets/images/projects/houseStocker/house-storage-7.png')",
-			"url('assets/images/projects/houseStocker/house-storage-8.png')"
+			"url('assets/images/projects/houseStocker/image2.png')",
+			"url('assets/images/projects/houseStocker/image1.png')",
+			"url('assets/images/projects/houseStocker/image3.png')",
+			"url('assets/images/projects/houseStocker/image4.png')",
+			"url('assets/images/projects/houseStocker/image5.png')"
 		],
 		sampleCode: [
 			{
@@ -55,11 +52,7 @@ const Projects = {
 			"url('assets/images/projects/sharedHouse/image3.png')",
 			"url('assets/images/projects/sharedHouse/image2.png')",
 			"url('assets/images/projects/sharedHouse/image4.png')",
-			"url('assets/images/projects/sharedHouse/image5.png')",
-			"url('assets/images/projects/sharedHouse/image6.png')",
-			"url('assets/images/projects/sharedHouse/image7.png')",
-			"url('assets/images/projects/sharedHouse/image8.png')",
-			"url('assets/images/projects/sharedHouse/image9.png')"
+			"url('assets/images/projects/sharedHouse/image5.png')"
 		],
 		sampleCode: [
 			{
@@ -101,7 +94,7 @@ const Projects = {
 		date: '03/04/2020 - ',
 		detail:
 			'This project is an ongoing process which showcases my current knowledge and skills in my Web Development career. As soon as I learn new skills or better practical ways of laying out elements or information, I will update this very soon.',
-		link: 'http://sharedhouse-env.eba-ymfiekfv.eu-west-2.elasticbeanstalk.com/',
+		link: 'http://peterkertesz.com',
 		images: [
 			"url('assets/images/projects/portfolio/image1.png')",
 			"url('assets/images/projects/portfolio/image2.png')",
@@ -125,6 +118,79 @@ const Projects = {
 				description:
 					'This example demonstrates how deep I can travel with this way of referencing. Increased transparency and neat layout.',
 				photo: 'assets/images/projects/portfolio/project-code-3.png'
+			}
+		]
+	},
+
+	businessDirectory: {
+		title: 'Business Directory',
+		tag: 'ReactJS and PHP web application deployed in Heroku',
+		date: '27/10/2020 - 12/11/2020',
+		detail:
+			'This project has been developed in response to the task required by IT Career Switch. It is a company directory system, which stores details of all employees working to a given company. It assumes that only administrators access this system so no authentication process is required. They can see all details of employees, edit or delete them. They can also set new locations or departments and edit those too. ',
+		link: 'https://boiling-shore-15346.herokuapp.com/',
+		images: [
+			"url('assets/images/projects/businessDirectory/image2.png')",
+			"url('assets/images/projects/businessDirectory/image1.png')",
+			"url('assets/images/projects/businessDirectory/image3.png')",
+			"url('assets/images/projects/businessDirectory/image4.png')",
+			"url('assets/images/projects/businessDirectory/image5.png')",
+			"url('assets/images/projects/businessDirectory/image6.png')"
+		],
+		sampleCode: [
+			{
+				title: 'Request data from React lifecycle hook',
+				description:
+					'This is an example of using my function ServerAPI to request data from PHP server. The code calls two different APIs after each other and handles errors appropriately.',
+				photo: 'assets/images/projects/businessDirectory/codeSample1.png'
+			},
+			{
+				title: 'Process Insert request in PHP',
+				description:
+					'The code first checks whether there was a POST request and if yes it trims the posted name and it also checks whether the data is empty or not. It inserts a new row into the database and returns the ID of that row',
+				photo: 'assets/images/projects/businessDirectory/codeSample2.png'
+			},
+			{
+				title: 'Leveraging Sass to make functions',
+				description:
+					'This code allows for easy handling of media queries in the Sass files. It also has other functions that handle commonly used CSS rules',
+				photo: 'assets/images/projects/businessDirectory/codeSample3.png'
+			}
+		]
+	},
+
+	countryMaps: {
+		title: 'Country Maps',
+		tag: 'JavaScript application with AJAX using PHP and cURL deployed in Heroku',
+		date: '21/10/2020 - 25/10/2020',
+		detail:
+			'This project has been developed in response to the task required by IT Career Switch. It is meant to display a LeafletJS map on the screen with all the countries in the world. Users can navigate around the map by selecting a country and see some details, photos or weather about that. This project was a good practice for asyncronous AJAX calls using PHP cURL.',
+		link: 'https://ancient-inlet-52320.herokuapp.com/',
+		images: [
+			"url('assets/images/projects/countryMaps/image2.png')",
+			"url('assets/images/projects/countryMaps/image1.png')",
+			"url('assets/images/projects/countryMaps/image3.png')",
+			"url('assets/images/projects/countryMaps/image4.png')",
+			"url('assets/images/projects/countryMaps/image5.png')"
+		],
+		sampleCode: [
+			{
+				title: 'Processing of cities data and creating markers',
+				description:
+					'This code demonstrates how I made use of the returned data from a country API. All the cities returned were in ascending order by population size and they each fell into a corresponding population category. When the locations and categories were ready, I displayed them on the map.',
+				photo: 'assets/images/projects/countryMaps/codeSample1.png'
+			},
+			{
+				title: 'Displaying weather data by using jQuery',
+				description:
+					'This code shows how I manipulated the DOM to display current weather data dynamically in regards to the selected country.',
+				photo: 'assets/images/projects/countryMaps/codeSample2.png'
+			},
+			{
+				title: 'Updating the map legend',
+				description:
+					'This code is interesting, it uses LeafletJS legend feature to update information according to the selected country.',
+				photo: 'assets/images/projects/countryMaps/codeSample3.png'
 			}
 		]
 	}
