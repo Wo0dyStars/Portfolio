@@ -25,7 +25,7 @@ class StickyHeader {
 	}
 
 	findSection(element, idx) {
-		if (window.scrollY + this.browserHeight * 0.7 > element.offsetTop) {
+		if (window.scrollY + this.browserHeight * 1 > element.offsetTop) {
 			this.elements[idx].classList.add('active');
 			this.elements[this.currentIndex].classList.remove('active');
 			this.currentIndex = idx;
