@@ -124,6 +124,7 @@ class Modal {
 		let tag = document.querySelector('.modal-container__information--tag');
 		let link = document.querySelector('.modal-container__link__website');
 		let date = document.querySelector('.modal-container__information--date');
+		let gitHub = document.querySelector(".modal-github-link");
 
 		title.textContent = this.projects[id].title;
 		detail.textContent = this.projects[id].detail;
@@ -131,6 +132,7 @@ class Modal {
 		date.textContent = this.projects[id].date;
 		link.setAttribute('href', this.projects[id].link);
 		link.setAttribute('target', "_blank");
+		gitHub.setAttribute('href', this.projects[id].github);
 
 		if (!this.slides.length) {
 			this.projects[id].images.forEach((image) => {

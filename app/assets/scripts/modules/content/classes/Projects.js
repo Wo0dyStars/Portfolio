@@ -6,6 +6,7 @@ const Projects = {
 		detail:
 			'This application has been developed to maintain information about the currently stored items (mainly food) in the households. People can register themselves and play with their family members. It is designed to let people insert shopping lists to see how much they spend on these items. They can see what items they purchased the most and the system tells them when they run out of items.',
 		link: 'https://pacific-fortress-95051.herokuapp.com/',
+		github: "https://github.com/Wo0dyStars/Household-storage",
 		images: [
 			"url('assets/images/projects/houseStocker/image2.png')",
 			"url('assets/images/projects/houseStocker/image1.png')",
@@ -48,6 +49,7 @@ const Projects = {
 		detail:
 			'This project has been built to get some practical sense using Angular and understand the principles of communicating with Node server. The content is designed for shared houses, where people wish to find better ways of dealing with conflicts of interest, lack of space and cultural differences. House members can keep a record of who did what and earn points for their activities. This way, they can easily find out if there is uneven amount of contribution.',
 		link: 'http://sharedhouse-env.eba-ymfiekfv.eu-west-2.elasticbeanstalk.com/',
+		github: "https://github.com/Wo0dyStars/shared-house",
 		images: [
 			"url('assets/images/projects/sharedHouse/image3.png')",
 			"url('assets/images/projects/sharedHouse/image2.png')",
@@ -95,6 +97,7 @@ const Projects = {
 		detail:
 			'This project is an ongoing process which showcases my current knowledge and skills in my Web Development career. As soon as I learn new skills or better practical ways of laying out elements or information, I will update this very soon.',
 		link: 'http://peterkertesz.com',
+		github: "https://github.com/Wo0dyStars/Portfolio",
 		images: [
 			"url('assets/images/projects/portfolio/image1.png')",
 			"url('assets/images/projects/portfolio/image2.png')",
@@ -129,6 +132,7 @@ const Projects = {
 		detail:
 			'This project has been developed in response to the task required by IT Career Switch. It is a company directory system, which stores details of all employees working to a given company. It assumes that only administrators access this system so no authentication process is required. They can see all details of employees, edit or delete them. They can also set new locations or departments and edit those too. ',
 		link: 'https://boiling-shore-15346.herokuapp.com/',
+		github: "https://github.com/Wo0dyStars/companyDirectory",
 		images: [
 			"url('assets/images/projects/businessDirectory/image2.png')",
 			"url('assets/images/projects/businessDirectory/image1.png')",
@@ -166,6 +170,7 @@ const Projects = {
 		detail:
 			'This project has been developed in response to the task required by IT Career Switch. It is meant to display a LeafletJS map on the screen with all the countries in the world. Users can navigate around the map by selecting a country and see some details, photos or weather about that. This project was a good practice for asyncronous AJAX calls using PHP cURL.',
 		link: 'https://ancient-inlet-52320.herokuapp.com/',
+		github: "https://github.com/Wo0dyStars/countrySmart",
 		images: [
 			"url('assets/images/projects/countryMaps/image2.png')",
 			"url('assets/images/projects/countryMaps/image1.png')",
