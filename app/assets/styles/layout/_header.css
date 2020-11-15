@@ -9,6 +9,19 @@
 		z-index: 12;
 		top: 0;
 		left: 0;
+
+		&--overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			background-color: rgba(0, 0, 0, .1);
+			width: 100vw;
+			height: 0;
+			z-index: 11;
+			visibility: hidden;
+			opacity: 0;
+			transition: all .1s ease-out;
+		}
 	}
 
 	&__checkbox {
@@ -19,6 +32,12 @@
 		opacity: 1;
 		height: 40rem;
 		visibility: visible;
+	}
+
+	&__checkbox:checked ~ &__checkbox--overlay {
+		opacity: 1;
+		visibility: visible;
+		height: 100vh;
 	}
 
 	&__checkbox:checked + &__button &__icon {

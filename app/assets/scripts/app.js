@@ -74,12 +74,17 @@ new RevealOnScroll(introductionSection, 'reveal-icon-animation', introductionIco
 // **********************************************************
 let NavigationCheckbox = document.querySelector('.header__checkbox');
 let NavigationElements = document.querySelectorAll('.header__navigation--element');
+let CheckboxOverlay = document.querySelector(".header__checkbox--overlay");
 
 NavigationElements.forEach((element) => {
 	element.addEventListener('click', () => {
 		NavigationCheckbox.checked = false;
 	});
 });
+
+CheckboxOverlay.addEventListener("click", () => {
+	NavigationCheckbox.checked = false;
+})
 
 // **********************************************************
 // ENABLE SMOOTH SCROLLING
