@@ -1,5 +1,5 @@
 .section__title {
-	font-family: "Raleway", sans-serif;
+	font-family: 'Montserrat Alternates', sans-serif;
 	font-size: 2rem;
 	color: rgba(9, 54, 55, .9);
 	width: 80%;
@@ -8,6 +8,10 @@
 	text-align: center;
 	font-weight: 800;
 	padding: 2rem;
+
+	&--white {
+		color: rgba(255, 255, 255, .7);
+	}
 
 	@media only screen and (min-width: 900px) {
 		width: 60%;
@@ -22,59 +26,11 @@
 .section__floatbar {
 	height: .8rem;
 	width: 10rem;
-	background-color: rgba(9, 54, 55, .9);
+	background-color: rgba(9, 54, 55, .7);
 	margin: 0 auto;
-}
 
-.section__description {
-	display: flex;
-	font-family: 'Montserrat Alternates', sans-serif;
-	align-items: center;
-	font-size: 1.4rem;
-	color: rgba(0, 0, 0, .7);
-	width: 100%;
-	height: 25rem;
-	margin: auto;
-	margin-top: 2rem;
-	margin-bottom: 5rem;
-	text-align: center;
-	padding: 2rem;
-	font-weight: 400;
-	position: relative;
-
-	@media only screen and (min-width: 900px) {
-		margin-top: 5rem;
-		height: 40rem;
-	}
-
-	&--paragraph {
-		position: absolute;
-		top: 10rem;
-		left: 50%;
-		transform: translateX(-50%);
-		z-index: 2;
-		width: 90%;
-
-		@media only screen and (min-width: 900px) {
-			width: 50%;
-		}
-	}
-
-	&--bg {
-		display: none;
-
-		@media only screen and (min-width: 900px) {
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 100%;
-			height: 100%;
-			z-index: 1;
-			background: url("assets/images/desc-bg.png") no-repeat;
-			background-size: contain;
-		}
+	&--white {
+		background-color: rgba(255, 255, 255, .7);
 	}
 }
 

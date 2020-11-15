@@ -1,5 +1,6 @@
 .resources {
-	margin: 15rem 12rem;
+	margin-top: 15rem;
+	background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
 
 	&__title {
 		font-size: 2.5rem;
@@ -15,6 +16,7 @@
 		grid-auto-rows: 30rem;
 		grid-gap: 4rem;
 		margin-top: 7rem;
+		color: rgba(255, 255, 255, .7);
 
 		&__resource {
 			display: grid;
