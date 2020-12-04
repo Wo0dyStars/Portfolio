@@ -8,6 +8,8 @@
 	text-align: center;
 	font-weight: 800;
 	padding: 2rem;
+	visibility: hidden;
+	opacity: 0;
 
 	&--white {
 		color: rgba(255, 255, 255, .7);
@@ -28,6 +30,8 @@
 	width: 10rem;
 	background-color: rgba(9, 54, 55, .7);
 	margin: 0 auto;
+	visibility: hidden;
+	opacity: 0;
 
 	&--white {
 		background-color: rgba(255, 255, 255, .7);

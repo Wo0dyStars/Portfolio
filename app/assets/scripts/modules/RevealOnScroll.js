@@ -31,11 +31,19 @@ class RevealOnScroll {
 					target.classList.remove(this.newClass);
 				}
 			}
-		} else if (window.scrollY + this.browserHeight * 1.3 > element.offsetTop) {
+		} else if (window.scrollY + this.browserHeight * 0.8 > element.offsetTop) {
 			if (this.newClass == 'reveal-icon-animation') {
 				target.classList.add(this.newClass);
-			} else {
+			} else if (this.newClass == "profile-photo--reveal-img") {
+				target.classList.add(this.newClass);
+				target.style.transform = "translateX(0rem)";
+				target.style.visibility = "visible";
+				target.style.opacity = "1";
+			}
+			else {
 				element.classList.add(this.newClass);
+				element.style.visibility = "visible";
+				element.style.opacity = "1";
 			}
 		}
 	}

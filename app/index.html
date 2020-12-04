@@ -3,7 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Peter Kertesz">
+        <meta name="description" content="Peter Kertesz Portfolio Website">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <meta property="og:title" content="Peter Kertesz" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://peterkertesz.com" />
+        <meta property="og:image" content="https://s3.eu-west-2.amazonaws.com/peterkertesz.com/preview.png" />
+        <meta name="og:description" content="Peter Kertesz Portfolio Website" />
+        <meta property="og:site_name" content="Peter Kertesz" />
         
         <!-- Google fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&display=swap" rel="stylesheet">        
@@ -134,12 +143,14 @@
                             <source srcset="assets/images/profile-large.png 1920w" media="(min-width: 1200px)">
                             <source srcset="assets/images/profile-medium.png 1380w" media="(min-width: 900px)">
                             <source srcset="assets/images/profile-small.png 990w" media="(min-width: 650px)">
-                            <img srcset="assets/images/profile-smallest.png 640w" alt="My profile photo">
+                            <img srcset="assets/images/profile-smallest.png 640w" alt="My profile photo" class="profile-photo--img">
                         </picture>
                     </div>
 
                     <div class="aboutMe__container__introduction--description flex">
-                        I have recently graduated in Computing and IT at The Open University with Upper Second-class Honours. During my study time, I have shown how disciplined, dedicated and passionate I was about learning new materials. Although, I am really interested in many aspects of programming, I fell in love with web development, especially creative designs, beautiful visualizations and amazing animations. Therefore, I have gratefully decided to select this path and put my greatest effort into bringing my full potential. 
+                        <p>
+                            I have recently graduated in Computing and IT at <a href="http://www.open.ac.uk/" target="_blank">The Open University</a> with Upper Second-class Honours. During my study time, I have shown how disciplined, dedicated and passionate I was about learning new materials. Although, I am really interested in many aspects of programming, I fell in love with web development, especially creative designs, beautiful visualizations and amazing animations. Therefore, I have gratefully decided to select this path and put my greatest effort into bringing my full potential. 
+                        </p>
                     </div>
 
                     <div class="aboutMe__container__introduction--skillset">
@@ -188,8 +199,8 @@
                 <img src="assets/images/icons/folder-open.svg" alt="Folder open icon">
             </div>
 
-            <div class="section__title section__title--white">What have I made?</div>
-            <div class="section__floatbar section__floatbar--white"></div>
+            <div class="section__title">What have I made?</div>
+            <div class="section__floatbar"></div>
 
             
 
@@ -566,13 +577,13 @@
             <div class="section-icon">
                 <img src="assets/images/icons/display.svg" alt="Display icon">
             </div>
-            <div class="section__title section__title--white">My resources</div>
-            <div class="section__floatbar section__floatbar--white"></div>
+            <div class="section__title">My resources</div>
+            <div class="section__floatbar"></div>
             
             <div class="resources__container">
                 <div class="resources__container__resource">
                     <div class="resources__container__resource--logo flex">
-                        <a href="https://developer.mozilla.org/en-US/">
+                        <a href="https://developer.mozilla.org/en-US/" target="_blank">
                             <img src="assets/images/resources/mdn.jpg" alt="HTML5, CSS3 and JavaScript references" title="HTML5, CSS3 and JavaScript references">
                         </a>
                     </div>
@@ -582,8 +593,8 @@
                 </div>
 
                 <div class="resources__container__resource">
-                    <div class="resources__container__resource--logo flex">
-                        <a href="https://stackoverflow.com/">
+                    <div class="resources__container__resource--logo flex" >
+                        <a href="https://stackoverflow.com/" target="_blank">
                             <img src="assets/images/resources/stackoverflow.png" alt="Stack overflow" title="Stack overflow">
                         </a>
                     </div>
@@ -594,7 +605,7 @@
 
                 <div class="resources__container__resource">
                     <div class="resources__container__resource--logo flex">
-                        <a href="https://code.visualstudio.com/">
+                        <a href="https://code.visualstudio.com/" target="_blank">
                             <img src="assets/images/resources/vsc.png" alt="Visual Studio Code" title="Visual Studio Code">
                         </a>
                     </div>
@@ -605,7 +616,7 @@
 
                 <div class="resources__container__resource">
                     <div class="resources__container__resource--logo flex">
-                        <a href="https://fonts.google.com/">
+                        <a href="https://fonts.google.com/" target="_blank">
                             <img src="assets/images/resources/google-fonts.png" alt="Google Fonts" title="Google Fonts">
                         </a>
                     </div>
@@ -616,7 +627,7 @@
 
                 <div class="resources__container__resource">
                     <div class="resources__container__resource--logo flex">
-                        <a href="https://uigradients.com/">
+                        <a href="https://uigradients.com/" target="_blank">
                             <img src="assets/images/resources/uigradients.jpg" alt="UI Gradients" title="UI Gradients">
                         </a>
                     </div>
@@ -627,7 +638,7 @@
 
                 <div class="resources__container__resource">
                     <div class="resources__container__resource--logo flex">
-                        <a href="https://unsplash.com/">
+                        <a href="https://unsplash.com/" target="_blank">
                             <img src="assets/images/resources/unsplash.png" alt="Unsplash" title="Unsplash">
                         </a>
                     </div>
@@ -638,7 +649,7 @@
 
                 <div class="resources__container__resource">
                     <div class="resources__container__resource--logo flex">
-                        <a href="https://icomoon.io/" class="footer__resources--link">
+                        <a href="https://icomoon.io/" class="footer__resources--link" target="_blank">
                             <img src="assets/images/resources/icomoon.png" alt="Icomoon" title="Icomoon">
                         </a>
                     </div>
@@ -649,7 +660,7 @@
 
                 <div class="resources__container__resource">
                     <div class="resources__container__resource--logo flex">
-                        <a href="https://animate.style/">
+                        <a href="https://animate.style/" target="_blank">
                             <img src="assets/images/resources/animate-css.jpeg" alt="Animate.css" title="Animate.css">
                         </a>
                     </div>

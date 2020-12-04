@@ -59,6 +59,9 @@ let getInTouchElement = document.querySelector('.getInTouch');
 let timelineElement = document.querySelector('.courses');
 let introductionSection = document.querySelector('.aboutMe__container__introduction');
 let introductionIcons = document.querySelector('.aboutMe__container__introduction--skillset__icons');
+let introductionPhoto = document.querySelector(".profile-photo--img");
+let resourcesContainer = document.querySelector(".resources__container");
+let resources = document.querySelectorAll(".resources__container__resource");
 
 new RevealOnScroll(sectionElements, 'reveal-section-animation');
 new RevealOnScroll(floatbarElements, 'reveal-floatbar-animation');
@@ -68,6 +71,8 @@ new RevealOnScroll(getInTouchElement, 'getInTouch-animated');
 new RevealOnScroll(timelineElement, 'reveal-timeline-animation');
 new RevealOnScroll(FirstSectionIcon, 'reveal-fixed-navbar', headerClass);
 new RevealOnScroll(introductionSection, 'reveal-icon-animation', introductionIcons);
+new RevealOnScroll(introductionSection, 'profile-photo--reveal-img', introductionPhoto);
+new RevealOnScroll(resources, 'reveal-resources');
 
 // **********************************************************
 // HIDE NAVIGATION BAR WHEN AN ELEMENT CLICKED
