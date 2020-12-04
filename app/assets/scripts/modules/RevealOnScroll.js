@@ -31,7 +31,7 @@ class RevealOnScroll {
 					target.classList.remove(this.newClass);
 				}
 			}
-		} else if (window.scrollY + this.browserHeight * 0.8 > element.offsetTop) {
+		} else if (window.scrollY + this.browserHeight * 0.95 > element.offsetTop) {
 			if (this.newClass == 'reveal-icon-animation') {
 				target.classList.add(this.newClass);
 			} else if (this.newClass == "profile-photo--reveal-img") {

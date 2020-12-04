@@ -35,24 +35,34 @@
 			}
 
 			.reveal-animation {
-				visibility: visible;
-				opacity: 1;
-
 				&:nth-of-type(1) {
 					animation: SlideInFromRight 1s linear;
+					visibility: visible;
+					opacity: 1;
 				}
 
 				&:nth-of-type(2) {
 					animation: SlideInFromRight 1.2s linear;
+					visibility: visible;
+					opacity: 1;
 				}
 
 				&:nth-of-type(3) {
 					animation: SlideInFromRight 1.4s linear;
+					visibility: visible;
+					opacity: 1;
 				}
 
 				&:nth-of-type(4) {
 					animation: SlideInFromRight 1.7s linear;
+					visibility: visible;
+					opacity: 1;
 				}
+			}
+
+			&--element:not(.reveal-animation) {
+				visibility: hidden;
+				opacity: 0;
 			}
 
 			&--element {
@@ -60,8 +70,6 @@
 				height: 20rem;
 				display: grid;
 				grid-template-rows: 4fr 1fr 1fr;
-				visibility: hidden;
-				opacity: 0;
 				transition: all .5s ease;
 
 				@media only screen and (min-width: 650px) {
